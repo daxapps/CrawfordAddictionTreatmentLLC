@@ -10,10 +10,10 @@ import UIKit
 
 class FAQTableViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
-    let questions = [
-        "What is Suboxone?",
-        "Can CAT help me?"
-    ]
+    // MARK: Properties
+    
+    let allQuestions = FAQs.allQuestions
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,17 +38,23 @@ class FAQTableViewController: UIViewController, UITableViewDataSource, UITableVi
 //    }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return self.questions.count
+        return self.allQuestions.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "FAQCell", for: indexPath)
-
-        let FAQCell = self.questions[indexPath.row]
-        cell.textLabel?.text = FAQCell
+        let FAQCell = self.allQuestions[indexPath.row]
+        
+        cell.textLabel?.text = FAQCell.question
 
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let detailController = self.storyboard!.instantiateViewController(withIdentifier: "AnswersViewController") as! AnswersViewController
+        detailController.faqs = self.allQuestions[indexPath.row]
+        self.navigationController!.pushViewController(detailController, animated: true)
+        
     }
     
 

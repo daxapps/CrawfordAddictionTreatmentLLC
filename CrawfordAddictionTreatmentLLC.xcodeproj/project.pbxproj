@@ -14,6 +14,7 @@
 		E0D6BAC11E1A935A005A26D4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E0D6BABF1E1A935A005A26D4 /* LaunchScreen.storyboard */; };
 		E0D6BACF1E1AC85E005A26D4 /* FAQTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0D6BACE1E1AC85E005A26D4 /* FAQTableViewController.swift */; };
 		E0D6BAD11E1B04D1005A26D4 /* FAQs.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0D6BAD01E1B04D1005A26D4 /* FAQs.swift */; };
+		E0D6BAD31E1B0D8C005A26D4 /* AnswersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0D6BAD21E1B0D8C005A26D4 /* AnswersViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		E0D6BAC21E1A935A005A26D4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E0D6BACE1E1AC85E005A26D4 /* FAQTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FAQTableViewController.swift; sourceTree = "<group>"; };
 		E0D6BAD01E1B04D1005A26D4 /* FAQs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FAQs.swift; sourceTree = "<group>"; };
+		E0D6BAD21E1B0D8C005A26D4 /* AnswersViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnswersViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +92,7 @@
 			children = (
 				E0D6BAB61E1A935A005A26D4 /* FirstViewController.swift */,
 				E0D6BACE1E1AC85E005A26D4 /* FAQTableViewController.swift */,
+				E0D6BAD21E1B0D8C005A26D4 /* AnswersViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -171,6 +174,7 @@
 				E0D6BAB51E1A935A005A26D4 /* AppDelegate.swift in Sources */,
 				E0D6BACF1E1AC85E005A26D4 /* FAQTableViewController.swift in Sources */,
 				E0D6BAB71E1A935A005A26D4 /* FirstViewController.swift in Sources */,
+				E0D6BAD31E1B0D8C005A26D4 /* AnswersViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
