@@ -1,0 +1,6 @@
+framework module Pods_CrawfordAddictionTreatmentLLC {
+  umbrella header "Pods-CrawfordAddictionTreatmentLLC-umbrella.h"
+
+  export *
+  module * { export * }
+}

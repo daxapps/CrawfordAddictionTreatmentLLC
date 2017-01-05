@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="dPk-xZ-slu">
-    <device id="retina4_0" orientation="portrait">
+    <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -18,17 +18,17 @@
                         <viewControllerLayoutGuide type="bottom" id="4ug-Mw-9AY"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="tsR-hK-woN">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="900"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SXZ-H6-dFF">
-                                <rect key="frame" x="0.0" y="64" width="320" height="836"/>
+                                <rect key="frame" x="0.0" y="64" width="320" height="536"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" alignment="center" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="WBg-Yg-mhq">
                                         <rect key="frame" x="0.0" y="-64" width="320" height="528"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="SOS-Rt-hmV">
-                                                <rect key="frame" x="0.0" y="0.0" width="320" height="173"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="320" height="131"/>
                                                 <subviews>
                                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" usesAttributedText="YES" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="KQZ-1w-vlD">
                                                         <rect key="frame" x="0.0" y="0.0" width="320" height="57"/>
@@ -48,12 +48,12 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dna group photo cropped" translatesAutoresizingMaskIntoConstraints="NO" id="Ta3-Qc-e7i">
-                                                        <rect key="frame" x="0.0" y="57" width="320" height="116"/>
+                                                        <rect key="frame" x="0.0" y="57" width="320" height="74"/>
                                                     </imageView>
                                                 </subviews>
                                             </stackView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="11" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vvz-FT-D1Q">
-                                                <rect key="frame" x="1.5" y="185" width="317.5" height="217"/>
+                                                <rect key="frame" x="0.0" y="143" width="320" height="217"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="217" id="T1w-Qe-Loc"/>
                                                 </constraints>
@@ -65,7 +65,7 @@ John Crawford, MD has over 30 years of experience in addiction medicine and is p
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TKG-in-4ks">
-                                                <rect key="frame" x="70" y="414" width="180" height="30"/>
+                                                <rect key="frame" x="70" y="372" width="180" height="30"/>
                                                 <color key="backgroundColor" red="0.9627608896055927" green="1" blue="0.1752927991075367" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="30" id="Le0-JR-ZyQ"/>
@@ -77,7 +77,7 @@ John Crawford, MD has over 30 years of experience in addiction medicine and is p
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LKK-dr-gnl">
-                                                <rect key="frame" x="70" y="456" width="180" height="30"/>
+                                                <rect key="frame" x="70" y="414" width="180" height="30"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="30" id="9eZ-vY-ZAb"/>
                                                 </constraints>
@@ -87,7 +87,7 @@ John Crawford, MD has over 30 years of experience in addiction medicine and is p
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XoL-6c-8K5">
-                                                <rect key="frame" x="70" y="498" width="180" height="30"/>
+                                                <rect key="frame" x="70" y="456" width="180" height="30"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="30" id="OGX-gD-PiW"/>
                                                 </constraints>
@@ -96,9 +96,21 @@ John Crawford, MD has over 30 years of experience in addiction medicine and is p
                                                     <segue destination="FgV-jc-t3h" kind="show" id="jfo-R5-B0i"/>
                                                 </connections>
                                             </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MdS-Un-PYg">
+                                                <rect key="frame" x="70" y="498" width="180" height="30"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="180" id="k5y-UT-Bnj"/>
+                                                    <constraint firstAttribute="height" constant="30" id="vkV-pS-B06"/>
+                                                </constraints>
+                                                <state key="normal" title="Bup Chat"/>
+                                                <connections>
+                                                    <segue destination="LHK-8H-dNn" kind="show" id="qmJ-rH-RGq"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                         <constraints>
                                             <constraint firstItem="LKK-dr-gnl" firstAttribute="leading" secondItem="XoL-6c-8K5" secondAttribute="leading" id="DZE-3Y-U7c"/>
+                                            <constraint firstItem="Vvz-FT-D1Q" firstAttribute="trailing" secondItem="SOS-Rt-hmV" secondAttribute="trailing" id="GUR-IO-ATd"/>
                                             <constraint firstItem="TKG-in-4ks" firstAttribute="leading" secondItem="LKK-dr-gnl" secondAttribute="leading" id="Ldx-XF-H1p"/>
                                             <constraint firstAttribute="height" constant="528" id="hnF-VB-BaK"/>
                                         </constraints>
@@ -106,10 +118,10 @@ John Crawford, MD has over 30 years of experience in addiction medicine and is p
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="WBg-Yg-mhq" firstAttribute="centerX" secondItem="SXZ-H6-dFF" secondAttribute="centerX" id="1Sd-pK-FHd"/>
+                                    <constraint firstAttribute="bottom" secondItem="WBg-Yg-mhq" secondAttribute="bottom" id="Dra-vu-2YP"/>
                                     <constraint firstAttribute="trailing" secondItem="WBg-Yg-mhq" secondAttribute="trailing" id="HnM-IC-nqs"/>
                                     <constraint firstItem="WBg-Yg-mhq" firstAttribute="leading" secondItem="SXZ-H6-dFF" secondAttribute="leading" id="T0z-9u-Z3L"/>
                                     <constraint firstItem="WBg-Yg-mhq" firstAttribute="top" secondItem="SXZ-H6-dFF" secondAttribute="top" id="UcF-sA-glS"/>
-                                    <constraint firstAttribute="bottom" secondItem="WBg-Yg-mhq" secondAttribute="bottom" constant="308" id="auc-KS-qOX"/>
                                 </constraints>
                             </scrollView>
                         </subviews>
@@ -118,20 +130,151 @@ John Crawford, MD has over 30 years of experience in addiction medicine and is p
                             <constraint firstItem="SXZ-H6-dFF" firstAttribute="leading" secondItem="tsR-hK-woN" secondAttribute="leading" id="BQa-D4-BKZ"/>
                             <constraint firstItem="SXZ-H6-dFF" firstAttribute="top" secondItem="Ia1-K6-d13" secondAttribute="bottom" id="EoW-9P-7gh"/>
                             <constraint firstAttribute="trailing" secondItem="SXZ-H6-dFF" secondAttribute="trailing" id="d8T-Mx-DjE"/>
-                            <constraint firstItem="SXZ-H6-dFF" firstAttribute="bottom" secondItem="4ug-Mw-9AY" secondAttribute="top" id="l3b-wX-J0E"/>
+                            <constraint firstItem="4ug-Mw-9AY" firstAttribute="top" secondItem="SXZ-H6-dFF" secondAttribute="bottom" id="gqO-oK-tZ3"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="About" image="first" id="acW-dT-cKf"/>
                     <navigationItem key="navigationItem" id="kQ7-7i-3hI"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-                    <size key="freeformSize" width="320" height="900"/>
+                    <size key="freeformSize" width="320" height="600"/>
                     <connections>
                         <outlet property="callButton" destination="TKG-in-4ks" id="EX3-CD-TV7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="750" y="-453.16901408450707"/>
+            <point key="canvasLocation" x="-1627.5" y="-2.112676056338028"/>
+        </scene>
+        <!--Bup Chat View Controller-->
+        <scene sceneID="hGu-fZ-pbz">
+            <objects>
+                <viewController id="LHK-8H-dNn" customClass="BupChatViewController" customModule="CrawfordAddictionTreatmentLLC" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="8Zh-cs-Mth"/>
+                        <viewControllerLayoutGuide type="bottom" id="Buo-UU-sqx"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="z07-uU-PbD" userLabel="Root">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="oGo-Z1-Kzr">
+                                <rect key="frame" x="0.0" y="20" width="375" height="40"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rmw-Kn-6PG">
+                                        <rect key="frame" x="295" y="5" width="72" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="SIGN OUT">
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="titleShadowColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="signOut:" destination="LHK-8H-dNn" eventType="touchUpInside" id="nMn-ep-KtG"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="BupChat" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lhG-fJ-I3c">
+                                        <rect key="frame" x="149" y="8" width="76" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.29673840350000003" green="0.61520525569999995" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="fZp-oR-9k6">
+                                <rect key="frame" x="16" y="68" width="343" height="539"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="messageCell" textLabel="OcE-UU-UVZ" imageView="x6o-k2-jQw" style="IBUITableViewCellStyleDefault" id="NVP-ig-dWJ">
+                                        <rect key="frame" x="0.0" y="28" width="343" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="NVP-ig-dWJ" id="gK0-nu-Fyk">
+                                            <rect key="frame" x="0.0" y="0.0" width="343" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="message" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="OcE-UU-UVZ">
+                                                    <rect key="frame" x="60" y="0.0" width="268" height="43"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" image="first" id="x6o-k2-jQw">
+                                                    <rect key="frame" x="15" y="6" width="30" height="30"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                </imageView>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="message" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="TZ9-Eh-txU">
+                                <rect key="frame" x="51" y="615" width="255" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3yx-Yj-qcR">
+                                <rect key="frame" x="314" y="617" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="SEND"/>
+                                <connections>
+                                    <action selector="didSendMessage:" destination="LHK-8H-dNn" eventType="touchUpInside" id="Tlf-Pu-7UX"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jLt-oy-Xzy">
+                                <rect key="frame" x="16" y="615" width="27" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Image Message"/>
+                                <connections>
+                                    <action selector="didTapAddPhoto:" destination="LHK-8H-dNn" eventType="touchUpInside" id="W0G-Vv-M29"/>
+                                </connections>
+                            </button>
+                            <visualEffectView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aIM-QC-QQP">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" id="Si0-Pk-6FM">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                </view>
+                                <blurEffect style="light"/>
+                            </visualEffectView>
+                            <imageView userInteractionEnabled="NO" alpha="0.0" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ays-ct-gvt">
+                                <rect key="frame" x="18" y="65" width="339" height="536"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ico-wh-uPz">
+                                <rect key="frame" x="149" y="406" width="76" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.29673840350000003" green="0.61520525569999995" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="SIGN IN">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="showLoginView:" destination="LHK-8H-dNn" eventType="touchUpInside" id="U5Y-7G-ISz"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="backgroundBlur" destination="aIM-QC-QQP" id="Lek-aw-e5p"/>
+                        <outlet property="imageDisplay" destination="ays-ct-gvt" id="kEB-Wo-bZD"/>
+                        <outlet property="imageMessage" destination="jLt-oy-Xzy" id="NDc-Mj-lLU"/>
+                        <outlet property="messageTextField" destination="TZ9-Eh-txU" id="9Jw-76-cBj"/>
+                        <outlet property="messagesTable" destination="fZp-oR-9k6" id="U3z-Sg-DHu"/>
+                        <outlet property="sendButton" destination="3yx-Yj-qcR" id="2oj-iX-MXa"/>
+                        <outlet property="signInButton" destination="ico-wh-uPz" id="d4E-X1-khG"/>
+                        <outlet property="signOutButton" destination="rmw-Kn-6PG" id="Cof-hd-uex"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="L6x-pj-7p0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1628" y="752"/>
         </scene>
         <!--FAQ-->
         <scene sceneID="HLO-zH-b8J">
@@ -141,6 +284,7 @@ John Crawford, MD has over 30 years of experience in addiction medicine and is p
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="bmt-Ka-MA5">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.29673840354332193" green="0.61520525568218254" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </navigationBar>
                     <connections>
                         <segue destination="9pv-A4-QxB" kind="relationship" relationship="rootViewController" id="UHl-Sk-iQ8"/>
@@ -148,7 +292,7 @@ John Crawford, MD has over 30 years of experience in addiction medicine and is p
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qqW-pg-4qw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="750" y="-1326"/>
+            <point key="canvasLocation" x="-2563" y="-2"/>
         </scene>
         <!--FAQ-->
         <scene sceneID="wg7-f3-ORb">
@@ -159,22 +303,22 @@ John Crawford, MD has over 30 years of experience in addiction medicine and is p
                         <viewControllerLayoutGuide type="bottom" id="Djb-ko-YwX"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="QS5-Rx-YEW">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="900"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="92" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="xTN-wm-uGJ">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="900"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="600"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="left" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="FAQCell" textLabel="66O-HI-Wrp" rowHeight="92" style="IBUITableViewCellStyleDefault" id="3fP-Da-HGK">
                                         <rect key="frame" x="0.0" y="28" width="320" height="92"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="3fP-Da-HGK" id="5sL-zp-N1s">
-                                            <rect key="frame" x="0.0" y="0.0" width="287" height="91.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="287" height="91"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="66O-HI-Wrp">
-                                                    <rect key="frame" x="15" y="0.0" width="270" height="91.5"/>
+                                                    <rect key="frame" x="15" y="0.0" width="270" height="91"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <attributedString key="attributedText">
                                                         <fragment content="Title">
@@ -208,28 +352,7 @@ John Crawford, MD has over 30 years of experience in addiction medicine and is p
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="750" y="761"/>
-        </scene>
-        <!--Videos-->
-        <scene sceneID="GhC-nc-Ouw">
-            <objects>
-                <viewController title="Videos" id="Ppa-EE-kfQ" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="knz-AG-gTi"/>
-                        <viewControllerLayoutGuide type="bottom" id="BuX-Fl-J6O"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="8PV-D3-AbD">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Videos" id="3vK-qh-Wa8"/>
-                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-                    <size key="freeformSize" width="320" height="480"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="cfQ-zo-2ru" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-319" y="657"/>
+            <point key="canvasLocation" x="-293" y="-690"/>
         </scene>
         <!--Directions-->
         <scene sceneID="CGQ-Xz-fEu">
@@ -240,11 +363,11 @@ John Crawford, MD has over 30 years of experience in addiction medicine and is p
                         <viewControllerLayoutGuide type="bottom" id="Csr-9x-IJ8"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="h18-o2-83M">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="900"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="0Kc-Rf-Ytg">
-                                <rect key="frame" x="0.0" y="108" width="320" height="748"/>
+                                <rect key="frame" x="0.0" y="108" width="320" height="448"/>
                             </mapView>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7ss-Az-E87">
                                 <rect key="frame" x="0.0" y="64" width="320" height="44"/>
@@ -264,7 +387,7 @@ John Crawford, MD has over 30 years of experience in addiction medicine and is p
                                 </items>
                             </navigationBar>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="y5H-pg-Nhd">
-                                <rect key="frame" x="0.0" y="856" width="320" height="44"/>
+                                <rect key="frame" x="0.0" y="556" width="320" height="44"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="u0y-0M-rux"/>
                                 </constraints>
@@ -314,7 +437,7 @@ John Crawford, MD has over 30 years of experience in addiction medicine and is p
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2zI-u6-esg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-146" y="-453"/>
+            <point key="canvasLocation" x="-294" y="340"/>
         </scene>
         <!--Answers-->
         <scene sceneID="1kt-qt-3PX">
@@ -325,11 +448,11 @@ John Crawford, MD has over 30 years of experience in addiction medicine and is p
                         <viewControllerLayoutGuide type="bottom" id="IDe-XE-zdy"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="sS6-v4-snh">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="y4o-Ay-oNn">
-                                <rect key="frame" x="20.5" y="28" width="279" height="419"/>
+                                <rect key="frame" x="48" y="28" width="279" height="419"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yg2-Tn-uRI">
                                         <rect key="frame" x="0.0" y="0.0" width="279" height="100"/>
@@ -378,32 +501,7 @@ John Crawford, MD has over 30 years of experience in addiction medicine and is p
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="u0W-mr-5LJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1561.875" y="360"/>
-        </scene>
-        <!--Web View-->
-        <scene sceneID="ahT-CT-ixH">
-            <objects>
-                <viewController title="Web View" id="sIJ-Bt-zvm" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="tx3-Gn-JRh"/>
-                        <viewControllerLayoutGuide type="bottom" id="35K-BW-GTy"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="S4y-d8-0fx">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <webView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9dq-Y2-Udt">
-                                <rect key="frame" x="16" y="48" width="288" height="303"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            </webView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Ha4-em-lyd" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2341.875" y="366.25"/>
+            <point key="canvasLocation" x="501" y="-670"/>
         </scene>
     </scenes>
     <resources>

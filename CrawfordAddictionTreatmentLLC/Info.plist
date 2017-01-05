@@ -46,5 +46,7 @@
 	</array>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>Result</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>BupChat would like to use your photo library to send image messages.</string>
 </dict>
 </plist>
