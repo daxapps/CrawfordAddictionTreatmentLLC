@@ -96,6 +96,7 @@ PODS:
 
 DEPENDENCIES:
   - Firebase
+  - Firebase/Auth
   - Firebase/Core
   - Firebase/Database
   - Firebase/RemoteConfig
@@ -124,6 +125,6 @@ SPEC CHECKSUMS:
   GoogleSymbolUtilities: 33117db1b5f290c6fbf259585e4885b4c84b98d7
   GoogleUtilities: 56c5ac05b7aa5dc417a1bb85221a9516e04d7032
 
-PODFILE CHECKSUM: 4ffaab829b1bdbd9eefc8fcbca03e4f61ef6e1c1
+PODFILE CHECKSUM: 9cb2a0f2e56b5ceba7c521f26561fe45bc395314
 
 COCOAPODS: 1.1.1

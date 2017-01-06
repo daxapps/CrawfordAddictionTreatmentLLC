@@ -18,6 +18,7 @@ class BupChat2ViewController: UIViewController, UITableViewDelegate, UITableView
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var textField: UITextField!
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         
@@ -33,7 +34,7 @@ class BupChat2ViewController: UIViewController, UITableViewDelegate, UITableView
             let vc = self.storyboard?.instantiateViewController(withIdentifier: "firebaseLoginViewController")
             self.navigationController?.present(vc!, animated: true, completion: nil)
         }
-        
+        subscribeToKeyboardNotifications()
     }
     
     deinit {
@@ -86,9 +87,9 @@ class BupChat2ViewController: UIViewController, UITableViewDelegate, UITableView
         
         ConfigureDatabase()
         
-        NotificationCenter.default.addObserver(self, selector: #selector(BupChat2ViewController.keyboardWillShow(_:)), name: NSNotification.Name.UIKeyboardWillShow, object: self.view.window)
-        
-        NotificationCenter.default.addObserver(self, selector: #selector(BupChat2ViewController.keyboardWillHide(_:)), name: NSNotification.Name.UIKeyboardWillHide, object: self.view.window)
+//        NotificationCenter.default.addObserver(self, selector: #selector(BupChat2ViewController.keyboardWillShow(_:)), name: NSNotification.Name.UIKeyboardWillShow, object: self.view.window)
+//        
+//        NotificationCenter.default.addObserver(self, selector: #selector(BupChat2ViewController.keyboardWillHide(_:)), name: NSNotification.Name.UIKeyboardWillHide, object: self.view.window)
         
     }
     
@@ -99,27 +100,62 @@ class BupChat2ViewController: UIViewController, UITableViewDelegate, UITableView
     }
     
     override func viewWillDisappear(_ animated: Bool) {
-        NotificationCenter.default.removeObserver(self, name: NSNotification.Name.UIKeyboardWillShow, object: self.view.window)
-        NotificationCenter.default.removeObserver(self, name: NSNotification.Name.UIKeyboardWillHide, object: self.view.window)
+        super.viewWillAppear(animated)
+//        NotificationCenter.default.removeObserver(self, name: NSNotification.Name.UIKeyboardWillShow, object: self.view.window)
+//        NotificationCenter.default.removeObserver(self, name: NSNotification.Name.UIKeyboardWillHide, object: self.view.window)
+        unsubscribeFromKeyboardNotifications()
     }
     
-    func keyboardWillHide (_ sender: Notification) {
+    func subscribeToKeyboardNotifications() {
+        NotificationCenter.default.addObserver(self, selector: #selector(BupChat2ViewController.keyboardWillShow(_:)), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(BupChat2ViewController.keyboardWillHide(_:)), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
+    }
+    
+    func keyboardWillShow(_ notification: NSNotification) {
+        resetViewFrame()
+        if textField.isFirstResponder {
+            view.frame.origin.y = getKeyboardHeight(notification) * -1
+        }
+    }
+    
+    func keyboardWillHide(_ notification: NSNotification) {
+        if textField.isFirstResponder {
+            resetViewFrame()
+        }
+    }
+    
+    func resetViewFrame(){
+        view.frame.origin.y = 0
+    }
+    
+    func getKeyboardHeight(_ notification: NSNotification) -> CGFloat {
+        let userInfo = notification.userInfo
+        let keyboardSize = userInfo![UIKeyboardFrameEndUserInfoKey] as! NSValue // of CGRect
+        return keyboardSize.cgRectValue.height
+    }
+    
+    func unsubscribeFromKeyboardNotifications() {
+        NotificationCenter.default.removeObserver(self, name: NSNotification.Name.UIKeyboardWillShow, object: nil)
+        NotificationCenter.default.removeObserver(self, name: NSNotification.Name.UIKeyboardWillHide, object: nil)
+    }
+    
+//    func keyboardWillHide (_ sender: Notification) {
 //        let userInfo: [NSObject:AnyObject] = (sender as NSNotification).userInfo! as [NSObject : AnyObject]
 //        
-//        let keyboardSize: CGSize = userInfo[UIKeyboardFrameBeginUserInfoKey]!.cgRectValue().size
-//        
+//        //let keyboardSize: CGSize = userInfo[UIKeyboardFrameBeginUserInfoKey]!.cgRectValue().size
+//        let keyboardSize = userInfo[UIKeyboardFrameBeginUserInfoKey]!.cg
 //        self.view.frame.origin.y += keyboardSize.height
 //        if keyboardOnScreen {
 //                        self.view.frame.origin.y += self.keyboardHeight(Notification)
 //                    }
         
-        view.frame.origin.y = 0
-    }
+        //view.frame.origin.y = 0
+//    }
     
 
     
-    func keyboardWillShow(_ sender: NSNotification) {
-//        let userInfo: [NSObject:AnyObject] = sender.userInfo! as [NSObject : AnyObject]
+    //func keyboardWillShow(_ sender: NSNotification) {
+//        let userInfo: [NSObject:Any] = sender.userInfo! as [NSObject : Any]
 //        
 //        let keyboardSize: CGSize = userInfo[UIKeyboardFrameBeginUserInfoKey]!.cgRectValue().size
 //        let offset: CGSize = userInfo[UIKeyboardFrameEndUserInfoKey]!.cgRectValue().size
@@ -132,34 +168,35 @@ class BupChat2ViewController: UIViewController, UITableViewDelegate, UITableView
 //            }
 //        }
 //        else {
-//            
+//            UIView.animate(withDuration: 0.15, animations: {
+//                self.view.frame.origin.y += keyboardSize.height - offset.height
+//            })
 //        }
 //        if !keyboardOnScreen {
 //            self.view.frame.origin.y += self.keyboardHeight(NSNotification)
         
-        view.frame.origin.y = 0
+        //        view.frame.origin.y = 0
         //view.frame.origin.y = getKeyboardHeight(notification) * -1
-        
-        
-    }
+    //}
     
-    func getKeyboardHeight(_ notification: NSNotification) -> CGFloat {
-        let userInfo = notification.userInfo
-        let keyboardSize = userInfo![UIKeyboardFrameEndUserInfoKey] as! NSValue // of CGRect
-        return keyboardSize.cgRectValue.height
-    }
+//    func getKeyboardHeight(_ notification: NSNotification) -> CGFloat {
+//        let userInfo = notification.userInfo
+//        let keyboardSize = userInfo![UIKeyboardFrameEndUserInfoKey] as! NSValue // of CGRect
+//        return keyboardSize.cgRectValue.height
+//    }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         
-        if (textField.text?.characters.count == 0) {
-            return true
-        }
-        
-        let data = [Constants.MessageFields.text: textField.text! as String]
-        SendMessage(data: data)
-        print("ended editing")
-        textField.text = ""
-        self.view.endEditing(true)
+//        if (textField.text?.characters.count == 0) {
+//            return true
+//        }
+//        
+//        let data = [Constants.MessageFields.text: textField.text! as String]
+//        SendMessage(data: data)
+//        print("ended editing")
+//        textField.text = ""
+//        self.view.endEditing(true)
+        textField.resignFirstResponder()
         return true
     }
     

@@ -9,14 +9,13 @@
 import UIKit
 import Firebase
 
-class BupChatLoginViewController: UIViewController {
-
+class BupChatLoginViewController: UIViewController {    
+    
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        // Do any additional setup after loading the view.
         
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(BupChatLoginViewController.dismissKeyboard))
         view.addGestureRecognizer(tap)
