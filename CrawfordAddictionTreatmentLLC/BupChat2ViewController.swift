@@ -197,6 +197,9 @@ class BupChat2ViewController: UIViewController, UITableViewDelegate, UITableView
 //        textField.text = ""
 //        self.view.endEditing(true)
         textField.resignFirstResponder()
+        let data = [Constants.MessageFields.text: textField.text! as String]
+        SendMessage(data: data)
+        textField.text = ""
         return true
     }
     
