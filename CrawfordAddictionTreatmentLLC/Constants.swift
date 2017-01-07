@@ -10,9 +10,15 @@ import Foundation
 
 struct Constants {
     
+    struct NotificationKeys {
+        static let SignedIn = "onSignInCompleted"
+    }
+    
     struct MessageFields {
         static let dateTime = "datetime"
         static let text = "text"
+        static let name = "name"
+        static let imageUrl = "photoUrl"
     }
     
 }
