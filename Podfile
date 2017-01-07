@@ -11,6 +11,7 @@ target 'CrawfordAddictionTreatmentLLC' do
 	pod 'Firebase/RemoteConfig'
 	pod 'Firebase/Auth'
 	pod 'FirebaseUI'
+	pod 'GoogleSignIn'
   # Pods for CrawfordAddictionTreatmentLLC
 
 end

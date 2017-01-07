@@ -120,6 +120,7 @@ DEPENDENCIES:
   - Firebase/RemoteConfig
   - Firebase/Storage
   - FirebaseUI
+  - GoogleSignIn
 
 SPEC CHECKSUMS:
   Bolts: 8a7995239dbe724f9cba2248b766d48b7ebdd322
@@ -146,6 +147,6 @@ SPEC CHECKSUMS:
   TwitterCore: fbdbeaf6d2d20cf7c7aa4136fe5173c1c85df2e2
   TwitterKit: 97e729ceea041d174126235bf6ff67dcf37772d4
 
-PODFILE CHECKSUM: 9cb2a0f2e56b5ceba7c521f26561fe45bc395314
+PODFILE CHECKSUM: 5ad71cf8cc56ddaa00055ce6f3d17f89ad4a83ea
 
 COCOAPODS: 1.1.1

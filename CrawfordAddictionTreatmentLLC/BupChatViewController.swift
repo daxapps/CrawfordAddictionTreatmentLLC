@@ -10,8 +10,10 @@ import UIKit
 import Firebase
 import FirebaseAuthUI
 import FirebaseGoogleAuthUI
+import GoogleSignIn
 
-class BupChatViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class BupChatViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate//, GIDSignInDelegate, GIDSignInUIDelegate
+{
     
     // MARK: Properties
 
@@ -21,7 +23,7 @@ class BupChatViewController: UIViewController, UITableViewDelegate, UITableViewD
     var remoteConfig: FIRRemoteConfig!
     let imageCache = NSCache<NSString, UIImage>()
     var placeholderImage = UIImage(named: "ic_account_circle")
-    fileprivate var _authHandle: FIRAuthStateDidChangeListenerHandle!
+    private var _authHandle: FIRAuthStateDidChangeListenerHandle!
     private var _refHandle: FIRDatabaseHandle!
     var user: FIRUser?
     var displayName = "Anonymous"
@@ -81,7 +83,7 @@ class BupChatViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     func configureAuth() {
         // config auth providers
-        
+        FUIAuth.defaultAuthUI()?.providers = [FUIGoogleAuth()]
         // listen for changes in authorization state
         _authHandle = FIRAuth.auth()?.addStateDidChangeListener { (auth: FIRAuth, user: FIRUser?) in
             // refresh table data
@@ -182,7 +184,7 @@ class BupChatViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     func loginSession() {
         let authViewController = FUIAuth.defaultAuthUI()?.authViewController()
-        self.present(authViewController!, animated: true, completion: nil)
+        present(authViewController!, animated: true, completion: nil)
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
