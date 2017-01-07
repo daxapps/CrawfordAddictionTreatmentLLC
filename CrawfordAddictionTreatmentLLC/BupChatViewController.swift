@@ -2,7 +2,7 @@
 //  BupChatViewController.swift
 //  CrawfordAddictionTreatmentLLC
 //
-//  Created by Jason Crawford on 1/4/17.
+//  Created by Jason Crawford on 1/5/17.
 //  Copyright © 2017 Jason Crawford. All rights reserved.
 //
 
@@ -11,47 +11,70 @@ import Firebase
 import FirebaseAuthUI
 import FirebaseGoogleAuthUI
 
-class BupChatViewController: UIViewController, UINavigationControllerDelegate {
-
-    // MARK: Properties
+class BupChatViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
+    // MARK: Properties
+
+    var messages: [FIRDataSnapshot]! = [FIRDataSnapshot]()
     var ref: FIRDatabaseReference!
-    var messages: [FIRDataSnapshot]! = []
-    var msglength: NSNumber = 1000
     var storageRef: FIRStorageReference!
     var remoteConfig: FIRRemoteConfig!
     let imageCache = NSCache<NSString, UIImage>()
-    var keyboardOnScreen = false
     var placeholderImage = UIImage(named: "ic_account_circle")
-    fileprivate var _refHandle: FIRDatabaseHandle!
     fileprivate var _authHandle: FIRAuthStateDidChangeListenerHandle!
+    private var _refHandle: FIRDatabaseHandle!
     var user: FIRUser?
     var displayName = "Anonymous"
     
     // MARK: Outlets
     
-    @IBOutlet weak var messageTextField: UITextField!
-    @IBOutlet weak var sendButton: UIButton!
-    @IBOutlet weak var signInButton: UIButton!
+    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var textField: UITextField!
     @IBOutlet weak var imageMessage: UIButton!
     @IBOutlet weak var signOutButton: UIButton!
-    @IBOutlet weak var messagesTable: UITableView!
-    @IBOutlet weak var backgroundBlur: UIVisualEffectView!
-    @IBOutlet weak var imageDisplay: UIImageView!
-    @IBOutlet var dismissImageRecognizer: UITapGestureRecognizer!
-    @IBOutlet var dismissKeyboardRecognizer: UITapGestureRecognizer!
-    
-    // MARK: Life Cycle
+    @IBOutlet weak var signInButton: UIButton!
+
     
     override func viewDidLoad() {
-        //self.signedInStatus(isSignedIn: true)
+        super.viewDidLoad()
+        // Do any additional setup after loading the view, typically from a nib.
+        
+        self.tableView.delegate = self
+        self.tableView.dataSource = self
+        self.textField.delegate = self
+        
+        ConfigureDatabase()
+        
+        //        NotificationCenter.default.addObserver(self, selector: #selector(BupChat2ViewController.keyboardWillShow(_:)), name: NSNotification.Name.UIKeyboardWillShow, object: self.view.window)
+        //
+        //        NotificationCenter.default.addObserver(self, selector: #selector(BupChat2ViewController.keyboardWillHide(_:)), name: NSNotification.Name.UIKeyboardWillHide, object: self.view.window)
         configureAuth()
         
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        
+        //logout
+        /* let firebaseAuth = FIRAuth.auth()
+         do {
+         try firebaseAuth?.signOut()
+         } catch let signOutError as NSError {
+         print("error signing out")
+         } */
+        
+//        if (FIRAuth.auth()?.currentUser == nil) {
+//            let vc = self.storyboard?.instantiateViewController(withIdentifier: "firebaseLoginViewController")
+//            self.navigationController?.present(vc!, animated: true, completion: nil)
+//        }
+        subscribeToKeyboardNotifications()
+    }
+    
     override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        unsubscribeFromAllNotifications()
+        super.viewWillAppear(animated)
+        //        NotificationCenter.default.removeObserver(self, name: NSNotification.Name.UIKeyboardWillShow, object: self.view.window)
+        //        NotificationCenter.default.removeObserver(self, name: NSNotification.Name.UIKeyboardWillHide, object: self.view.window)
+        unsubscribeFromKeyboardNotifications()
     }
     
     // MARK: Config
@@ -63,7 +86,7 @@ class BupChatViewController: UIViewController, UINavigationControllerDelegate {
         _authHandle = FIRAuth.auth()?.addStateDidChangeListener { (auth: FIRAuth, user: FIRUser?) in
             // refresh table data
             self.messages.removeAll(keepingCapacity: false)
-            self.messagesTable.reloadData()
+            self.tableView.reloadData()
             
             //check if there is a current user
             if let activeUser = user {
@@ -82,28 +105,24 @@ class BupChatViewController: UIViewController, UINavigationControllerDelegate {
         }
     }
     
-    func configureDatabase() {
-        // configure database to sync messages
+    deinit {
+        self.ref.child("messages").removeObserver(withHandle: _refHandle)
+        FIRAuth.auth()?.removeStateDidChangeListener(_authHandle)
+    }
+    
+    func ConfigureDatabase () {
         ref = FIRDatabase.database().reference()
-        _refHandle = ref.child("messages").observe(.childAdded) { (snapshot: FIRDataSnapshot) in
+        _refHandle = self.ref.child("messages").observe(.childAdded, with: {(snapshot: FIRDataSnapshot) -> Void in
             self.messages.append(snapshot)
-            self.messagesTable.insertRows(at: [IndexPath(row: self.messages.count - 1, section: 0)], with: .automatic)
+            self.tableView.insertRows(at: [IndexPath(row: self.messages.count-1, section: 0)], with: .automatic)
             self.scrollToBottomMessage()
-        }
+        })
     }
     
     func configureStorage() {
         // configure storage using your firebase storage
         storageRef = FIRStorage.storage().reference()
     }
-    
-    deinit {
-        // what needs to be deinitialized when view is no longer being used
-        ref.child("messages").removeObserver(withHandle: _refHandle)
-        FIRAuth.auth()?.removeStateDidChangeListener(_authHandle)
-    }
-    
-    // MARK: Remote Config
     
     func configureRemoteConfig() {
         // configure remote configuration settings
@@ -123,11 +142,11 @@ class BupChatViewController: UIViewController, UINavigationControllerDelegate {
             if status == .success {
                 print("config fetched")
                 self.remoteConfig.activateFetched()
-                let friendlyMsgLength = self.remoteConfig["friendly_msg_length"]
-                if friendlyMsgLength.source != .static {
-                    self.msglength = friendlyMsgLength.numberValue!
-                    print("friend msg length config: \(self.msglength)")
-                }
+                //let friendlyMsgLength = self.remoteConfig["friendly_msg_length"]
+                //if friendlyMsgLength.source != .static {
+                    //self.msglength = friendlyMsgLength.numberValue!
+                //print("friend msg length config: \(self.msglength)")
+                //}
             } else {
                 print("config not fetched")
                 print("error: \(error)")
@@ -140,21 +159,21 @@ class BupChatViewController: UIViewController, UINavigationControllerDelegate {
     func signedInStatus(isSignedIn: Bool) {
         signInButton.isHidden = isSignedIn
         signOutButton.isHidden = !isSignedIn
-        messagesTable.isHidden = !isSignedIn
-        messageTextField.isHidden = !isSignedIn
-        sendButton.isHidden = !isSignedIn
+        tableView.isHidden = !isSignedIn
+        textField.isHidden = !isSignedIn
+        //sendButton.isHidden = !isSignedIn
         imageMessage.isHidden = !isSignedIn
         
-        if (isSignedIn) {
+       if (isSignedIn) {
             
             // remove background blur (will use when showing image messages)
-            messagesTable.rowHeight = UITableViewAutomaticDimension
-            messagesTable.estimatedRowHeight = 122.0
-            backgroundBlur.effect = nil
-            messageTextField.delegate = self
+            tableView.rowHeight = UITableViewAutomaticDimension
+            tableView.estimatedRowHeight = 122.0
+        //backgroundBlur.effect = nil
+            textField.delegate = self
             
             // Set up app to send and receive messages when signed in
-            configureDatabase()
+            ConfigureDatabase()
             configureStorage()
             configureRemoteConfig()
             fetchConfig()
@@ -162,18 +181,79 @@ class BupChatViewController: UIViewController, UINavigationControllerDelegate {
     }
     
     func loginSession() {
-        //let authViewController = FUIAuth.defaultAuthUI()!.authViewController()
-        let authViewController = FIRAuthUI.authUI()!.authViewController()
-        self.present(authViewController, animated: true, completion: nil)
+        let authViewController = FUIAuth.defaultAuthUI()?.authViewController()
+        self.present(authViewController!, animated: true, completion: nil)
     }
     
-    // MARK: Send Message
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
     
-    func sendMessage(data: [String:String]) {
-        // method that pushes message to the firebase database
-        var mdata = data
-        mdata[Constants.MessageFields.name] = displayName
-        ref.child("messages").childByAutoId().setValue(mdata)
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return messages.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell: UITableViewCell = self.tableView.dequeueReusableCell(withIdentifier: "tableViewCell", for: indexPath)
+        
+        let messageSnap: FIRDataSnapshot! = self.messages[indexPath.row]
+        let message = messageSnap.value as! [String:String]
+        let name = message[Constants.MessageFields.name] ?? "[username]"
+        
+        // if photo message, then grab image and display it
+        if let imageUrl = message[Constants.MessageFields.imageUrl] {
+            cell.textLabel?.text = "sent by: \(name)"
+            // download and display image
+            FIRStorage.storage().reference(forURL: imageUrl).data(withMaxSize: INT64_MAX) { (data, error) in
+                guard error == nil else {
+                    print("error downloading: \(error!)")
+                    return
+                }
+                // display image
+                let messageImage = UIImage.init(data: data!, scale: 50)
+                // check if the cell is still on screen, if so, update cell image
+                if cell == tableView.cellForRow(at: indexPath) {
+                    DispatchQueue.main.async {
+                        cell.imageView?.image = messageImage
+                        cell.setNeedsLayout()
+                    }
+                }
+            }
+        } else {
+//            let text = message[Constants.MessageFields.text] ?? "[message]"
+//            cell.textLabel?.text = name + ": " + text
+//            cell.imageView?.image = placeholderImage
+            if let text = message[Constants.MessageFields.text] as String! {
+                cell.textLabel?.text = name + ": " + text
+                cell.imageView?.image = placeholderImage
+            }
+            if let subText = message[Constants.MessageFields.dateTime] {
+                cell.detailTextLabel?.text = subText
+            }
+        }
+        
+        return cell
+        
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String:Any]) {
+        // constant to hold the information about the photo
+        if let photo = info[UIImagePickerControllerOriginalImage] as? UIImage, let photoData = UIImageJPEGRepresentation(photo, 0.8) {
+            // call function to upload photo message
+            sendPhotoMessage(photoData: photoData)
+        }
+        picker.dismiss(animated: true, completion: nil)
+    }
+    
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        picker.dismiss(animated: true, completion: nil)
+    }
+    
+    func sendMessage(data: [String: String]) {
+        var packet = data
+        packet[Constants.MessageFields.name] = displayName
+        packet[Constants.MessageFields.dateTime] = Utilities().GetDate()
+        self.ref.child("messages").childByAutoId().setValue(packet)
     }
     
     func sendPhotoMessage(photoData: Data) {
@@ -209,8 +289,8 @@ class BupChatViewController: UIViewController, UINavigationControllerDelegate {
     
     func scrollToBottomMessage() {
         if messages.count == 0 { return }
-        let bottomMessageIndex = IndexPath(row: messagesTable.numberOfRows(inSection: 0) - 1, section: 0)
-        messagesTable.scrollToRow(at: bottomMessageIndex, at: .bottom, animated: true)
+        let bottomMessageIndex = IndexPath(row: tableView.numberOfRows(inSection: 0) - 1, section: 0)
+        tableView.scrollToRow(at: bottomMessageIndex, at: .bottom, animated: true)
     }
     
     // MARK: Actions
@@ -234,221 +314,108 @@ class BupChatViewController: UIViewController, UINavigationControllerDelegate {
         }
     }
     
-    @IBAction func didSendMessage(_ sender: UIButton) {
-        let _ = textFieldShouldReturn(messageTextField)
-        messageTextField.text = ""
+    func subscribeToKeyboardNotifications() {
+        NotificationCenter.default.addObserver(self, selector: #selector(BupChatViewController.keyboardWillShow(_:)), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(BupChatViewController.keyboardWillHide(_:)), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
     }
     
-    @IBAction func dismissImageDisplay(_ sender: AnyObject) {
-        // if touch detected when image is displayed
-        if imageDisplay.alpha == 1.0 {
-            UIView.animate(withDuration: 0.25) {
-                self.backgroundBlur.effect = nil
-                self.imageDisplay.alpha = 0.0
-            }
-            dismissImageRecognizer.isEnabled = false
-            messageTextField.isEnabled = true
+    func keyboardWillShow(_ notification: NSNotification) {
+        resetViewFrame()
+        if textField.isFirstResponder {
+            view.frame.origin.y = getKeyboardHeight(notification) * -1
         }
     }
     
-    @IBAction func tappedView(_ sender: AnyObject) {
-        resignTextfield()
-    }
-}
-
-// MARK: - FCViewController: UITableViewDelegate, UITableViewDataSource
-
-extension BupChatViewController: UITableViewDelegate, UITableViewDataSource {
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return messages.count
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        // dequeue cell
-        let cell: UITableViewCell! = messagesTable.dequeueReusableCell(withIdentifier: "messageCell", for: indexPath)
-        // unpack message from firebase data snapshot
-        let messageSnapshot: FIRDataSnapshot! = messages[indexPath.row]
-        let message = messageSnapshot.value as! [String:String]
-        let name = message[Constants.MessageFields.name] ?? "[username]"
-        // if photo message, then grab image and display it
-        if let imageUrl = message[Constants.MessageFields.imageUrl] {
-            cell!.textLabel?.text = "sent by: \(name)"
-            // download and display image
-            FIRStorage.storage().reference(forURL: imageUrl).data(withMaxSize: INT64_MAX) { (data, error) in
-                guard error == nil else {
-                    print("error downloading: \(error!)")
-                    return
-                }
-                // display image
-                let messageImage = UIImage.init(data: data!, scale: 50)
-                // check if the cell is still on screen, if so, update cell image
-                if cell == tableView.cellForRow(at: indexPath) {
-                    DispatchQueue.main.async {
-                        cell.imageView?.image = messageImage
-                        cell.setNeedsLayout()
-                    }
-                }
-            }
-        } else {
-            // otherwisw, update cell for regulat message
-            let text = message[Constants.MessageFields.text] ?? "[message]"
-            cell!.textLabel?.text = name + ": " + text
-            cell!.imageView?.image = placeholderImage
+    func keyboardWillHide(_ notification: NSNotification) {
+        if textField.isFirstResponder {
+            resetViewFrame()
         }
+    }
+    
+    func resetViewFrame(){
+        view.frame.origin.y = 0
+    }
+    
+    func getKeyboardHeight(_ notification: NSNotification) -> CGFloat {
+        let userInfo = notification.userInfo
+        let keyboardSize = userInfo![UIKeyboardFrameEndUserInfoKey] as! NSValue // of CGRect
+        return keyboardSize.cgRectValue.height
+    }
+    
+    func unsubscribeFromKeyboardNotifications() {
+        NotificationCenter.default.removeObserver(self, name: NSNotification.Name.UIKeyboardWillShow, object: nil)
+        NotificationCenter.default.removeObserver(self, name: NSNotification.Name.UIKeyboardWillHide, object: nil)
+    }
+    
+//    func keyboardWillHide (_ sender: Notification) {
+//        let userInfo: [NSObject:AnyObject] = (sender as NSNotification).userInfo! as [NSObject : AnyObject]
+//        
+//        //let keyboardSize: CGSize = userInfo[UIKeyboardFrameBeginUserInfoKey]!.cgRectValue().size
+//        let keyboardSize = userInfo[UIKeyboardFrameBeginUserInfoKey]!.cg
+//        self.view.frame.origin.y += keyboardSize.height
+//        if keyboardOnScreen {
+//                        self.view.frame.origin.y += self.keyboardHeight(Notification)
+//                    }
         
-        //        let text = message[Constants.MessageFields.text] ?? "[message]"
-        //        cell!.textLabel?.text = name + ": " + text
-        //        cell!.imageView?.image = self.placeholderImage
-        return cell!
+        //view.frame.origin.y = 0
+//    }
+    
+
+    
+    //func keyboardWillShow(_ sender: NSNotification) {
+//        let userInfo: [NSObject:Any] = sender.userInfo! as [NSObject : Any]
+//        
+//        let keyboardSize: CGSize = userInfo[UIKeyboardFrameBeginUserInfoKey]!.cgRectValue().size
+//        let offset: CGSize = userInfo[UIKeyboardFrameEndUserInfoKey]!.cgRectValue().size
+//        
+//        if keyboardSize.height == offset.height {
+//            if self.view.frame.origin.y == 0 {
+//                UIView.animate(withDuration: 0.15, animations: {
+//                    self.view.frame.origin.y -= keyboardSize.height
+//                })
+//            }
+//        }
+//        else {
+//            UIView.animate(withDuration: 0.15, animations: {
+//                self.view.frame.origin.y += keyboardSize.height - offset.height
+//            })
+//        }
+//        if !keyboardOnScreen {
+//            self.view.frame.origin.y += self.keyboardHeight(NSNotification)
         
-    }
+        //        view.frame.origin.y = 0
+        //view.frame.origin.y = getKeyboardHeight(notification) * -1
+    //}
     
-    func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
-        return UITableViewAutomaticDimension
-    }
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        // if message contains an image, then display the image
-        guard !messageTextField.isFirstResponder else { return }
-        
-        // unpack message from firebase data snapshot
-        let messageSnapshot: FIRDataSnapshot! = messages[(indexPath as NSIndexPath).row]
-        let message = messageSnapshot.value as! [String: String]
-        
-        // if tapped row with image message, then display image
-        if let imageUrl = message[Constants.MessageFields.imageUrl] {
-            if let cachedImage = imageCache.object(forKey: imageUrl as NSString) {
-                showImageDisplay(cachedImage)
-            } else {
-                FIRStorage.storage().reference(forURL: imageUrl).data(withMaxSize: INT64_MAX){ (data, error) in
-                    guard error == nil else {
-                        print("Error downloading: \(error!)")
-                        return
-                    }
-                    self.showImageDisplay(UIImage.init(data: data!)!)
-                }
-            }
-        }
-    }
-    
-    // MARK: Show Image Display
-    
-    func showImageDisplay(_ image: UIImage) {
-        dismissImageRecognizer.isEnabled = true
-        dismissKeyboardRecognizer.isEnabled = false
-        messageTextField.isEnabled = false
-        UIView.animate(withDuration: 0.25) {
-            self.backgroundBlur.effect = UIBlurEffect(style: .light)
-            self.imageDisplay.alpha = 1.0
-            self.imageDisplay.image = image
-        }
-    }
-    
-    // MARK: Show Image Display
-    
-    func showImageDisplay(image: UIImage) {
-        dismissImageRecognizer.isEnabled = true
-        dismissKeyboardRecognizer.isEnabled = false
-        messageTextField.isEnabled = false
-        UIView.animate(withDuration: 0.25) {
-            self.backgroundBlur.effect = UIBlurEffect(style: .light)
-            self.imageDisplay.alpha = 1.0
-            self.imageDisplay.image = image
-        }
-    }
-}
-
-// MARK: - FCViewController: UIImagePickerControllerDelegate
-
-extension BupChatViewController: UIImagePickerControllerDelegate {
-    
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String:Any]) {
-        // constant to hold the information about the photo
-        if let photo = info[UIImagePickerControllerOriginalImage] as? UIImage, let photoData = UIImageJPEGRepresentation(photo, 0.8) {
-            // call function to upload photo message
-            sendPhotoMessage(photoData: photoData)
-        }
-        picker.dismiss(animated: true, completion: nil)
-    }
-    
-    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
-        picker.dismiss(animated: true, completion: nil)
-    }
-}
-
-// MARK: - FCViewController: UITextFieldDelegate
-
-extension BupChatViewController: UITextFieldDelegate {
-    
-    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-        // set the maximum length of the message
-        guard let text = textField.text else { return true }
-        let newLength = text.utf16.count + string.utf16.count - range.length
-        return newLength <= msglength.intValue
-    }
+//    func getKeyboardHeight(_ notification: NSNotification) -> CGFloat {
+//        let userInfo = notification.userInfo
+//        let keyboardSize = userInfo![UIKeyboardFrameEndUserInfoKey] as! NSValue // of CGRect
+//        return keyboardSize.cgRectValue.height
+//    }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        if !textField.text!.isEmpty {
-            let data = [Constants.MessageFields.text: textField.text! as String]
-            sendMessage(data: data)
-            textField.resignFirstResponder()
-        }
+        
+//        if (textField.text?.characters.count == 0) {
+//            return true
+//        }
+//        
+//        let data = [Constants.MessageFields.text: textField.text! as String]
+//        SendMessage(data: data)
+//        print("ended editing")
+//        textField.text = ""
+//        self.view.endEditing(true)
+        
+        textField.resignFirstResponder()
+        let data = [Constants.MessageFields.text: textField.text! as String]
+        sendMessage(data: data)
+        textField.text = ""
         return true
     }
     
-    // MARK: Show/Hide Keyboard
-    
-    func keyboardWillShow(_ notification: Notification) {
-        if !keyboardOnScreen {
-            self.view.frame.origin.y -= self.keyboardHeight(notification)
-        }
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
     }
     
-    func keyboardWillHide(_ notification: Notification) {
-        if keyboardOnScreen {
-            self.view.frame.origin.y += self.keyboardHeight(notification)
-        }
-    }
     
-    func keyboardDidShow(_ notification: Notification) {
-        keyboardOnScreen = true
-        dismissKeyboardRecognizer.isEnabled = true
-        scrollToBottomMessage()
-    }
-    
-    func keyboardDidHide(_ notification: Notification) {
-        dismissKeyboardRecognizer.isEnabled = false
-        keyboardOnScreen = false
-    }
-    
-    func keyboardHeight(_ notification: Notification) -> CGFloat {
-        return ((notification as NSNotification).userInfo![UIKeyboardFrameBeginUserInfoKey] as! NSValue).cgRectValue.height
-    }
-    
-    func resignTextfield() {
-        if messageTextField.isFirstResponder {
-            messageTextField.resignFirstResponder()
-        }
-    }
-}
-
-// MARK: - FCViewController (Notifications)
-
-extension BupChatViewController {
-    
-    func subscribeToKeyboardNotifications() {
-        subscribeToNotification(.UIKeyboardWillShow, selector: #selector(keyboardWillShow))
-        subscribeToNotification(.UIKeyboardWillHide, selector: #selector(keyboardWillHide))
-        subscribeToNotification(.UIKeyboardDidShow, selector: #selector(keyboardDidShow))
-        subscribeToNotification(.UIKeyboardDidHide, selector: #selector(keyboardDidHide))
-    }
-    
-    func subscribeToNotification(_ name: NSNotification.Name, selector: Selector) {
-        NotificationCenter.default.addObserver(self, selector: selector, name: name, object: nil)
-    }
-    
-    func unsubscribeFromAllNotifications() {
-        NotificationCenter.default.removeObserver(self)
-    }
 }
