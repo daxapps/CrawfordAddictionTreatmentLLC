@@ -11,11 +11,8 @@ import Firebase
 import FirebaseAuthUI
 import FirebaseGoogleAuthUI
 import GoogleSignIn
-//import FBSDKCoreKit
-//import FBSDKLoginKit
-//import FirebaseFacebookAuthUI
 
-class BupChatViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate //, GIDSignInDelegate, GIDSignInUIDelegate
+class BupChatViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate//, GIDSignInDelegate, GIDSignInUIDelegate
 {
     
     // MARK: Properties
@@ -87,7 +84,6 @@ class BupChatViewController: UIViewController, UITableViewDelegate, UITableViewD
     func configureAuth() {
         // config auth providers
         FUIAuth.defaultAuthUI()?.providers = [FUIGoogleAuth()]
-        //FUIAuth.defaultAuthUI()?.providers = [FBSDKApplicationDelegate() as! FUIAuthProvider]
         // listen for changes in authorization state
         _authHandle = FIRAuth.auth()?.addStateDidChangeListener { (auth: FIRAuth, user: FIRUser?) in
             // refresh table data
