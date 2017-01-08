@@ -228,7 +228,8 @@ John Crawford, MD has over 30 years of experience in addiction medicine and is p
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="6NQ-mq-SPU">
                                 <rect key="frame" x="233" y="7" width="71" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="SIGN OUT">
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <state key="normal" title="SignOut">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
@@ -247,14 +248,14 @@ John Crawford, MD has over 30 years of experience in addiction medicine and is p
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KRb-he-mgH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1629" y="781"/>
+            <point key="canvasLocation" x="-1629" y="710"/>
         </scene>
         <!--FAQ-->
         <scene sceneID="HLO-zH-b8J">
             <objects>
                 <navigationController id="dPk-xZ-slu" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="FAQ" id="FiP-Ha-zr1"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="bmt-Ka-MA5">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="bmt-Ka-MA5">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="0.29673840354332193" green="0.61520525568218254" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -325,7 +326,7 @@ John Crawford, MD has over 30 years of experience in addiction medicine and is p
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-293" y="-690"/>
+            <point key="canvasLocation" x="-811" y="-671"/>
         </scene>
         <!--Directions-->
         <scene sceneID="CGQ-Xz-fEu">
@@ -474,7 +475,7 @@ John Crawford, MD has over 30 years of experience in addiction medicine and is p
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="u0W-mr-5LJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="501" y="-670"/>
+            <point key="canvasLocation" x="-23" y="-641"/>
         </scene>
     </scenes>
     <resources>
