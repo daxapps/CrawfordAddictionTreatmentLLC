@@ -22,6 +22,7 @@ class BupChatViewController: UIViewController, UITableViewDelegate, UITableViewD
     var storageRef: FIRStorageReference!
     var remoteConfig: FIRRemoteConfig!
     let imageCache = NSCache<NSString, UIImage>()
+    var keyboardOnScreen = false
     var placeholderImage = UIImage(named: "ic_account_circle")
     private var _authHandle: FIRAuthStateDidChangeListenerHandle!
     private var _refHandle: FIRDatabaseHandle!
@@ -44,8 +45,8 @@ class BupChatViewController: UIViewController, UITableViewDelegate, UITableViewD
         self.tableView.delegate = self
         self.tableView.dataSource = self
         self.textField.delegate = self
-        
-        ConfigureDatabase()
+//
+//        ConfigureDatabase()
         
         //        NotificationCenter.default.addObserver(self, selector: #selector(BupChat2ViewController.keyboardWillShow(_:)), name: NSNotification.Name.UIKeyboardWillShow, object: self.view.window)
         //
@@ -96,8 +97,8 @@ class BupChatViewController: UIViewController, UITableViewDelegate, UITableViewD
                 if self.user != activeUser {
                     self.user = activeUser
                     self.signedInStatus(isSignedIn: true)
-                    let name = user!.email!.components(separatedBy: "@")[0]
-                    self.displayName = name
+                    let name = user!.email?.components(separatedBy: "@")[0]
+                    self.displayName = name ?? ""
                 }
             } else {
                 // user must sign in
@@ -166,7 +167,7 @@ class BupChatViewController: UIViewController, UITableViewDelegate, UITableViewD
         //sendButton.isHidden = !isSignedIn
         imageMessage.isHidden = !isSignedIn
         
-       if (isSignedIn) {
+       if isSignedIn {
             
             // remove background blur (will use when showing image messages)
             tableView.rowHeight = UITableViewAutomaticDimension
