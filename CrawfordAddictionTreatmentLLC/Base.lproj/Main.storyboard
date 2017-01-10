@@ -19,143 +19,138 @@
                         <viewControllerLayoutGuide type="bottom" id="4ug-Mw-9AY"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="tsR-hK-woN">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SXZ-H6-dFF">
-                                <rect key="frame" x="0.0" y="64" width="320" height="536"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" alignment="center" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="WBg-Yg-mhq">
-                                        <rect key="frame" x="0.0" y="-64" width="320" height="528"/>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" misplaced="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="KQZ-1w-vlD">
+                                        <rect key="frame" x="8" y="-64" width="359" height="57"/>
+                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="57" id="IQp-P4-hSs"/>
+                                        </constraints>
+                                        <attributedString key="attributedText">
+                                            <fragment content="Crawford Addiction Treatment LLC">
+                                                <attributes>
+                                                    <color key="NSColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <font key="NSFont" size="21" name="SnellRoundhand-Bold"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="truncatingTail" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                </attributes>
+                                            </fragment>
+                                        </attributedString>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="dna group photo cropped" translatesAutoresizingMaskIntoConstraints="NO" id="Ta3-Qc-e7i">
+                                        <rect key="frame" x="8" y="1" width="359" height="82"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="82" id="EL3-6S-cGf"/>
+                                        </constraints>
+                                    </imageView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="4eE-8m-YUV">
+                                        <rect key="frame" x="98" y="297" width="180" height="210"/>
                                         <subviews>
-                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="SOS-Rt-hmV">
-                                                <rect key="frame" x="0.0" y="0.0" width="320" height="89"/>
-                                                <subviews>
-                                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" usesAttributedText="YES" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="KQZ-1w-vlD">
-                                                        <rect key="frame" x="0.0" y="0.0" width="320" height="57"/>
-                                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="height" constant="57" id="W00-Cl-hI6"/>
-                                                        </constraints>
-                                                        <attributedString key="attributedText">
-                                                            <fragment content="Crawford Addiction Treatment LLC">
-                                                                <attributes>
-                                                                    <color key="NSColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                                    <font key="NSFont" size="21" name="SnellRoundhand-Bold"/>
-                                                                    <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="truncatingTail" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                                                </attributes>
-                                                            </fragment>
-                                                        </attributedString>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dna group photo cropped" translatesAutoresizingMaskIntoConstraints="NO" id="Ta3-Qc-e7i">
-                                                        <rect key="frame" x="0.0" y="57" width="320" height="32"/>
-                                                    </imageView>
-                                                </subviews>
-                                            </stackView>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="11" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vvz-FT-D1Q">
-                                                <rect key="frame" x="0.0" y="101" width="320" height="217"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="217" id="T1w-Qe-Loc"/>
-                                                </constraints>
-                                                <string key="text">Crawford Addiction Treatment LLC is an outpatient treatment facility designed to help patients fight pain medicine addiction and provide a superior patient experience.
-
-John Crawford, MD has over 30 years of experience in addiction medicine and is passionate about exceeding your expectations.  He is a Diplomate of the American Society of Addiction Medicine and a member of the American Board of Addiction Medicine.</string>
-                                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TKG-in-4ks">
-                                                <rect key="frame" x="70" y="330" width="180" height="30"/>
-                                                <color key="backgroundColor" red="0.9627608896055927" green="1" blue="0.1752927991075367" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="30" id="Le0-JR-ZyQ"/>
-                                                </constraints>
+                                                <rect key="frame" x="0.0" y="0.0" width="180" height="30"/>
+                                                <color key="backgroundColor" red="0.29673840350000003" green="0.61520525569999995" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="15"/>
-                                                <state key="normal" title="Call To Make Appointment"/>
+                                                <state key="normal" title="Call To Make Appointment">
+                                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
                                                 <connections>
                                                     <action selector="makeCall:" destination="9pv-A4-QxB" eventType="touchUpInside" id="LH5-Eg-dET"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NNc-nW-OL0">
-                                                <rect key="frame" x="70" y="372" width="180" height="30"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="30" id="724-BC-mBe"/>
-                                                    <constraint firstAttribute="width" constant="180" id="MmR-IJ-znS"/>
-                                                </constraints>
-                                                <state key="normal" title="Make Online Appointment"/>
+                                                <rect key="frame" x="0.0" y="45" width="180" height="30"/>
+                                                <color key="backgroundColor" red="0.29673840350000003" green="0.61520525569999995" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <state key="normal" title="Make Online Appointment">
+                                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
                                                 <connections>
                                                     <action selector="onlineAppointmentButton:" destination="9pv-A4-QxB" eventType="touchUpInside" id="EmL-sc-wKG"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LKK-dr-gnl">
-                                                <rect key="frame" x="70" y="414" width="180" height="30"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="30" id="9eZ-vY-ZAb"/>
-                                                </constraints>
-                                                <state key="normal" title="FAQ"/>
+                                                <rect key="frame" x="0.0" y="90" width="180" height="30"/>
+                                                <color key="backgroundColor" red="0.29673840350000003" green="0.61520525569999995" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <state key="normal" title="FAQ">
+                                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
                                                 <connections>
                                                     <segue destination="8rJ-Kc-sve" kind="show" id="3l4-3S-QqB"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XoL-6c-8K5">
-                                                <rect key="frame" x="70" y="456" width="180" height="30"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="30" id="OGX-gD-PiW"/>
-                                                </constraints>
-                                                <state key="normal" title="Directions"/>
+                                                <rect key="frame" x="0.0" y="135" width="180" height="30"/>
+                                                <color key="backgroundColor" red="0.29673840350000003" green="0.61520525569999995" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <state key="normal" title="Directions">
+                                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
                                                 <connections>
                                                     <segue destination="FgV-jc-t3h" kind="show" id="jfo-R5-B0i"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MdS-Un-PYg">
-                                                <rect key="frame" x="70" y="498" width="180" height="30"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="180" id="k5y-UT-Bnj"/>
-                                                    <constraint firstAttribute="height" constant="30" id="vkV-pS-B06"/>
-                                                </constraints>
-                                                <state key="normal" title="Bup Chat"/>
+                                                <rect key="frame" x="0.0" y="180" width="180" height="30"/>
+                                                <color key="backgroundColor" red="0.29673840350000003" green="0.61520525569999995" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <state key="normal" title="Bup Chat">
+                                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
                                                 <connections>
                                                     <segue destination="zFC-E6-1oZ" kind="show" id="1RR-WP-z0d"/>
                                                 </connections>
                                             </button>
                                         </subviews>
-                                        <constraints>
-                                            <constraint firstItem="LKK-dr-gnl" firstAttribute="leading" secondItem="XoL-6c-8K5" secondAttribute="leading" id="DZE-3Y-U7c"/>
-                                            <constraint firstItem="Vvz-FT-D1Q" firstAttribute="trailing" secondItem="SOS-Rt-hmV" secondAttribute="trailing" id="GUR-IO-ATd"/>
-                                            <constraint firstItem="TKG-in-4ks" firstAttribute="leading" secondItem="LKK-dr-gnl" secondAttribute="leading" id="Ldx-XF-H1p"/>
-                                            <constraint firstAttribute="height" constant="528" id="hnF-VB-BaK"/>
-                                        </constraints>
                                     </stackView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="11" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vvz-FT-D1Q" userLabel="About Paragraph">
+                                        <rect key="frame" x="19" y="83" width="336" height="198"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="198" id="zha-BA-fbU"/>
+                                        </constraints>
+                                        <string key="text">Crawford Addiction Treatment LLC is an outpatient treatment facility designed to help patients fight pain medicine addiction and provide a superior patient experience.
+
+John Crawford, MD has over 30 years of experience in addiction medicine and is passionate about exceeding your expectations.  He is a Diplomate of the American Society of Addiction Medicine and a member of the American Board of Addiction Medicine.</string>
+                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="WBg-Yg-mhq" firstAttribute="centerX" secondItem="SXZ-H6-dFF" secondAttribute="centerX" id="1Sd-pK-FHd"/>
-                                    <constraint firstAttribute="bottom" secondItem="WBg-Yg-mhq" secondAttribute="bottom" id="Dra-vu-2YP"/>
-                                    <constraint firstAttribute="trailing" secondItem="WBg-Yg-mhq" secondAttribute="trailing" id="HnM-IC-nqs"/>
-                                    <constraint firstItem="WBg-Yg-mhq" firstAttribute="leading" secondItem="SXZ-H6-dFF" secondAttribute="leading" id="T0z-9u-Z3L"/>
-                                    <constraint firstItem="WBg-Yg-mhq" firstAttribute="top" secondItem="SXZ-H6-dFF" secondAttribute="top" id="UcF-sA-glS"/>
+                                    <constraint firstItem="Vvz-FT-D1Q" firstAttribute="top" secondItem="Ta3-Qc-e7i" secondAttribute="bottom" id="1ph-Oy-Ji2"/>
+                                    <constraint firstItem="KQZ-1w-vlD" firstAttribute="centerX" secondItem="SXZ-H6-dFF" secondAttribute="centerX" id="D4O-9X-TXA"/>
+                                    <constraint firstItem="Ta3-Qc-e7i" firstAttribute="top" secondItem="KQZ-1w-vlD" secondAttribute="bottom" constant="8" symbolic="YES" id="GKU-HP-QFp"/>
+                                    <constraint firstItem="KQZ-1w-vlD" firstAttribute="top" secondItem="SXZ-H6-dFF" secondAttribute="top" id="GMX-7O-icb"/>
+                                    <constraint firstItem="Vvz-FT-D1Q" firstAttribute="centerX" secondItem="4eE-8m-YUV" secondAttribute="centerX" constant="-1" id="Qj2-AT-yFH"/>
+                                    <constraint firstItem="4eE-8m-YUV" firstAttribute="top" secondItem="Vvz-FT-D1Q" secondAttribute="bottom" constant="16" id="Rk0-Dg-PD3"/>
+                                    <constraint firstItem="Ta3-Qc-e7i" firstAttribute="centerX" secondItem="4eE-8m-YUV" secondAttribute="centerX" id="YRm-zv-12r"/>
+                                    <constraint firstAttribute="trailing" secondItem="Vvz-FT-D1Q" secondAttribute="trailing" constant="20" id="cBH-qs-6VF"/>
+                                    <constraint firstItem="KQZ-1w-vlD" firstAttribute="leading" secondItem="SXZ-H6-dFF" secondAttribute="leadingMargin" id="h5v-E4-CuA"/>
+                                    <constraint firstItem="KQZ-1w-vlD" firstAttribute="trailing" secondItem="Ta3-Qc-e7i" secondAttribute="trailing" id="jgJ-Yy-2xl"/>
+                                    <constraint firstAttribute="bottom" secondItem="4eE-8m-YUV" secondAttribute="bottom" constant="32" id="n5g-Ez-0KG"/>
+                                    <constraint firstItem="Vvz-FT-D1Q" firstAttribute="leading" secondItem="SXZ-H6-dFF" secondAttribute="leading" constant="19" id="siu-PD-CAq"/>
+                                    <constraint firstItem="KQZ-1w-vlD" firstAttribute="leading" secondItem="Ta3-Qc-e7i" secondAttribute="leading" id="zVD-pD-WA6"/>
                                 </constraints>
                             </scrollView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="SXZ-H6-dFF" firstAttribute="leading" secondItem="tsR-hK-woN" secondAttribute="leading" id="BQa-D4-BKZ"/>
-                            <constraint firstItem="SXZ-H6-dFF" firstAttribute="top" secondItem="Ia1-K6-d13" secondAttribute="bottom" id="EoW-9P-7gh"/>
-                            <constraint firstAttribute="trailing" secondItem="SXZ-H6-dFF" secondAttribute="trailing" id="d8T-Mx-DjE"/>
-                            <constraint firstItem="4ug-Mw-9AY" firstAttribute="top" secondItem="SXZ-H6-dFF" secondAttribute="bottom" id="gqO-oK-tZ3"/>
+                            <constraint firstItem="SXZ-H6-dFF" firstAttribute="leading" secondItem="tsR-hK-woN" secondAttribute="leading" id="AqA-nY-SDq"/>
+                            <constraint firstItem="SXZ-H6-dFF" firstAttribute="bottom" secondItem="4ug-Mw-9AY" secondAttribute="top" id="kiA-g3-WAz"/>
+                            <constraint firstAttribute="trailing" secondItem="SXZ-H6-dFF" secondAttribute="trailing" id="nuB-8h-GSs"/>
+                            <constraint firstItem="SXZ-H6-dFF" firstAttribute="top" secondItem="Ia1-K6-d13" secondAttribute="bottom" id="wJd-hu-jCS"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="About" image="first" id="acW-dT-cKf"/>
                     <navigationItem key="navigationItem" id="kQ7-7i-3hI"/>
-                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-                    <size key="freeformSize" width="320" height="600"/>
                     <connections>
                         <outlet property="callButton" destination="TKG-in-4ks" id="EX3-CD-TV7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1627.5" y="-2.112676056338028"/>
+            <point key="canvasLocation" x="-1628" y="-2.2488755622188905"/>
         </scene>
         <!--Bup Chat View Controller-->
         <scene sceneID="IDe-sJ-4M4">
@@ -166,18 +161,18 @@ John Crawford, MD has over 30 years of experience in addiction medicine and is p
                         <viewControllerLayoutGuide type="bottom" id="vMu-It-qJf"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Mis-0P-I8N">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="69" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="h6d-I4-lXi">
-                                <rect key="frame" x="0.0" y="64" width="320" height="486"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="553"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="tableViewCell" textLabel="n2S-R0-TvX" detailTextLabel="jm4-Li-HFh" imageView="KnH-zv-gKT" rowHeight="69" style="IBUITableViewCellStyleSubtitle" id="Neg-vr-hLN">
-                                        <rect key="frame" x="0.0" y="28" width="320" height="69"/>
+                                        <rect key="frame" x="0.0" y="28" width="375" height="69"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Neg-vr-hLN" id="7dj-sh-dM4">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="68"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="68"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="n2S-R0-TvX">
@@ -204,14 +199,14 @@ John Crawford, MD has over 30 years of experience in addiction medicine and is p
                                 </prototypes>
                             </tableView>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QFu-0V-wwG">
-                                <rect key="frame" x="54" y="550" width="195" height="30"/>
+                                <rect key="frame" x="54" y="617" width="250" height="30"/>
                                 <color key="backgroundColor" red="0.33373204372158782" green="1" blue="0.97543678821585433" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eAD-OM-5Xz">
-                                <rect key="frame" x="9" y="553" width="37" height="24"/>
+                                <rect key="frame" x="9" y="620" width="37" height="24"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="37" id="6yR-9U-2uh"/>
                                 </constraints>
@@ -221,9 +216,9 @@ John Crawford, MD has over 30 years of experience in addiction medicine and is p
                                 </connections>
                             </button>
                             <visualEffectView opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uRL-fx-m0z">
-                                <rect key="frame" x="0.0" y="20" width="320" height="580"/>
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="47o-7C-coM">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="580"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 </view>
                                 <blurEffect style="light"/>
@@ -270,7 +265,7 @@ John Crawford, MD has over 30 years of experience in addiction medicine and is p
                         <nil key="title"/>
                         <barButtonItem key="rightBarButtonItem" style="plain" id="0j5-r9-dWw">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="6NQ-mq-SPU">
-                                <rect key="frame" x="233" y="7" width="71" height="30"/>
+                                <rect key="frame" x="288" y="7" width="71" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="14"/>
                                 <state key="normal" title="SignOut">
@@ -314,7 +309,7 @@ John Crawford, MD has over 30 years of experience in addiction medicine and is p
             <objects>
                 <navigationController id="dPk-xZ-slu" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="FAQ" id="FiP-Ha-zr1"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="bmt-Ka-MA5">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="bmt-Ka-MA5">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="0.29673840354332193" green="0.61520525568218254" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -336,22 +331,22 @@ John Crawford, MD has over 30 years of experience in addiction medicine and is p
                         <viewControllerLayoutGuide type="bottom" id="Djb-ko-YwX"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="QS5-Rx-YEW">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="92" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="xTN-wm-uGJ">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="600"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="left" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="FAQCell" textLabel="66O-HI-Wrp" rowHeight="92" style="IBUITableViewCellStyleDefault" id="3fP-Da-HGK">
-                                        <rect key="frame" x="0.0" y="28" width="320" height="92"/>
+                                        <rect key="frame" x="0.0" y="28" width="375" height="92"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="3fP-Da-HGK" id="5sL-zp-N1s">
-                                            <rect key="frame" x="0.0" y="0.0" width="287" height="91"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="342" height="91"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="66O-HI-Wrp">
-                                                    <rect key="frame" x="15" y="0.0" width="270" height="91"/>
+                                                    <rect key="frame" x="15" y="0.0" width="325" height="91"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <attributedString key="attributedText">
                                                         <fragment content="Title">
@@ -396,14 +391,14 @@ John Crawford, MD has over 30 years of experience in addiction medicine and is p
                         <viewControllerLayoutGuide type="bottom" id="Csr-9x-IJ8"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="h18-o2-83M">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="0Kc-Rf-Ytg">
-                                <rect key="frame" x="0.0" y="108" width="320" height="448"/>
+                                <rect key="frame" x="0.0" y="108" width="375" height="515"/>
                             </mapView>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7ss-Az-E87">
-                                <rect key="frame" x="0.0" y="64" width="320" height="44"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="44"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="Qug-si-5L3"/>
                                 </constraints>
@@ -420,7 +415,7 @@ John Crawford, MD has over 30 years of experience in addiction medicine and is p
                                 </items>
                             </navigationBar>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="y5H-pg-Nhd">
-                                <rect key="frame" x="0.0" y="556" width="320" height="44"/>
+                                <rect key="frame" x="0.0" y="623" width="375" height="44"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="u0y-0M-rux"/>
                                 </constraints>
