@@ -36,6 +36,10 @@ class BupChatViewController: UIViewController, UITableViewDelegate, UITableViewD
     @IBOutlet weak var imageMessage: UIButton!
     @IBOutlet weak var signOutButton: UIButton!
     @IBOutlet weak var signInButton: UIButton!
+    @IBOutlet weak var backgroundBlur: UIVisualEffectView!
+    @IBOutlet weak var imageDisplay: UIImageView!
+    @IBOutlet var dismissImageRecognizer: UITapGestureRecognizer!
+    @IBOutlet var dismissKeyboardRecognizer: UITapGestureRecognizer!
 
     
     override func viewDidLoad() {
@@ -113,7 +117,7 @@ class BupChatViewController: UIViewController, UITableViewDelegate, UITableViewD
         FIRAuth.auth()?.removeStateDidChangeListener(_authHandle)
     }
     
-    func ConfigureDatabase () {
+    func configureDatabase () {
         ref = FIRDatabase.database().reference()
         _refHandle = self.ref.child("messages").observe(.childAdded, with: {(snapshot: FIRDataSnapshot) -> Void in
             self.messages.append(snapshot)
@@ -172,11 +176,11 @@ class BupChatViewController: UIViewController, UITableViewDelegate, UITableViewD
             // remove background blur (will use when showing image messages)
             tableView.rowHeight = UITableViewAutomaticDimension
             tableView.estimatedRowHeight = 122.0
-        //backgroundBlur.effect = nil
+            backgroundBlur.effect = nil
             textField.delegate = self
             
             // Set up app to send and receive messages when signed in
-            ConfigureDatabase()
+            configureDatabase()
             configureStorage()
             configureRemoteConfig()
             fetchConfig()
@@ -237,6 +241,66 @@ class BupChatViewController: UIViewController, UITableViewDelegate, UITableViewD
         
         return cell
         
+    }
+    
+    func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
+        return UITableViewAutomaticDimension
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        // if message contains an image, then display the image
+        guard !textField.isFirstResponder else { return }
+        
+        // unpack message from firebase data snapshot
+        let messageSnapshot: FIRDataSnapshot! = messages[(indexPath as NSIndexPath).row]
+        let message = messageSnapshot.value as! [String: String]
+        
+        // if tapped row with image message, then display image
+        if let imageUrl = message[Constants.MessageFields.imageUrl] {
+            if let cachedImage = imageCache.object(forKey: imageUrl as NSString) {
+                showImageDisplay(cachedImage)
+            } else {
+                FIRStorage.storage().reference(forURL: imageUrl).data(withMaxSize: INT64_MAX){ (data, error) in
+                    guard error == nil else {
+                        print("Error downloading: \(error!)")
+                        return
+                    }
+                    self.showImageDisplay(UIImage.init(data: data!)!)
+                }
+            }
+        }
+    }
+    
+    // MARK: Show Image Display
+    
+    func showImageDisplay(_ image: UIImage) {
+        dismissImageRecognizer.isEnabled = true
+        dismissKeyboardRecognizer.isEnabled = false
+        textField.isEnabled = false
+        UIView.animate(withDuration: 0.25) {
+            self.backgroundBlur.effect = UIBlurEffect(style: .light)
+            self.imageDisplay.alpha = 1.0
+            self.imageDisplay.image = image
+        }
+    }
+    
+    func resignTextfield() {
+        if textField.isFirstResponder {
+            textField.resignFirstResponder()
+        }
+    }
+    
+    // MARK: Show Image Display
+    
+    func showImageDisplay(image: UIImage) {
+        dismissImageRecognizer.isEnabled = true
+        dismissKeyboardRecognizer.isEnabled = false
+        textField.isEnabled = false
+        UIView.animate(withDuration: 0.25) {
+            self.backgroundBlur.effect = UIBlurEffect(style: .light)
+            self.imageDisplay.alpha = 1.0
+            self.imageDisplay.image = image
+        }
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String:Any]) {
@@ -315,6 +379,22 @@ class BupChatViewController: UIViewController, UITableViewDelegate, UITableViewD
         } catch {
             print("unable to sign out: \(error)")
         }
+    }
+    
+    @IBAction func dismissImageDisplay(_ sender: AnyObject) {
+        // if touch detected when image is displayed
+        if imageDisplay.alpha == 1.0 {
+            UIView.animate(withDuration: 0.25) {
+                self.backgroundBlur.effect = nil
+                self.imageDisplay.alpha = 0.0
+            }
+            dismissImageRecognizer.isEnabled = false
+            textField.isEnabled = true
+        }
+    }
+    
+    @IBAction func tappedView(_ sender: AnyObject) {
+        resignTextfield()
     }
     
     func subscribeToKeyboardNotifications() {
