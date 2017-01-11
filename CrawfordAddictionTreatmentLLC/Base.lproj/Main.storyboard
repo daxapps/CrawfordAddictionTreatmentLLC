@@ -220,13 +220,22 @@ John Crawford, MD has over 30 years of experience in addiction medicine and is p
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="47o-7C-coM">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="151-fg-hbD">
+                                            <rect key="frame" x="0.0" y="52" width="375" height="479"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="479" id="pdj-Fo-UfR"/>
+                                            </constraints>
+                                        </imageView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="151-fg-hbD" firstAttribute="centerY" secondItem="47o-7C-coM" secondAttribute="centerY" constant="-32" id="GFL-YQ-BNL"/>
+                                        <constraint firstAttribute="trailing" secondItem="151-fg-hbD" secondAttribute="trailing" id="J7c-Yr-Tcs"/>
+                                        <constraint firstItem="151-fg-hbD" firstAttribute="leading" secondItem="47o-7C-coM" secondAttribute="leading" id="kAy-gW-vcn"/>
+                                    </constraints>
                                 </view>
                                 <blurEffect style="light"/>
                             </visualEffectView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="151-fg-hbD">
-                                <rect key="frame" x="8" y="79" width="304" height="442"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Umj-dt-I1I">
                                 <rect key="frame" x="96" y="285" width="128" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -302,7 +311,7 @@ John Crawford, MD has over 30 years of experience in addiction medicine and is p
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="-1630.4000000000001" y="780.8095952023989"/>
+            <point key="canvasLocation" x="-1631.2" y="780.35982008995506"/>
         </scene>
         <!--FAQ-->
         <scene sceneID="HLO-zH-b8J">
@@ -479,47 +488,60 @@ John Crawford, MD has over 30 years of experience in addiction medicine and is p
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="y4o-Ay-oNn">
-                                <rect key="frame" x="48" y="28" width="279" height="419"/>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EJY-JN-mY0">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yg2-Tn-uRI">
-                                        <rect key="frame" x="0.0" y="0.0" width="279" height="100"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="y4o-Ay-oNn">
+                                        <rect key="frame" x="48" y="124" width="279" height="419"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yg2-Tn-uRI">
+                                                <rect key="frame" x="0.0" y="0.0" width="279" height="100"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="100" id="RmP-RT-Gcy"/>
+                                                </constraints>
+                                                <attributedString key="attributedText">
+                                                    <fragment content="Label">
+                                                        <attributes>
+                                                            <font key="NSFont" size="17" name="HelveticaNeue-Bold"/>
+                                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                        </attributes>
+                                                    </fragment>
+                                                </attributedString>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="top" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="17" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0um-fx-VIk">
+                                                <rect key="frame" x="0.0" y="100" width="279" height="319"/>
+                                                <attributedString key="attributedText">
+                                                    <fragment content="Label">
+                                                        <attributes>
+                                                            <font key="NSFont" size="17" name="HelveticaNeue"/>
+                                                            <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                        </attributes>
+                                                    </fragment>
+                                                </attributedString>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="100" id="RmP-RT-Gcy"/>
+                                            <constraint firstAttribute="width" constant="279" id="60c-ie-lbp"/>
+                                            <constraint firstAttribute="height" constant="419" id="DR3-dn-3A0"/>
                                         </constraints>
-                                        <attributedString key="attributedText">
-                                            <fragment content="Label">
-                                                <attributes>
-                                                    <font key="NSFont" size="17" name="HelveticaNeue-Bold"/>
-                                                    <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                                </attributes>
-                                            </fragment>
-                                        </attributedString>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="top" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="17" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0um-fx-VIk">
-                                        <rect key="frame" x="0.0" y="100" width="279" height="319"/>
-                                        <attributedString key="attributedText">
-                                            <fragment content="Label">
-                                                <attributes>
-                                                    <font key="NSFont" size="17" name="HelveticaNeue"/>
-                                                    <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                                </attributes>
-                                            </fragment>
-                                        </attributedString>
-                                        <nil key="highlightedColor"/>
-                                    </label>
+                                    </stackView>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="279" id="60c-ie-lbp"/>
-                                    <constraint firstAttribute="height" constant="419" id="DR3-dn-3A0"/>
+                                    <constraint firstAttribute="trailing" secondItem="y4o-Ay-oNn" secondAttribute="trailing" constant="48" id="GcW-SH-3X3"/>
+                                    <constraint firstAttribute="bottom" secondItem="y4o-Ay-oNn" secondAttribute="bottom" constant="124" id="KDi-bZ-Wl4"/>
+                                    <constraint firstItem="y4o-Ay-oNn" firstAttribute="centerY" secondItem="EJY-JN-mY0" secondAttribute="centerY" id="bnM-wW-XYS"/>
+                                    <constraint firstItem="y4o-Ay-oNn" firstAttribute="centerX" secondItem="EJY-JN-mY0" secondAttribute="centerX" id="y0s-XW-Fk1"/>
                                 </constraints>
-                            </stackView>
+                            </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="y4o-Ay-oNn" firstAttribute="top" secondItem="9Bk-1C-hkm" secondAttribute="bottom" constant="8" id="BRM-s5-wim"/>
-                            <constraint firstItem="y4o-Ay-oNn" firstAttribute="centerX" secondItem="sS6-v4-snh" secondAttribute="centerX" id="xY7-Su-bmf"/>
+                            <constraint firstItem="IDe-XE-zdy" firstAttribute="top" secondItem="EJY-JN-mY0" secondAttribute="bottom" id="Xl0-ws-Gdf"/>
+                            <constraint firstItem="EJY-JN-mY0" firstAttribute="top" secondItem="sS6-v4-snh" secondAttribute="top" id="YHJ-lO-lzb"/>
+                            <constraint firstItem="EJY-JN-mY0" firstAttribute="leading" secondItem="sS6-v4-snh" secondAttribute="leading" id="o9w-4P-RxU"/>
+                            <constraint firstAttribute="trailing" secondItem="EJY-JN-mY0" secondAttribute="trailing" id="rIa-gl-FZi"/>
                         </constraints>
                     </view>
                     <connections>
@@ -529,7 +551,7 @@ John Crawford, MD has over 30 years of experience in addiction medicine and is p
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="u0W-mr-5LJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="501" y="-670"/>
+            <point key="canvasLocation" x="500" y="-670.61469265367316"/>
         </scene>
     </scenes>
     <resources>
