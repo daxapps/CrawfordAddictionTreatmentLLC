@@ -69,7 +69,7 @@
                                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
                                                 <connections>
-                                                    <action selector="onlineAppointmentButton:" destination="9pv-A4-QxB" eventType="touchUpInside" id="EmL-sc-wKG"/>
+                                                    <segue destination="qZh-pW-mld" kind="show" id="AtU-gx-UA5"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LKK-dr-gnl">
@@ -145,7 +145,7 @@ John Crawford, MD has over 30 years of experience in addiction medicine and is p
                     <tabBarItem key="tabBarItem" title="About" image="first" id="acW-dT-cKf"/>
                     <navigationItem key="navigationItem" id="kQ7-7i-3hI"/>
                     <connections>
-                        <outlet property="callButton" destination="TKG-in-4ks" id="EX3-CD-TV7"/>
+                        <outlet property="callButton" destination="NNc-nW-OL0" id="EOe-Id-Xyj"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
@@ -318,7 +318,7 @@ John Crawford, MD has over 30 years of experience in addiction medicine and is p
             <objects>
                 <navigationController id="dPk-xZ-slu" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="FAQ" id="FiP-Ha-zr1"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="bmt-Ka-MA5">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="bmt-Ka-MA5">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="0.29673840354332193" green="0.61520525568218254" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -389,7 +389,37 @@ John Crawford, MD has over 30 years of experience in addiction medicine and is p
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-293" y="-690"/>
+            <point key="canvasLocation" x="-783" y="-1509"/>
+        </scene>
+        <!--Online Appointment View Controller-->
+        <scene sceneID="aVX-3l-c3G">
+            <objects>
+                <viewController id="qZh-pW-mld" customClass="OnlineAppointmentViewController" customModule="CrawfordAddictionTreatmentLLC" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="3cF-mX-uDC"/>
+                        <viewControllerLayoutGuide type="bottom" id="BrN-Pw-w75"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="2cf-8l-Gni">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lxW-YR-kyN">
+                                <rect key="frame" x="16" y="0.0" width="343" height="667"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </webView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="BrN-Pw-w75" firstAttribute="top" secondItem="lxW-YR-kyN" secondAttribute="bottom" id="F1N-vt-64j"/>
+                            <constraint firstItem="lxW-YR-kyN" firstAttribute="trailing" secondItem="2cf-8l-Gni" secondAttribute="trailingMargin" id="LMn-nq-Hfw"/>
+                            <constraint firstItem="lxW-YR-kyN" firstAttribute="leading" secondItem="2cf-8l-Gni" secondAttribute="leadingMargin" id="VD9-g7-HzC"/>
+                            <constraint firstItem="lxW-YR-kyN" firstAttribute="top" secondItem="2cf-8l-Gni" secondAttribute="topMargin" id="n6x-P8-QtH"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HcE-WS-CWX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-650.39999999999998" y="-766.86656671664173"/>
         </scene>
         <!--Directions-->
         <scene sceneID="CGQ-Xz-fEu">
@@ -551,7 +581,7 @@ John Crawford, MD has over 30 years of experience in addiction medicine and is p
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="u0W-mr-5LJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="500" y="-670.61469265367316"/>
+            <point key="canvasLocation" x="-2" y="-1510"/>
         </scene>
     </scenes>
     <resources>

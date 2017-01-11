@@ -11,12 +11,12 @@ import UIKit
 class FirstViewController: UIViewController {
 
     @IBOutlet weak var callButton: UIButton!
-    
-    @IBAction func onlineAppointmentButton(_ sender: Any) {
-        if let url = URL(string: "http://johncrawfordmd.com/online-appointments/") {
-            UIApplication.shared.open(url)
-        }
-    }
+  
+//    @IBAction func onlineAppointmentButton(_ sender: Any) {
+//        if let url = URL(string: "https://johncrawfordmd.com/online-appointments/") {
+//            UIApplication.shared.open(url)
+//        }
+//    }
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
