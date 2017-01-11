@@ -49,11 +49,14 @@
                                         </constraints>
                                     </imageView>
                                     <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="4eE-8m-YUV">
-                                        <rect key="frame" x="98" y="297" width="180" height="210"/>
+                                        <rect key="frame" x="98" y="297" width="200" height="255"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TKG-in-4ks">
-                                                <rect key="frame" x="0.0" y="0.0" width="180" height="30"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="200" height="30"/>
                                                 <color key="backgroundColor" red="0.29673840350000003" green="0.61520525569999995" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="200" id="0ae-BI-2FW"/>
+                                                </constraints>
                                                 <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="15"/>
                                                 <state key="normal" title="Call To Make Appointment">
                                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -63,8 +66,11 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NNc-nW-OL0">
-                                                <rect key="frame" x="0.0" y="45" width="180" height="30"/>
+                                                <rect key="frame" x="0.0" y="45" width="200" height="30"/>
                                                 <color key="backgroundColor" red="0.29673840350000003" green="0.61520525569999995" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="200" id="8h0-Za-uaD"/>
+                                                </constraints>
                                                 <state key="normal" title="Make Online Appointment">
                                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
@@ -73,8 +79,11 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LKK-dr-gnl">
-                                                <rect key="frame" x="0.0" y="90" width="180" height="30"/>
+                                                <rect key="frame" x="0.0" y="90" width="200" height="30"/>
                                                 <color key="backgroundColor" red="0.29673840350000003" green="0.61520525569999995" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="200" id="9mr-ZV-JJ5"/>
+                                                </constraints>
                                                 <state key="normal" title="FAQ">
                                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
@@ -82,9 +91,25 @@
                                                     <segue destination="8rJ-Kc-sve" kind="show" id="3l4-3S-QqB"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XoL-6c-8K5">
-                                                <rect key="frame" x="0.0" y="135" width="180" height="30"/>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bzo-g3-Cu3">
+                                                <rect key="frame" x="0.0" y="135" width="200" height="30"/>
                                                 <color key="backgroundColor" red="0.29673840350000003" green="0.61520525569999995" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="200" id="7yf-GR-BYa"/>
+                                                </constraints>
+                                                <state key="normal" title="Videos">
+                                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <segue destination="B8G-VT-Nzm" kind="show" id="nip-ia-FRH"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XoL-6c-8K5">
+                                                <rect key="frame" x="0.0" y="180" width="200" height="30"/>
+                                                <color key="backgroundColor" red="0.29673840350000003" green="0.61520525569999995" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="200" id="f1p-dI-Ghx"/>
+                                                </constraints>
                                                 <state key="normal" title="Directions">
                                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
@@ -93,8 +118,11 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MdS-Un-PYg">
-                                                <rect key="frame" x="0.0" y="180" width="180" height="30"/>
+                                                <rect key="frame" x="0.0" y="225" width="200" height="30"/>
                                                 <color key="backgroundColor" red="0.29673840350000003" green="0.61520525569999995" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="200" id="VJF-FC-RDW"/>
+                                                </constraints>
                                                 <state key="normal" title="Bup Chat">
                                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
@@ -152,10 +180,238 @@ John Crawford, MD has over 30 years of experience in addiction medicine and is p
             </objects>
             <point key="canvasLocation" x="-1628" y="-2.2488755622188905"/>
         </scene>
-        <!--Bup Chat View Controller-->
+        <!--Videos-->
+        <scene sceneID="0cs-Bh-ccG">
+            <objects>
+                <viewController title="Videos" id="B8G-VT-Nzm" customClass="VideoListViewController" customModule="CrawfordAddictionTreatmentLLC" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="WgH-cH-dAm"/>
+                        <viewControllerLayoutGuide type="bottom" id="u0f-c9-moa"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="iDq-ls-mQx">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="zFN-wJ-MGx">
+                                <rect key="frame" x="20" y="165.5" width="335" height="336"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="left" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="8x3-3Z-oTH">
+                                        <rect key="frame" x="0.0" y="0.0" width="335" height="84"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="84" id="cNC-HX-R3M"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                                        <state key="normal" title="Is painkiller dependency is a Chronic Brain Disease?"/>
+                                        <connections>
+                                            <action selector="video1Pressed:" destination="B8G-VT-Nzm" eventType="touchUpInside" id="Jm7-uT-hXd"/>
+                                            <segue destination="CPd-i9-a6D" kind="show" id="ngW-Ua-xww"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="left" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="fs1-rz-FzQ">
+                                        <rect key="frame" x="0.0" y="84" width="335" height="84"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="84" id="3KL-6n-bqj"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                                        <state key="normal" title="What is Suboxone?"/>
+                                        <connections>
+                                            <action selector="video1Pressed:" destination="B8G-VT-Nzm" eventType="touchUpInside" id="54y-gB-Voy"/>
+                                            <segue destination="oxZ-Cv-yyl" kind="show" id="CeN-uY-5Jn"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="center" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="pxj-ci-LBk">
+                                        <rect key="frame" x="0.0" y="168" width="335" height="84"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="84" id="eEB-AB-3MF"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                                        <state key="normal" title="What are the signs of pain medicine abuse?"/>
+                                        <connections>
+                                            <action selector="video1Pressed:" destination="B8G-VT-Nzm" eventType="touchUpInside" id="B4R-Qt-sft"/>
+                                            <segue destination="ctb-L7-Fmp" kind="show" id="VZL-FH-f5u"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="center" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="UTN-sU-m9r">
+                                        <rect key="frame" x="0.0" y="252" width="335" height="84"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="84" id="PzX-yf-ZGc"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                                        <state key="normal" title="Why is Suboxone used to facilitate recovery from pain pill addiction?"/>
+                                        <connections>
+                                            <action selector="video1Pressed:" destination="B8G-VT-Nzm" eventType="touchUpInside" id="Cvj-Ej-Kdf"/>
+                                            <segue destination="heU-53-Nh0" kind="show" id="Se6-4e-wym"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="zFN-wJ-MGx" secondAttribute="trailing" constant="20" id="fKF-JU-JVF"/>
+                            <constraint firstItem="zFN-wJ-MGx" firstAttribute="leading" secondItem="iDq-ls-mQx" secondAttribute="leading" constant="20" id="gBl-fS-JVL"/>
+                            <constraint firstItem="zFN-wJ-MGx" firstAttribute="centerY" secondItem="iDq-ls-mQx" secondAttribute="centerY" id="t9I-dI-LoA"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="A0X-ai-QaR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-628" y="-86.806596701649184"/>
+        </scene>
+        <!--Suboxone-->
+        <scene sceneID="VNw-7x-J6i">
+            <objects>
+                <viewController title="Suboxone" id="oxZ-Cv-yyl" customClass="VideoViewController2" customModule="CrawfordAddictionTreatmentLLC" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="xXk-Kc-6Zw"/>
+                        <viewControllerLayoutGuide type="bottom" id="CuI-Hf-ZkR"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="9G4-Xm-yVG">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="450"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <webView multipleTouchEnabled="YES" contentMode="scaleAspectFill" scalesPageToFit="YES" mediaPlaybackRequiresUserAction="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xwc-SP-Blo">
+                                <rect key="frame" x="8" y="73" width="359" height="304"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="304" id="q7C-yu-eeB"/>
+                                </constraints>
+                            </webView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="What is Suboxone?" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VcP-eB-RTA">
+                                <rect key="frame" x="8" y="73" width="359" height="62"/>
+                                <color key="backgroundColor" red="0.29673840350000003" green="0.61520525569999995" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="62" id="R6d-Qd-HSl"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="VcP-eB-RTA" firstAttribute="leading" secondItem="Xwc-SP-Blo" secondAttribute="leading" id="510-ue-CZR"/>
+                            <constraint firstAttribute="trailing" secondItem="Xwc-SP-Blo" secondAttribute="trailing" constant="8" id="CNv-ws-IMI"/>
+                            <constraint firstItem="VcP-eB-RTA" firstAttribute="top" secondItem="Xwc-SP-Blo" secondAttribute="top" id="SUs-6d-sv8"/>
+                            <constraint firstItem="Xwc-SP-Blo" firstAttribute="centerY" secondItem="9G4-Xm-yVG" secondAttribute="centerY" id="kfc-Nm-JWz"/>
+                            <constraint firstItem="Xwc-SP-Blo" firstAttribute="leading" secondItem="9G4-Xm-yVG" secondAttribute="leading" constant="8" id="srM-k4-KiE"/>
+                            <constraint firstItem="VcP-eB-RTA" firstAttribute="width" secondItem="Xwc-SP-Blo" secondAttribute="width" id="yPC-Rc-sqx"/>
+                        </constraints>
+                    </view>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="375" height="450"/>
+                    <connections>
+                        <outlet property="secondVideo" destination="Xwc-SP-Blo" id="dGd-SS-ahY"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WO5-p5-lSa" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="316" y="-246"/>
+        </scene>
+        <!--Signs of Abuse-->
+        <scene sceneID="g3T-b7-MXb">
+            <objects>
+                <viewController title="Signs of Abuse" id="ctb-L7-Fmp" customClass="VideoViewController3" customModule="CrawfordAddictionTreatmentLLC" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="qsQ-Kh-FjJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="JXk-ae-Q3L"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Pi7-gi-ljS">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="450"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <webView multipleTouchEnabled="YES" contentMode="scaleAspectFill" scalesPageToFit="YES" mediaPlaybackRequiresUserAction="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UyK-IU-qtQ">
+                                <rect key="frame" x="8" y="73" width="359" height="304"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="304" id="A64-Ce-Ptt"/>
+                                </constraints>
+                            </webView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="What are the signs of pain medicine abuse?" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="22o-vl-dyb">
+                                <rect key="frame" x="8" y="73" width="359" height="62"/>
+                                <color key="backgroundColor" red="0.29673840350000003" green="0.61520525569999995" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="62" id="4ea-AQ-cu9"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="22o-vl-dyb" firstAttribute="top" secondItem="UyK-IU-qtQ" secondAttribute="top" id="5ZJ-lk-Ub4"/>
+                            <constraint firstItem="22o-vl-dyb" firstAttribute="width" secondItem="UyK-IU-qtQ" secondAttribute="width" id="AYW-VP-Glu"/>
+                            <constraint firstItem="22o-vl-dyb" firstAttribute="leading" secondItem="UyK-IU-qtQ" secondAttribute="leading" id="RF1-yf-fBd"/>
+                            <constraint firstAttribute="trailing" secondItem="UyK-IU-qtQ" secondAttribute="trailing" constant="8" id="oDK-dE-CWN"/>
+                            <constraint firstItem="UyK-IU-qtQ" firstAttribute="leading" secondItem="Pi7-gi-ljS" secondAttribute="leading" constant="8" id="t6e-zu-TcH"/>
+                            <constraint firstItem="UyK-IU-qtQ" firstAttribute="centerY" secondItem="Pi7-gi-ljS" secondAttribute="centerY" id="w96-v3-Yba"/>
+                        </constraints>
+                    </view>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="375" height="450"/>
+                    <connections>
+                        <outlet property="thirdVideo" destination="UyK-IU-qtQ" id="lyR-iD-44h"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rB0-62-P6p" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="316" y="201"/>
+        </scene>
+        <!--Facilitate Recovery-->
+        <scene sceneID="aiT-7g-ZVK">
+            <objects>
+                <viewController title="Facilitate Recovery" id="heU-53-Nh0" customClass="VideoViewController4" customModule="CrawfordAddictionTreatmentLLC" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="lHG-fh-RdK"/>
+                        <viewControllerLayoutGuide type="bottom" id="abo-HR-syE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="w1Y-zg-F3o">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="450"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <webView multipleTouchEnabled="YES" contentMode="scaleAspectFill" scalesPageToFit="YES" mediaPlaybackRequiresUserAction="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ep0-LW-tTe">
+                                <rect key="frame" x="8" y="73" width="359" height="304"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="304" id="p1U-eh-AyB"/>
+                                </constraints>
+                            </webView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Why is Suboxone used to facilitate recovery from pain pill addiction?" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yHc-An-mSd">
+                                <rect key="frame" x="8" y="73" width="359" height="62"/>
+                                <color key="backgroundColor" red="0.29673840350000003" green="0.61520525569999995" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="62" id="xiQ-SR-5he"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="Ep0-LW-tTe" secondAttribute="trailing" constant="8" id="HA7-Gc-e29"/>
+                            <constraint firstItem="yHc-An-mSd" firstAttribute="width" secondItem="Ep0-LW-tTe" secondAttribute="width" id="g5D-WJ-mxx"/>
+                            <constraint firstItem="Ep0-LW-tTe" firstAttribute="centerY" secondItem="w1Y-zg-F3o" secondAttribute="centerY" id="ily-Uh-DPa"/>
+                            <constraint firstItem="yHc-An-mSd" firstAttribute="top" secondItem="Ep0-LW-tTe" secondAttribute="top" id="nN9-WC-hl8"/>
+                            <constraint firstItem="Ep0-LW-tTe" firstAttribute="leading" secondItem="w1Y-zg-F3o" secondAttribute="leading" constant="8" id="tde-Qb-laO"/>
+                            <constraint firstItem="yHc-An-mSd" firstAttribute="leading" secondItem="Ep0-LW-tTe" secondAttribute="leading" id="y5h-wl-rQs"/>
+                        </constraints>
+                    </view>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="375" height="450"/>
+                    <connections>
+                        <outlet property="forthVideo" destination="Ep0-LW-tTe" id="AIu-4t-8U2"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5T4-Mz-e6S" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="316" y="649"/>
+        </scene>
+        <!--BupChat-->
         <scene sceneID="IDe-sJ-4M4">
             <objects>
-                <viewController id="zFC-E6-1oZ" customClass="BupChatViewController" customModule="CrawfordAddictionTreatmentLLC" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="BupChat" id="zFC-E6-1oZ" customClass="BupChatViewController" customModule="CrawfordAddictionTreatmentLLC" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Q0A-eY-6Qv"/>
                         <viewControllerLayoutGuide type="bottom" id="vMu-It-qJf"/>
@@ -385,16 +641,16 @@ John Crawford, MD has over 30 years of experience in addiction medicine and is p
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="" id="cPa-gy-q4n"/>
-                    <navigationItem key="navigationItem" id="yxF-nj-lkg"/>
+                    <navigationItem key="navigationItem" title="FAQ" id="yxF-nj-lkg"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-783" y="-1509"/>
         </scene>
-        <!--Online Appointment View Controller-->
+        <!--Online Appointment-->
         <scene sceneID="aVX-3l-c3G">
             <objects>
-                <viewController id="qZh-pW-mld" customClass="OnlineAppointmentViewController" customModule="CrawfordAddictionTreatmentLLC" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Online Appointment" id="qZh-pW-mld" customClass="OnlineAppointmentViewController" customModule="CrawfordAddictionTreatmentLLC" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="3cF-mX-uDC"/>
                         <viewControllerLayoutGuide type="bottom" id="BrN-Pw-w75"/>
@@ -403,7 +659,7 @@ John Crawford, MD has over 30 years of experience in addiction medicine and is p
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lxW-YR-kyN">
+                            <webView contentMode="scaleToFill" scalesPageToFit="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lxW-YR-kyN">
                                 <rect key="frame" x="16" y="0.0" width="343" height="667"/>
                                 <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </webView>
@@ -419,7 +675,57 @@ John Crawford, MD has over 30 years of experience in addiction medicine and is p
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HcE-WS-CWX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-650.39999999999998" y="-766.86656671664173"/>
+            <point key="canvasLocation" x="-650" y="-848"/>
+        </scene>
+        <!--Chronic Brain Disease-->
+        <scene sceneID="hZJ-ps-hIk">
+            <objects>
+                <viewController title="Chronic Brain Disease" id="CPd-i9-a6D" customClass="VideoViewController1" customModule="CrawfordAddictionTreatmentLLC" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="8cp-To-aKi"/>
+                        <viewControllerLayoutGuide type="bottom" id="h6c-zL-HU5"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Qus-3r-6ia">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="450"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <webView multipleTouchEnabled="YES" contentMode="scaleAspectFill" scalesPageToFit="YES" mediaPlaybackRequiresUserAction="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oRy-AE-Dm2">
+                                <rect key="frame" x="8" y="73" width="359" height="304"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="304" id="NB4-OD-OnS"/>
+                                </constraints>
+                            </webView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Painkiller Dependency is a Chronic Brain Disease" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G0y-2F-9O8">
+                                <rect key="frame" x="8" y="73" width="359" height="62"/>
+                                <color key="backgroundColor" red="0.29673840350000003" green="0.61520525569999995" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="62" id="9Hy-ed-LVe"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="oRy-AE-Dm2" secondAttribute="trailing" constant="8" id="Gpc-Qg-sfU"/>
+                            <constraint firstItem="G0y-2F-9O8" firstAttribute="leading" secondItem="oRy-AE-Dm2" secondAttribute="leading" id="Ngc-NE-iwS"/>
+                            <constraint firstItem="oRy-AE-Dm2" firstAttribute="leading" secondItem="Qus-3r-6ia" secondAttribute="leading" constant="8" id="SRn-rm-BRQ"/>
+                            <constraint firstItem="G0y-2F-9O8" firstAttribute="top" secondItem="oRy-AE-Dm2" secondAttribute="top" id="UBY-Gx-WFA"/>
+                            <constraint firstItem="oRy-AE-Dm2" firstAttribute="centerY" secondItem="Qus-3r-6ia" secondAttribute="centerY" id="b3Z-To-Nsx"/>
+                            <constraint firstItem="G0y-2F-9O8" firstAttribute="width" secondItem="oRy-AE-Dm2" secondAttribute="width" id="wxt-6N-9sW"/>
+                        </constraints>
+                    </view>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="375" height="450"/>
+                    <connections>
+                        <outlet property="firstVideo" destination="oRy-AE-Dm2" id="EGk-lw-KzL"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ggX-Iz-V3n" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="316" y="-696"/>
         </scene>
         <!--Directions-->
         <scene sceneID="CGQ-Xz-fEu">
@@ -504,7 +810,7 @@ John Crawford, MD has over 30 years of experience in addiction medicine and is p
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2zI-u6-esg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-296" y="-3"/>
+            <point key="canvasLocation" x="-679" y="956"/>
         </scene>
         <!--Answers-->
         <scene sceneID="1kt-qt-3PX">
