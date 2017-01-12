@@ -49,7 +49,7 @@
                                         </constraints>
                                     </imageView>
                                     <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="4eE-8m-YUV">
-                                        <rect key="frame" x="98" y="297" width="200" height="255"/>
+                                        <rect key="frame" x="98" y="297" width="200" height="210"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TKG-in-4ks">
                                                 <rect key="frame" x="0.0" y="0.0" width="200" height="30"/>
@@ -65,21 +65,8 @@
                                                     <action selector="makeCall:" destination="9pv-A4-QxB" eventType="touchUpInside" id="LH5-Eg-dET"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NNc-nW-OL0">
-                                                <rect key="frame" x="0.0" y="45" width="200" height="30"/>
-                                                <color key="backgroundColor" red="0.29673840350000003" green="0.61520525569999995" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="200" id="8h0-Za-uaD"/>
-                                                </constraints>
-                                                <state key="normal" title="Make Online Appointment">
-                                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                </state>
-                                                <connections>
-                                                    <segue destination="qZh-pW-mld" kind="show" id="AtU-gx-UA5"/>
-                                                </connections>
-                                            </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LKK-dr-gnl">
-                                                <rect key="frame" x="0.0" y="90" width="200" height="30"/>
+                                                <rect key="frame" x="0.0" y="45" width="200" height="30"/>
                                                 <color key="backgroundColor" red="0.29673840350000003" green="0.61520525569999995" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="200" id="9mr-ZV-JJ5"/>
@@ -92,7 +79,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bzo-g3-Cu3">
-                                                <rect key="frame" x="0.0" y="135" width="200" height="30"/>
+                                                <rect key="frame" x="0.0" y="90" width="200" height="30"/>
                                                 <color key="backgroundColor" red="0.29673840350000003" green="0.61520525569999995" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="200" id="7yf-GR-BYa"/>
@@ -105,7 +92,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XoL-6c-8K5">
-                                                <rect key="frame" x="0.0" y="180" width="200" height="30"/>
+                                                <rect key="frame" x="0.0" y="135" width="200" height="30"/>
                                                 <color key="backgroundColor" red="0.29673840350000003" green="0.61520525569999995" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="200" id="f1p-dI-Ghx"/>
@@ -118,7 +105,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MdS-Un-PYg">
-                                                <rect key="frame" x="0.0" y="225" width="200" height="30"/>
+                                                <rect key="frame" x="0.0" y="180" width="200" height="30"/>
                                                 <color key="backgroundColor" red="0.29673840350000003" green="0.61520525569999995" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="200" id="VJF-FC-RDW"/>
@@ -172,9 +159,6 @@ John Crawford, MD has over 30 years of experience in addiction medicine and is p
                     </view>
                     <tabBarItem key="tabBarItem" title="About" image="first" id="acW-dT-cKf"/>
                     <navigationItem key="navigationItem" id="kQ7-7i-3hI"/>
-                    <connections>
-                        <outlet property="callButton" destination="NNc-nW-OL0" id="EOe-Id-Xyj"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
             </objects>
@@ -646,36 +630,6 @@ John Crawford, MD has over 30 years of experience in addiction medicine and is p
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-783" y="-1509"/>
-        </scene>
-        <!--Online Appointment-->
-        <scene sceneID="aVX-3l-c3G">
-            <objects>
-                <viewController title="Online Appointment" id="qZh-pW-mld" customClass="OnlineAppointmentViewController" customModule="CrawfordAddictionTreatmentLLC" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="3cF-mX-uDC"/>
-                        <viewControllerLayoutGuide type="bottom" id="BrN-Pw-w75"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="2cf-8l-Gni">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <webView contentMode="scaleToFill" scalesPageToFit="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lxW-YR-kyN">
-                                <rect key="frame" x="16" y="0.0" width="343" height="667"/>
-                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            </webView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="BrN-Pw-w75" firstAttribute="top" secondItem="lxW-YR-kyN" secondAttribute="bottom" id="F1N-vt-64j"/>
-                            <constraint firstItem="lxW-YR-kyN" firstAttribute="trailing" secondItem="2cf-8l-Gni" secondAttribute="trailingMargin" id="LMn-nq-Hfw"/>
-                            <constraint firstItem="lxW-YR-kyN" firstAttribute="leading" secondItem="2cf-8l-Gni" secondAttribute="leadingMargin" id="VD9-g7-HzC"/>
-                            <constraint firstItem="lxW-YR-kyN" firstAttribute="top" secondItem="2cf-8l-Gni" secondAttribute="topMargin" id="n6x-P8-QtH"/>
-                        </constraints>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="HcE-WS-CWX" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-650" y="-848"/>
         </scene>
         <!--Chronic Brain Disease-->
         <scene sceneID="hZJ-ps-hIk">

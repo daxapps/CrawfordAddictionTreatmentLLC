@@ -17,7 +17,7 @@ class OnlineAppointmentViewController: UIViewController, WKUIDelegate {
     
     override func loadView() {
         let webConfiguration = WKWebViewConfiguration()
-        webView = WKWebView(frame: .zero, configuration: webConfiguration)
+        webView = WKWebView(frame: .infinite, configuration: webConfiguration)
         webView.uiDelegate = self
         view = webView
     }
