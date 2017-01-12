@@ -12,6 +12,7 @@ import WebKit
 class VideoViewController1: UIViewController, WKUIDelegate {
 
     @IBOutlet weak var firstVideo: UIWebView!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
    
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,27 +20,26 @@ class VideoViewController1: UIViewController, WKUIDelegate {
 
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
     func loadFirstYoutubeVideo(videoID:String) {
-        guard let youtubeURL = URL(string: "https://www.youtube.com/embed/\(videoID)")
-            else { return }
-        firstVideo.loadRequest( URLRequest(url: youtubeURL) )
+        let youtubeURL = URL(string: "https://www.youtube.com/embed/\(videoID)")
+        let myRequest = URLRequest(url: youtubeURL!)
+        firstVideo.loadRequest(myRequest)
     }
 
+    func webViewDidStartLoad(_ webView: UIWebView) {
+        //activityIndicator.isHidden = false
+        activityIndicator.startAnimating()
+        print("did startLoad")
+    }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    func webViewDidFinishLoad(_ webView:UIWebView) {
+        //activityIndicator.isHidden = false
+        activityIndicator.stopAnimating()
+        print("did finishLoad")
     }
-    */
+    
+    func webView(_ webView: UIWebView, didFailLoadWithError error: Error) {
+    }
+    
 
 }

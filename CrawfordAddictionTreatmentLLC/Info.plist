@@ -35,6 +35,8 @@
 	<string>Result</string>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>BupChat would like to use your photo library to send image messages.</string>
+	<key>NSCameraUsageDescription</key>
+	<string>BupChat would like to access your camera to take pictures to send image messages.</string>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>
