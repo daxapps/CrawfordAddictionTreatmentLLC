@@ -700,7 +700,7 @@ John Crawford, MD has over 30 years of experience in addiction medicine and is p
         <!--Navigation Controller-->
         <scene sceneID="HLO-zH-b8J">
             <objects>
-                <navigationController hidesBarsOnSwipe="YES" hidesBarsWhenKeyboardAppears="YES" hidesBarsWhenVerticallyCompact="YES" id="dPk-xZ-slu" sceneMemberID="viewController">
+                <navigationController hidesBarsWhenKeyboardAppears="YES" hidesBarsWhenVerticallyCompact="YES" id="dPk-xZ-slu" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" enabled="NO" title="" id="FiP-Ha-zr1"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="bmt-Ka-MA5">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
