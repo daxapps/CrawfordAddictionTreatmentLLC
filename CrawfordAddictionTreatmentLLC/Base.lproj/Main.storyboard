@@ -696,7 +696,7 @@ John Crawford, MD has over 30 years of experience in addiction medicine and is p
             <objects>
                 <navigationController hidesBarsOnSwipe="YES" hidesBarsWhenKeyboardAppears="YES" hidesBarsWhenVerticallyCompact="YES" id="dPk-xZ-slu" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" enabled="NO" title="" id="FiP-Ha-zr1"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="bmt-Ka-MA5">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="bmt-Ka-MA5">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="0.29673840354332193" green="0.61520525568218254" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
