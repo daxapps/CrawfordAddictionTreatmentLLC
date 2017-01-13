@@ -140,7 +140,7 @@
                                         <string key="text">Crawford Addiction Treatment LLC is an outpatient treatment facility designed to help patients fight pain medicine addiction and provide a superior patient experience.
 
 John Crawford, MD has over 30 years of experience in addiction medicine and is passionate about exceeding your expectations.  He is a Diplomate of the American Society of Addiction Medicine and a member of the American Board of Addiction Medicine.</string>
-                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -553,10 +553,10 @@ John Crawford, MD has over 30 years of experience in addiction medicine and is p
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="68"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="n2S-R0-TvX">
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="n2S-R0-TvX">
                                                     <rect key="frame" x="54" y="16" width="34" height="21"/>
                                                     <autoresizingMask key="autoresizingMask"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -656,13 +656,19 @@ John Crawford, MD has over 30 years of experience in addiction medicine and is p
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="r4s-od-6Aj">
                         <nil key="title"/>
-                        <barButtonItem key="rightBarButtonItem" style="plain" id="0j5-r9-dWw">
-                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="6NQ-mq-SPU">
+                        <barButtonItem key="rightBarButtonItem" id="0j5-r9-dWw">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" id="6NQ-mq-SPU">
                                 <rect key="frame" x="288" y="7" width="71" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="14"/>
-                                <state key="normal" title="SignOut">
-                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal">
+                                    <attributedString key="attributedTitle">
+                                        <fragment content="SignOut">
+                                            <attributes>
+                                                <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <font key="NSFont" size="14" name=".AppleSystemUIFont"/>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
                                 </state>
                                 <connections>
                                     <action selector="signOut:" destination="zFC-E6-1oZ" eventType="touchUpInside" id="EDd-Rf-WsN"/>
@@ -873,7 +879,7 @@ John Crawford, MD has over 30 years of experience in addiction medicine and is p
                                     <constraint firstAttribute="height" constant="44" id="u0y-0M-rux"/>
                                 </constraints>
                                 <items>
-                                    <barButtonItem style="plain" id="Box-lU-SX4">
+                                    <barButtonItem id="Box-lU-SX4">
                                         <segmentedControl key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="atn-XJ-wLh">
                                             <rect key="frame" x="16" y="7" width="204" height="30"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -887,7 +893,7 @@ John Crawford, MD has over 30 years of experience in addiction medicine and is p
                                             </connections>
                                         </segmentedControl>
                                     </barButtonItem>
-                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="2cu-Rn-JcJ"/>
+                                    <barButtonItem systemItem="flexibleSpace" id="2cu-Rn-JcJ"/>
                                     <barButtonItem title="Locate Me" id="nn9-zd-HCl">
                                         <connections>
                                             <action selector="locateMe:" destination="FgV-jc-t3h" id="8d1-Yx-3IR"/>

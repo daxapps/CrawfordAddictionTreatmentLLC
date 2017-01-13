@@ -78,6 +78,16 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		E04BBAFE1E296DDA0010916B /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				E01B038A1E1DE25D00355A07 /* GoogleService-Info.plist */,
+				E0D6BAC21E1A935A005A26D4 /* Info.plist */,
+				E0D6BABD1E1A935A005A26D4 /* Assets.xcassets */,
+			);
+			name = Assets;
+			sourceTree = "<group>";
+		};
 		E0D6BAA81E1A935A005A26D4 = {
 			isa = PBXGroup;
 			children = (
@@ -103,9 +113,7 @@
 				E0D6BAC81E1AC756005A26D4 /* Model */,
 				E0D6BAC91E1AC764005A26D4 /* View */,
 				E0D6BACA1E1AC76F005A26D4 /* Controller */,
-				E0D6BABD1E1A935A005A26D4 /* Assets.xcassets */,
-				E0D6BAC21E1A935A005A26D4 /* Info.plist */,
-				E01B038A1E1DE25D00355A07 /* GoogleService-Info.plist */,
+				E04BBAFE1E296DDA0010916B /* Assets */,
 			);
 			path = CrawfordAddictionTreatmentLLC;
 			sourceTree = "<group>";

@@ -10,10 +10,8 @@ import UIKit
 import Firebase
 import FirebaseAuthUI
 import FirebaseGoogleAuthUI
-import GoogleSignIn
 
-class BupChatViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate//, GIDSignInDelegate, GIDSignInUIDelegate
-{
+class BupChatViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     // MARK: Properties
 
@@ -44,43 +42,23 @@ class BupChatViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
         
         self.tableView.delegate = self
         self.tableView.dataSource = self
         self.textField.delegate = self
-//
-//        ConfigureDatabase()
-        
-        //        NotificationCenter.default.addObserver(self, selector: #selector(BupChat2ViewController.keyboardWillShow(_:)), name: NSNotification.Name.UIKeyboardWillShow, object: self.view.window)
-        //
-        //        NotificationCenter.default.addObserver(self, selector: #selector(BupChat2ViewController.keyboardWillHide(_:)), name: NSNotification.Name.UIKeyboardWillHide, object: self.view.window)
+
         configureAuth()
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         
-        //logout
-        /* let firebaseAuth = FIRAuth.auth()
-         do {
-         try firebaseAuth?.signOut()
-         } catch let signOutError as NSError {
-         print("error signing out")
-         } */
-        
-//        if (FIRAuth.auth()?.currentUser == nil) {
-//            let vc = self.storyboard?.instantiateViewController(withIdentifier: "firebaseLoginViewController")
-//            self.navigationController?.present(vc!, animated: true, completion: nil)
-//        }
         subscribeToKeyboardNotifications()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        //        NotificationCenter.default.removeObserver(self, name: NSNotification.Name.UIKeyboardWillShow, object: self.view.window)
-        //        NotificationCenter.default.removeObserver(self, name: NSNotification.Name.UIKeyboardWillHide, object: self.view.window)
+ 
         unsubscribeFromKeyboardNotifications()
     }
     
@@ -102,7 +80,7 @@ class BupChatViewController: UIViewController, UITableViewDelegate, UITableViewD
                     self.user = activeUser
                     self.signedInStatus(isSignedIn: true)
                     let name = user!.email?.components(separatedBy: "@")[0]
-                    self.displayName = name ?? "anonymous"
+                    self.displayName = name ?? ""
                 }
             } else {
                 // user must sign in
@@ -172,7 +150,6 @@ class BupChatViewController: UIViewController, UITableViewDelegate, UITableViewD
         imageMessage.isHidden = !isSignedIn
         
        if isSignedIn {
-            
             // remove background blur (will use when showing image messages)
             tableView.rowHeight = UITableViewAutomaticDimension
             tableView.estimatedRowHeight = 122.0
@@ -191,6 +168,8 @@ class BupChatViewController: UIViewController, UITableViewDelegate, UITableViewD
         let authViewController = FUIAuth.defaultAuthUI()?.authViewController()
         present(authViewController!, animated: true, completion: nil)
     }
+    
+    // MARK: TableView
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
@@ -227,9 +206,6 @@ class BupChatViewController: UIViewController, UITableViewDelegate, UITableViewD
                 }
             }
         } else {
-//            let text = message[Constants.MessageFields.text] ?? "[message]"
-//            cell.textLabel?.text = name + ": " + text
-//            cell.imageView?.image = placeholderImage
             if let text = message[Constants.MessageFields.text] as String! {
                 cell.textLabel?.text = name + ": " + text
                 cell.imageView?.image = placeholderImage
@@ -274,25 +250,6 @@ class BupChatViewController: UIViewController, UITableViewDelegate, UITableViewD
     // MARK: Show Image Display
     
     func showImageDisplay(_ image: UIImage) {
-        dismissImageRecognizer.isEnabled = true
-        dismissKeyboardRecognizer.isEnabled = false
-        textField.isEnabled = false
-        UIView.animate(withDuration: 0.25) {
-            self.backgroundBlur.effect = UIBlurEffect(style: .light)
-            self.imageDisplay.alpha = 1.0
-            self.imageDisplay.image = image
-        }
-    }
-    
-    func resignTextfield() {
-        if textField.isFirstResponder {
-            textField.resignFirstResponder()
-        }
-    }
-    
-    // MARK: Show Image Display
-    
-    func showImageDisplay(image: UIImage) {
         dismissImageRecognizer.isEnabled = true
         dismissKeyboardRecognizer.isEnabled = false
         textField.isEnabled = false
@@ -397,6 +354,8 @@ class BupChatViewController: UIViewController, UITableViewDelegate, UITableViewD
         resignTextfield()
     }
     
+    // MARK: Keyboard Notifications
+    
     func subscribeToKeyboardNotifications() {
         NotificationCenter.default.addObserver(self, selector: #selector(BupChatViewController.keyboardWillShow(_:)), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(BupChatViewController.keyboardWillHide(_:)), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
@@ -430,64 +389,9 @@ class BupChatViewController: UIViewController, UITableViewDelegate, UITableViewD
         NotificationCenter.default.removeObserver(self, name: NSNotification.Name.UIKeyboardWillHide, object: nil)
     }
     
-//    func keyboardWillHide (_ sender: Notification) {
-//        let userInfo: [NSObject:AnyObject] = (sender as NSNotification).userInfo! as [NSObject : AnyObject]
-//        
-//        //let keyboardSize: CGSize = userInfo[UIKeyboardFrameBeginUserInfoKey]!.cgRectValue().size
-//        let keyboardSize = userInfo[UIKeyboardFrameBeginUserInfoKey]!.cg
-//        self.view.frame.origin.y += keyboardSize.height
-//        if keyboardOnScreen {
-//                        self.view.frame.origin.y += self.keyboardHeight(Notification)
-//                    }
-        
-        //view.frame.origin.y = 0
-//    }
-    
-
-    
-    //func keyboardWillShow(_ sender: NSNotification) {
-//        let userInfo: [NSObject:Any] = sender.userInfo! as [NSObject : Any]
-//        
-//        let keyboardSize: CGSize = userInfo[UIKeyboardFrameBeginUserInfoKey]!.cgRectValue().size
-//        let offset: CGSize = userInfo[UIKeyboardFrameEndUserInfoKey]!.cgRectValue().size
-//        
-//        if keyboardSize.height == offset.height {
-//            if self.view.frame.origin.y == 0 {
-//                UIView.animate(withDuration: 0.15, animations: {
-//                    self.view.frame.origin.y -= keyboardSize.height
-//                })
-//            }
-//        }
-//        else {
-//            UIView.animate(withDuration: 0.15, animations: {
-//                self.view.frame.origin.y += keyboardSize.height - offset.height
-//            })
-//        }
-//        if !keyboardOnScreen {
-//            self.view.frame.origin.y += self.keyboardHeight(NSNotification)
-        
-        //        view.frame.origin.y = 0
-        //view.frame.origin.y = getKeyboardHeight(notification) * -1
-    //}
-    
-//    func getKeyboardHeight(_ notification: NSNotification) -> CGFloat {
-//        let userInfo = notification.userInfo
-//        let keyboardSize = userInfo![UIKeyboardFrameEndUserInfoKey] as! NSValue // of CGRect
-//        return keyboardSize.cgRectValue.height
-//    }
+    // MARK: Textfield
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        
-//        if (textField.text?.characters.count == 0) {
-//            return true
-//        }
-//        
-//        let data = [Constants.MessageFields.text: textField.text! as String]
-//        SendMessage(data: data)
-//        print("ended editing")
-//        textField.text = ""
-//        self.view.endEditing(true)
-        
         textField.resignFirstResponder()
         let data = [Constants.MessageFields.text: textField.text! as String]
         sendMessage(data: data)
@@ -495,9 +399,10 @@ class BupChatViewController: UIViewController, UITableViewDelegate, UITableViewD
         return true
     }
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    func resignTextfield() {
+        if textField.isFirstResponder {
+            textField.resignFirstResponder()
+        }
     }
     
     
