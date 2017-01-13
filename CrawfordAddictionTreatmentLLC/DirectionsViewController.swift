@@ -17,12 +17,18 @@ class DirectionsViewController: UIViewController, CLLocationManagerDelegate {
     
     var manager = CLLocationManager()
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         // location where pin is dropped
         let pinLocation: CLLocationCoordinate2D = CLLocationCoordinate2DMake(30.230607, -93.219534)
+        // how far to zoom in
+        let businessSpan = MKCoordinateSpanMake(0.5, 0.5)
+        
+        // set up region of zoom
+        let region = MKCoordinateRegion(center: pinLocation, span: businessSpan)
+        
+        mapView.setRegion(region, animated: true)
         
         // pin annotations
         let objectAnnotation = MKPointAnnotation()
@@ -45,16 +51,14 @@ class DirectionsViewController: UIViewController, CLLocationManagerDelegate {
     
     @IBAction func mapType(_ sender: AnyObject) {
         
-        if (segmentControl.selectedSegmentIndex == 0)
-        {
+        if (segmentControl.selectedSegmentIndex == 0) {
             mapView.mapType = MKMapType.standard
         }
-        if (segmentControl.selectedSegmentIndex == 1)
-        {
+        
+        if (segmentControl.selectedSegmentIndex == 1) {
             mapView.mapType = MKMapType.satellite
         }
-        if (segmentControl.selectedSegmentIndex == 2)
-        {
+        if (segmentControl.selectedSegmentIndex == 2) {
             mapView.mapType = MKMapType.hybrid
         }
         
@@ -83,7 +87,7 @@ class DirectionsViewController: UIViewController, CLLocationManagerDelegate {
         let location = CLLocationCoordinate2D(latitude: userLocation.coordinate.latitude, longitude: userLocation.coordinate.longitude)
         
         // how far to zoom in
-        let span = MKCoordinateSpanMake(0.5, 0.5)
+        let span = MKCoordinateSpanMake(0.2, 0.2)
         
         // set up region of zoom
         let region = MKCoordinateRegion(center: location, span: span)
