@@ -16,11 +16,11 @@ class VideoViewController1: UIViewController, WKUIDelegate {
    
     override func viewDidLoad() {
         super.viewDidLoad()
-        loadFirstYoutubeVideo(videoID: "t2mmgcvoX40")
+        loadYoutubeVideo(videoID: "t2mmgcvoX40")
 
     }
 
-    func loadFirstYoutubeVideo(videoID:String) {
+    func loadYoutubeVideo(videoID:String) {
         let youtubeURL = URL(string: "https://www.youtube.com/embed/\(videoID)")
         let myRequest = URLRequest(url: youtubeURL!)
         firstVideo.loadRequest(myRequest)

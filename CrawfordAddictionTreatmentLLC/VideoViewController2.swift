@@ -12,17 +12,31 @@ import WebKit
 class VideoViewController2: UIViewController, WKUIDelegate {
     
     @IBOutlet weak var secondVideo: UIWebView!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        loadFirstYoutubeVideo(videoID: "LHGzXzoNQD0")
-        
+        loadYoutubeVideo(videoID: "LHGzXzoNQD0")
     }
     
-    func loadFirstYoutubeVideo(videoID:String) {
-        guard let youtubeURL = URL(string: "https://www.youtube.com/embed/\(videoID)")
-            else { return }
-        secondVideo.loadRequest( URLRequest(url: youtubeURL) )
+    func loadYoutubeVideo(videoID:String) {
+        let youtubeURL = URL(string: "https://www.youtube.com/embed/\(videoID)")
+        let myRequest = URLRequest(url: youtubeURL!)
+        secondVideo.loadRequest(myRequest)
     }
+    
+    func webViewDidStartLoad(_ webView: UIWebView) {
+        activityIndicator.startAnimating()
+        print("did startLoad")
+    }
+    
+    func webViewDidFinishLoad(_ webView:UIWebView) {
+        activityIndicator.stopAnimating()
+        print("did finishLoad")
+    }
+    
+    func webView(_ webView: UIWebView, didFailLoadWithError error: Error) {
+    }
+    
 
 }

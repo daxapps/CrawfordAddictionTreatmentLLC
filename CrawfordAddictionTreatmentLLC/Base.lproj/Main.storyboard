@@ -275,6 +275,9 @@ John Crawford, MD has over 30 years of experience in addiction medicine and is p
                                 <constraints>
                                     <constraint firstAttribute="height" constant="304" id="q7C-yu-eeB"/>
                                 </constraints>
+                                <connections>
+                                    <outlet property="delegate" destination="oxZ-Cv-yyl" id="SNr-ZL-jxa"/>
+                                </connections>
                             </webView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="What is Suboxone?" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VcP-eB-RTA">
                                 <rect key="frame" x="8" y="73" width="359" height="62"/>
@@ -286,12 +289,18 @@ John Crawford, MD has over 30 years of experience in addiction medicine and is p
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="7aC-5j-9wl">
+                                <rect key="frame" x="169" y="206.5" width="37" height="37"/>
+                                <color key="color" red="0.99936896559999999" green="0.74338763949999997" blue="0.53373223540000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="VcP-eB-RTA" firstAttribute="leading" secondItem="Xwc-SP-Blo" secondAttribute="leading" id="510-ue-CZR"/>
                             <constraint firstAttribute="trailing" secondItem="Xwc-SP-Blo" secondAttribute="trailing" constant="8" id="CNv-ws-IMI"/>
+                            <constraint firstItem="7aC-5j-9wl" firstAttribute="centerY" secondItem="Xwc-SP-Blo" secondAttribute="centerY" id="KSM-TX-yFh"/>
                             <constraint firstItem="VcP-eB-RTA" firstAttribute="top" secondItem="Xwc-SP-Blo" secondAttribute="top" id="SUs-6d-sv8"/>
+                            <constraint firstItem="7aC-5j-9wl" firstAttribute="centerX" secondItem="Xwc-SP-Blo" secondAttribute="centerX" id="dRL-az-X80"/>
                             <constraint firstItem="Xwc-SP-Blo" firstAttribute="centerY" secondItem="9G4-Xm-yVG" secondAttribute="centerY" id="kfc-Nm-JWz"/>
                             <constraint firstItem="Xwc-SP-Blo" firstAttribute="leading" secondItem="9G4-Xm-yVG" secondAttribute="leading" constant="8" id="srM-k4-KiE"/>
                             <constraint firstItem="VcP-eB-RTA" firstAttribute="width" secondItem="Xwc-SP-Blo" secondAttribute="width" id="yPC-Rc-sqx"/>
@@ -300,6 +309,7 @@ John Crawford, MD has over 30 years of experience in addiction medicine and is p
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="375" height="450"/>
                     <connections>
+                        <outlet property="activityIndicator" destination="7aC-5j-9wl" id="dic-eq-TPn"/>
                         <outlet property="secondVideo" destination="Xwc-SP-Blo" id="dGd-SS-ahY"/>
                     </connections>
                 </viewController>
@@ -325,6 +335,9 @@ John Crawford, MD has over 30 years of experience in addiction medicine and is p
                                 <constraints>
                                     <constraint firstAttribute="height" constant="304" id="A64-Ce-Ptt"/>
                                 </constraints>
+                                <connections>
+                                    <outlet property="delegate" destination="ctb-L7-Fmp" id="3ZR-zO-QQn"/>
+                                </connections>
                             </webView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="What are the signs of pain medicine abuse?" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="22o-vl-dyb">
                                 <rect key="frame" x="8" y="73" width="359" height="62"/>
@@ -336,12 +349,18 @@ John Crawford, MD has over 30 years of experience in addiction medicine and is p
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="yff-ZW-8Rd">
+                                <rect key="frame" x="169" y="206.5" width="37" height="37"/>
+                                <color key="color" red="0.99936896559999999" green="0.74338763949999997" blue="0.53373223540000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="22o-vl-dyb" firstAttribute="top" secondItem="UyK-IU-qtQ" secondAttribute="top" id="5ZJ-lk-Ub4"/>
                             <constraint firstItem="22o-vl-dyb" firstAttribute="width" secondItem="UyK-IU-qtQ" secondAttribute="width" id="AYW-VP-Glu"/>
+                            <constraint firstItem="yff-ZW-8Rd" firstAttribute="centerY" secondItem="UyK-IU-qtQ" secondAttribute="centerY" id="QhK-ta-BAc"/>
                             <constraint firstItem="22o-vl-dyb" firstAttribute="leading" secondItem="UyK-IU-qtQ" secondAttribute="leading" id="RF1-yf-fBd"/>
+                            <constraint firstItem="yff-ZW-8Rd" firstAttribute="centerX" secondItem="UyK-IU-qtQ" secondAttribute="centerX" id="RsU-3f-L3o"/>
                             <constraint firstAttribute="trailing" secondItem="UyK-IU-qtQ" secondAttribute="trailing" constant="8" id="oDK-dE-CWN"/>
                             <constraint firstItem="UyK-IU-qtQ" firstAttribute="leading" secondItem="Pi7-gi-ljS" secondAttribute="leading" constant="8" id="t6e-zu-TcH"/>
                             <constraint firstItem="UyK-IU-qtQ" firstAttribute="centerY" secondItem="Pi7-gi-ljS" secondAttribute="centerY" id="w96-v3-Yba"/>
@@ -350,6 +369,7 @@ John Crawford, MD has over 30 years of experience in addiction medicine and is p
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="375" height="450"/>
                     <connections>
+                        <outlet property="activityIndicator" destination="yff-ZW-8Rd" id="vq3-W8-BIl"/>
                         <outlet property="thirdVideo" destination="UyK-IU-qtQ" id="lyR-iD-44h"/>
                     </connections>
                 </viewController>
@@ -375,6 +395,9 @@ John Crawford, MD has over 30 years of experience in addiction medicine and is p
                                 <constraints>
                                     <constraint firstAttribute="height" constant="304" id="p1U-eh-AyB"/>
                                 </constraints>
+                                <connections>
+                                    <outlet property="delegate" destination="heU-53-Nh0" id="fch-fQ-1mP"/>
+                                </connections>
                             </webView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Why is Suboxone used to facilitate recovery from pain pill addiction?" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yHc-An-mSd">
                                 <rect key="frame" x="8" y="73" width="359" height="62"/>
@@ -386,20 +409,27 @@ John Crawford, MD has over 30 years of experience in addiction medicine and is p
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="BZo-f5-lHi">
+                                <rect key="frame" x="169" y="207" width="37" height="37"/>
+                                <color key="color" red="0.99936896559999999" green="0.74338763949999997" blue="0.53373223540000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="BZo-f5-lHi" firstAttribute="centerY" secondItem="Ep0-LW-tTe" secondAttribute="centerY" id="7Id-9X-H1g"/>
                             <constraint firstAttribute="trailing" secondItem="Ep0-LW-tTe" secondAttribute="trailing" constant="8" id="HA7-Gc-e29"/>
                             <constraint firstItem="yHc-An-mSd" firstAttribute="width" secondItem="Ep0-LW-tTe" secondAttribute="width" id="g5D-WJ-mxx"/>
                             <constraint firstItem="Ep0-LW-tTe" firstAttribute="centerY" secondItem="w1Y-zg-F3o" secondAttribute="centerY" id="ily-Uh-DPa"/>
                             <constraint firstItem="yHc-An-mSd" firstAttribute="top" secondItem="Ep0-LW-tTe" secondAttribute="top" id="nN9-WC-hl8"/>
                             <constraint firstItem="Ep0-LW-tTe" firstAttribute="leading" secondItem="w1Y-zg-F3o" secondAttribute="leading" constant="8" id="tde-Qb-laO"/>
+                            <constraint firstItem="BZo-f5-lHi" firstAttribute="centerX" secondItem="Ep0-LW-tTe" secondAttribute="centerX" id="v9J-IP-IaV"/>
                             <constraint firstItem="yHc-An-mSd" firstAttribute="leading" secondItem="Ep0-LW-tTe" secondAttribute="leading" id="y5h-wl-rQs"/>
                         </constraints>
                     </view>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="375" height="450"/>
                     <connections>
+                        <outlet property="activityIndicator" destination="BZo-f5-lHi" id="EXr-bt-CtG"/>
                         <outlet property="forthVideo" destination="Ep0-LW-tTe" id="AIu-4t-8U2"/>
                     </connections>
                 </viewController>
