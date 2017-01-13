@@ -17,7 +17,7 @@ class BupChatViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     // MARK: Properties
 
-    var messages: [FIRDataSnapshot]! = [FIRDataSnapshot]()
+    var messages: [FIRDataSnapshot]! = []
     var ref: FIRDatabaseReference!
     var storageRef: FIRStorageReference!
     var remoteConfig: FIRRemoteConfig!
@@ -93,7 +93,7 @@ class BupChatViewController: UIViewController, UITableViewDelegate, UITableViewD
         _authHandle = FIRAuth.auth()?.addStateDidChangeListener { (auth: FIRAuth, user: FIRUser?) in
             // refresh table data
             self.messages.removeAll(keepingCapacity: false)
-            self.tableView.reloadData()
+            self.tableView.reloadData() 
             
             //check if there is a current user
             if let activeUser = user {
