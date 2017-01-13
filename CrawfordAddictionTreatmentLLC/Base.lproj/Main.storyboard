@@ -290,7 +290,7 @@ John Crawford, MD has over 30 years of experience in addiction medicine and is p
                                 <nil key="highlightedColor"/>
                             </label>
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="7aC-5j-9wl">
-                                <rect key="frame" x="169" y="206.5" width="37" height="37"/>
+                                <rect key="frame" x="169" y="207" width="37" height="37"/>
                                 <color key="color" red="0.99936896559999999" green="0.74338763949999997" blue="0.53373223540000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </activityIndicatorView>
                         </subviews>
@@ -350,7 +350,7 @@ John Crawford, MD has over 30 years of experience in addiction medicine and is p
                                 <nil key="highlightedColor"/>
                             </label>
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="yff-ZW-8Rd">
-                                <rect key="frame" x="169" y="206.5" width="37" height="37"/>
+                                <rect key="frame" x="169" y="207" width="37" height="37"/>
                                 <color key="color" red="0.99936896559999999" green="0.74338763949999997" blue="0.53373223540000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </activityIndicatorView>
                         </subviews>
@@ -550,18 +550,18 @@ John Crawford, MD has over 30 years of experience in addiction medicine and is p
                                         <rect key="frame" x="0.0" y="28" width="375" height="69"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Neg-vr-hLN" id="7dj-sh-dM4">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="68.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="68"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="n2S-R0-TvX">
-                                                    <rect key="frame" x="54" y="17" width="33.5" height="20.5"/>
+                                                    <rect key="frame" x="54" y="16" width="34" height="21"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="jm4-Li-HFh">
-                                                    <rect key="frame" x="54" y="37.5" width="44" height="14.5"/>
+                                                    <rect key="frame" x="54" y="37" width="44" height="15"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                     <nil key="textColor"/>
@@ -600,23 +600,23 @@ John Crawford, MD has over 30 years of experience in addiction medicine and is p
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="151-fg-hbD">
-                                            <rect key="frame" x="0.0" y="68.5" width="375" height="479"/>
+                                            <rect key="frame" x="0.0" y="101" width="375" height="479"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="479" id="pdj-Fo-UfR"/>
                                             </constraints>
                                         </imageView>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="151-fg-hbD" firstAttribute="centerY" secondItem="47o-7C-coM" secondAttribute="centerY" constant="-32" id="GFL-YQ-BNL"/>
                                         <constraint firstAttribute="trailing" secondItem="151-fg-hbD" secondAttribute="trailing" id="J7c-Yr-Tcs"/>
+                                        <constraint firstItem="151-fg-hbD" firstAttribute="centerY" secondItem="47o-7C-coM" secondAttribute="centerY" id="QcN-ro-Axd"/>
                                         <constraint firstItem="151-fg-hbD" firstAttribute="leading" secondItem="47o-7C-coM" secondAttribute="leading" id="kAy-gW-vcn"/>
                                     </constraints>
                                 </view>
                                 <blurEffect style="light"/>
                             </visualEffectView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Umj-dt-I1I">
-                                <rect key="frame" x="96" y="285" width="128" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Umj-dt-I1I">
+                                <rect key="frame" x="161" y="335" width="54" height="30"/>
+                                <color key="backgroundColor" red="0.29673840350000003" green="0.61520525569999995" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="SIGN IN">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
@@ -629,12 +629,18 @@ John Crawford, MD has over 30 years of experience in addiction medicine and is p
                         <gestureRecognizers/>
                         <constraints>
                             <constraint firstAttribute="trailingMargin" secondItem="QFu-0V-wwG" secondAttribute="trailing" constant="55" id="1MG-Rk-cyT"/>
+                            <constraint firstItem="Umj-dt-I1I" firstAttribute="centerX" secondItem="Mis-0P-I8N" secondAttribute="centerX" id="DTW-qb-tMS"/>
+                            <constraint firstAttribute="trailing" secondItem="h6d-I4-lXi" secondAttribute="trailing" id="Dba-CE-P9P"/>
+                            <constraint firstItem="QFu-0V-wwG" firstAttribute="top" secondItem="h6d-I4-lXi" secondAttribute="bottom" id="GDg-DK-zaF"/>
                             <constraint firstItem="uRL-fx-m0z" firstAttribute="bottom" secondItem="vMu-It-qJf" secondAttribute="top" id="GtA-pE-dJw"/>
                             <constraint firstItem="uRL-fx-m0z" firstAttribute="trailing" secondItem="h6d-I4-lXi" secondAttribute="trailing" id="KZn-jY-K6Y"/>
                             <constraint firstItem="eAD-OM-5Xz" firstAttribute="centerY" secondItem="QFu-0V-wwG" secondAttribute="centerY" id="Ojd-Vu-0qV"/>
                             <constraint firstItem="uRL-fx-m0z" firstAttribute="leading" secondItem="Mis-0P-I8N" secondAttribute="leading" id="QAw-z8-dFb"/>
                             <constraint firstItem="eAD-OM-5Xz" firstAttribute="leading" secondItem="Mis-0P-I8N" secondAttribute="leadingMargin" constant="-7" id="Tab-bK-nO5"/>
                             <constraint firstItem="QFu-0V-wwG" firstAttribute="leading" secondItem="eAD-OM-5Xz" secondAttribute="trailing" constant="8" symbolic="YES" id="WI5-e5-bJa"/>
+                            <constraint firstItem="h6d-I4-lXi" firstAttribute="leading" secondItem="Mis-0P-I8N" secondAttribute="leading" id="Yui-O0-2B4"/>
+                            <constraint firstItem="Umj-dt-I1I" firstAttribute="centerY" secondItem="Mis-0P-I8N" secondAttribute="centerY" id="b6Z-hP-cze"/>
+                            <constraint firstItem="h6d-I4-lXi" firstAttribute="top" secondItem="Q0A-eY-6Qv" secondAttribute="bottom" id="cVi-ad-XoJ"/>
                             <constraint firstItem="uRL-fx-m0z" firstAttribute="top" secondItem="Mis-0P-I8N" secondAttribute="top" constant="20" symbolic="YES" id="eXR-Th-6B8"/>
                             <constraint firstItem="h6d-I4-lXi" firstAttribute="top" secondItem="Q0A-eY-6Qv" secondAttribute="bottom" id="lXQ-Be-QeX"/>
                             <constraint firstItem="eAD-OM-5Xz" firstAttribute="top" secondItem="h6d-I4-lXi" secondAttribute="bottom" constant="3" id="nzS-k7-Q7r"/>
@@ -696,7 +702,7 @@ John Crawford, MD has over 30 years of experience in addiction medicine and is p
             <objects>
                 <navigationController hidesBarsOnSwipe="YES" hidesBarsWhenKeyboardAppears="YES" hidesBarsWhenVerticallyCompact="YES" id="dPk-xZ-slu" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" enabled="NO" title="" id="FiP-Ha-zr1"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="bmt-Ka-MA5">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="bmt-Ka-MA5">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="0.29673840354332193" green="0.61520525568218254" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -729,11 +735,11 @@ John Crawford, MD has over 30 years of experience in addiction medicine and is p
                                         <rect key="frame" x="0.0" y="28" width="375" height="92"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="3fP-Da-HGK" id="5sL-zp-N1s">
-                                            <rect key="frame" x="0.0" y="0.0" width="342" height="91.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="342" height="91"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="66O-HI-Wrp">
-                                                    <rect key="frame" x="15" y="0.0" width="325" height="91.5"/>
+                                                    <rect key="frame" x="15" y="0.0" width="325" height="91"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <attributedString key="attributedText">
                                                         <fragment content="Title">
@@ -802,7 +808,7 @@ John Crawford, MD has over 30 years of experience in addiction medicine and is p
                                 <nil key="highlightedColor"/>
                             </label>
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="vMT-Pi-qPa">
-                                <rect key="frame" x="169" y="206.5" width="37" height="37"/>
+                                <rect key="frame" x="169" y="207" width="37" height="37"/>
                                 <color key="color" red="0.99936896559999999" green="0.74338763949999997" blue="0.53373223540000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </activityIndicatorView>
                         </subviews>
