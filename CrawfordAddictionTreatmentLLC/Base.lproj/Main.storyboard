@@ -10,9 +10,28 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Text Us View Controller-->
+        <scene sceneID="Z5S-Kc-wr2">
+            <objects>
+                <viewController id="EVF-fi-ZBI" customClass="TextUsViewController" customModule="CrawfordAddictionTreatmentLLC" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Y7h-gc-ILQ"/>
+                        <viewControllerLayoutGuide type="bottom" id="cYG-eg-tzF"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="plz-gA-XOr">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="700"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="raC-Q5-dqV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2532" y="-669"/>
+        </scene>
         <!--About-->
         <scene sceneID="hNz-n2-bh7">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
                 <viewController id="9pv-A4-QxB" customClass="FirstViewController" customModule="CrawfordAddictionTreatmentLLC" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Ia1-K6-d13"/>
@@ -25,52 +44,41 @@
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SXZ-H6-dFF">
                                 <rect key="frame" x="0.0" y="64" width="375" height="636"/>
                                 <subviews>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" misplaced="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="KQZ-1w-vlD">
-                                        <rect key="frame" x="8" y="-64" width="359" height="57"/>
-                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="57" id="IQp-P4-hSs"/>
-                                        </constraints>
-                                        <attributedString key="attributedText">
-                                            <fragment content="Crawford Addiction Treatment LLC">
-                                                <attributes>
-                                                    <color key="NSColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                    <font key="NSFont" size="35" name="SavoyeLetPlain"/>
-                                                    <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="truncatingTail" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                                </attributes>
-                                            </fragment>
-                                        </attributedString>
-                                        <nil key="highlightedColor"/>
-                                    </label>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="dna group photo cropped" translatesAutoresizingMaskIntoConstraints="NO" id="Ta3-Qc-e7i">
-                                        <rect key="frame" x="8" y="1" width="359" height="82"/>
+                                        <rect key="frame" x="8" y="19" width="359" height="121"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="82" id="EL3-6S-cGf"/>
+                                            <constraint firstAttribute="height" constant="121" id="9GL-7a-03B"/>
                                         </constraints>
                                     </imageView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="4eE-8m-YUV">
-                                        <rect key="frame" x="98" y="297" width="200" height="255"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="4eE-8m-YUV">
+                                        <rect key="frame" x="88" y="255" width="200" height="300"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TKG-in-4ks">
                                                 <rect key="frame" x="0.0" y="0.0" width="200" height="30"/>
-                                                <color key="backgroundColor" red="0.29673840350000003" green="0.61520525569999995" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="200" id="0ae-BI-2FW"/>
-                                                </constraints>
+                                                <color key="backgroundColor" red="0.015552227385342121" green="0.39508569240570068" blue="0.52259933948516846" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="15"/>
-                                                <state key="normal" title="Call To Make Appointment">
+                                                <state key="normal" title="Call Us">
                                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
                                                 <connections>
                                                     <action selector="makeCall:" destination="9pv-A4-QxB" eventType="touchUpInside" id="LH5-Eg-dET"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LKK-dr-gnl">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V6E-yp-Dgj">
                                                 <rect key="frame" x="0.0" y="45" width="200" height="30"/>
-                                                <color key="backgroundColor" red="0.29673840350000003" green="0.61520525569999995" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="200" id="9mr-ZV-JJ5"/>
-                                                </constraints>
+                                                <color key="backgroundColor" red="0.015552227389999999" green="0.39508569240000002" blue="0.52259933950000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="15"/>
+                                                <state key="normal" title="Text Us">
+                                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="sendTextMessageButtonPressed:" destination="9pv-A4-QxB" eventType="touchUpInside" id="yH4-CM-P3C"/>
+                                                    <segue destination="EVF-fi-ZBI" kind="show" id="I9g-zP-KSc"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LKK-dr-gnl">
+                                                <rect key="frame" x="0.0" y="90" width="200" height="30"/>
+                                                <color key="backgroundColor" red="0.015552227385342121" green="0.39508569240570068" blue="0.52259933948516846" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <state key="normal" title="FAQ">
                                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
@@ -79,11 +87,8 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bzo-g3-Cu3">
-                                                <rect key="frame" x="0.0" y="90" width="200" height="30"/>
-                                                <color key="backgroundColor" red="0.29673840350000003" green="0.61520525569999995" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="200" id="7yf-GR-BYa"/>
-                                                </constraints>
+                                                <rect key="frame" x="0.0" y="135" width="200" height="30"/>
+                                                <color key="backgroundColor" red="0.015552227385342121" green="0.39508569240570068" blue="0.52259933948516846" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <state key="normal" title="Videos">
                                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
@@ -92,11 +97,8 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XoL-6c-8K5">
-                                                <rect key="frame" x="0.0" y="135" width="200" height="30"/>
-                                                <color key="backgroundColor" red="0.29673840350000003" green="0.61520525569999995" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="200" id="f1p-dI-Ghx"/>
-                                                </constraints>
+                                                <rect key="frame" x="0.0" y="180" width="200" height="30"/>
+                                                <color key="backgroundColor" red="0.015552227385342121" green="0.39508569240570068" blue="0.52259933948516846" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <state key="normal" title="Directions">
                                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
@@ -105,11 +107,8 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MdS-Un-PYg">
-                                                <rect key="frame" x="0.0" y="180" width="200" height="30"/>
-                                                <color key="backgroundColor" red="0.29673840350000003" green="0.61520525569999995" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="200" id="VJF-FC-RDW"/>
-                                                </constraints>
+                                                <rect key="frame" x="0.0" y="225" width="200" height="30"/>
+                                                <color key="backgroundColor" red="0.015552227385342121" green="0.39508569240570068" blue="0.52259933948516846" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <state key="normal" title="Bup Chat">
                                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
@@ -118,11 +117,8 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rDf-6R-vFF">
-                                                <rect key="frame" x="0.0" y="225" width="200" height="30"/>
-                                                <color key="backgroundColor" red="0.29673840350000003" green="0.61520525569999995" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="200" id="vfQ-jf-LX9"/>
-                                                </constraints>
+                                                <rect key="frame" x="0.0" y="270" width="200" height="30"/>
+                                                <color key="backgroundColor" red="0.015552227385342121" green="0.39508569240570068" blue="0.52259933948516846" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <state key="normal" title="Helpful Links">
                                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
@@ -132,52 +128,63 @@
                                             </button>
                                         </subviews>
                                     </stackView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="11" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vvz-FT-D1Q" userLabel="About Paragraph">
-                                        <rect key="frame" x="19" y="83" width="336" height="198"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="198" id="zha-BA-fbU"/>
-                                        </constraints>
-                                        <string key="text">Crawford Addiction Treatment LLC is an outpatient treatment facility designed to help patients fight pain medicine addiction and provide a superior patient experience.
-
-John Crawford, MD has over 30 years of experience in addiction medicine and is passionate about exceeding your expectations.  He is a Diplomate of the American Society of Addiction Medicine and a member of the American Board of Addiction Medicine.</string>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Addiction Treatment" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vS4-Qb-E1X">
+                                        <rect key="frame" x="8" y="-22" width="359" height="23"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                         <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" misplaced="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="KQZ-1w-vlD">
+                                        <rect key="frame" x="8" y="-64" width="359" height="41"/>
+                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <attributedString key="attributedText">
+                                            <fragment content="Crawford">
+                                                <attributes>
+                                                    <color key="NSColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <font key="NSFont" size="36" name="Georgia-Bold"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="truncatingTail" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                </attributes>
+                                            </fragment>
+                                        </attributedString>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="Vvz-FT-D1Q" firstAttribute="top" secondItem="Ta3-Qc-e7i" secondAttribute="bottom" id="1ph-Oy-Ji2"/>
-                                    <constraint firstItem="KQZ-1w-vlD" firstAttribute="centerX" secondItem="SXZ-H6-dFF" secondAttribute="centerX" id="D4O-9X-TXA"/>
-                                    <constraint firstItem="Ta3-Qc-e7i" firstAttribute="top" secondItem="KQZ-1w-vlD" secondAttribute="bottom" constant="8" symbolic="YES" id="GKU-HP-QFp"/>
-                                    <constraint firstItem="Vvz-FT-D1Q" firstAttribute="centerX" secondItem="4eE-8m-YUV" secondAttribute="centerX" constant="-11" id="Qj2-AT-yFH"/>
-                                    <constraint firstItem="4eE-8m-YUV" firstAttribute="top" secondItem="Vvz-FT-D1Q" secondAttribute="bottom" constant="16" id="Rk0-Dg-PD3"/>
-                                    <constraint firstItem="Ta3-Qc-e7i" firstAttribute="centerX" secondItem="4eE-8m-YUV" secondAttribute="centerX" constant="-10.5" id="YRm-zv-12r"/>
-                                    <constraint firstItem="KQZ-1w-vlD" firstAttribute="top" secondItem="SXZ-H6-dFF" secondAttribute="top" id="bNK-WO-73h"/>
-                                    <constraint firstAttribute="trailing" secondItem="Vvz-FT-D1Q" secondAttribute="trailing" constant="20" id="cBH-qs-6VF"/>
-                                    <constraint firstItem="KQZ-1w-vlD" firstAttribute="leading" secondItem="SXZ-H6-dFF" secondAttribute="leadingMargin" id="h5v-E4-CuA"/>
-                                    <constraint firstItem="KQZ-1w-vlD" firstAttribute="trailing" secondItem="Ta3-Qc-e7i" secondAttribute="trailing" id="jgJ-Yy-2xl"/>
-                                    <constraint firstAttribute="bottom" secondItem="4eE-8m-YUV" secondAttribute="bottom" constant="20" id="n5g-Ez-0KG"/>
-                                    <constraint firstItem="Vvz-FT-D1Q" firstAttribute="leading" secondItem="SXZ-H6-dFF" secondAttribute="leading" constant="19" id="siu-PD-CAq"/>
-                                    <constraint firstItem="KQZ-1w-vlD" firstAttribute="leading" secondItem="Ta3-Qc-e7i" secondAttribute="leading" id="zVD-pD-WA6"/>
+                                    <constraint firstItem="Ta3-Qc-e7i" firstAttribute="top" secondItem="vS4-Qb-E1X" secondAttribute="bottom" constant="18" id="1Ld-MV-oIc"/>
+                                    <constraint firstAttribute="bottom" secondItem="4eE-8m-YUV" secondAttribute="bottom" constant="126" id="9Fg-bG-VqF"/>
+                                    <constraint firstItem="4eE-8m-YUV" firstAttribute="leading" secondItem="SXZ-H6-dFF" secondAttribute="leading" constant="88" id="DXo-Z9-sPH"/>
+                                    <constraint firstItem="KQZ-1w-vlD" firstAttribute="leading" secondItem="vS4-Qb-E1X" secondAttribute="leading" id="FJn-dx-fKu"/>
+                                    <constraint firstItem="KQZ-1w-vlD" firstAttribute="centerX" secondItem="SXZ-H6-dFF" secondAttribute="centerX" id="HW5-Y7-bey"/>
+                                    <constraint firstItem="vS4-Qb-E1X" firstAttribute="leading" secondItem="Ta3-Qc-e7i" secondAttribute="leading" id="OpA-tv-QcH"/>
+                                    <constraint firstItem="vS4-Qb-E1X" firstAttribute="top" secondItem="KQZ-1w-vlD" secondAttribute="bottom" constant="1" id="U9Y-B0-etU"/>
+                                    <constraint firstItem="Ta3-Qc-e7i" firstAttribute="centerX" secondItem="4eE-8m-YUV" secondAttribute="centerX" id="YDb-Tl-w7G"/>
+                                    <constraint firstItem="4eE-8m-YUV" firstAttribute="top" secondItem="Ta3-Qc-e7i" secondAttribute="bottom" constant="51" id="mk6-BI-3Mc"/>
+                                    <constraint firstItem="vS4-Qb-E1X" firstAttribute="trailing" secondItem="Ta3-Qc-e7i" secondAttribute="trailing" id="mm1-8s-1Xm"/>
+                                    <constraint firstItem="KQZ-1w-vlD" firstAttribute="trailing" secondItem="SXZ-H6-dFF" secondAttribute="trailingMargin" id="mzF-Vf-eej"/>
+                                    <constraint firstItem="KQZ-1w-vlD" firstAttribute="top" secondItem="SXZ-H6-dFF" secondAttribute="top" id="r0p-Jx-xWV"/>
+                                    <constraint firstItem="KQZ-1w-vlD" firstAttribute="trailing" secondItem="vS4-Qb-E1X" secondAttribute="trailing" id="vEK-Tz-JhN"/>
+                                    <constraint firstItem="KQZ-1w-vlD" firstAttribute="leading" secondItem="SXZ-H6-dFF" secondAttribute="leadingMargin" id="vqw-eA-Ca9"/>
                                 </constraints>
                             </scrollView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="SXZ-H6-dFF" firstAttribute="leading" secondItem="tsR-hK-woN" secondAttribute="leading" id="AqA-nY-SDq"/>
-                            <constraint firstItem="SXZ-H6-dFF" firstAttribute="bottom" secondItem="4ug-Mw-9AY" secondAttribute="top" id="kiA-g3-WAz"/>
-                            <constraint firstAttribute="trailing" secondItem="SXZ-H6-dFF" secondAttribute="trailing" id="nuB-8h-GSs"/>
-                            <constraint firstItem="SXZ-H6-dFF" firstAttribute="top" secondItem="Ia1-K6-d13" secondAttribute="bottom" id="wJd-hu-jCS"/>
+                            <constraint firstItem="SXZ-H6-dFF" firstAttribute="leading" secondItem="tsR-hK-woN" secondAttribute="leading" id="ZFO-qB-EP9"/>
+                            <constraint firstAttribute="trailing" secondItem="SXZ-H6-dFF" secondAttribute="trailing" id="blX-X9-H3Y"/>
+                            <constraint firstItem="SXZ-H6-dFF" firstAttribute="bottom" secondItem="4ug-Mw-9AY" secondAttribute="top" id="f7X-ch-xBy"/>
+                            <constraint firstItem="SXZ-H6-dFF" firstAttribute="top" secondItem="Ia1-K6-d13" secondAttribute="bottom" id="h6M-Kc-b2I"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="About" image="first" id="acW-dT-cKf"/>
                     <navigationItem key="navigationItem" id="kQ7-7i-3hI"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="375" height="700"/>
+                    <connections>
+                        <outlet property="textUsButton" destination="V6E-yp-Dgj" id="BC2-aR-RRa"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1628" y="-2.2488755622188905"/>
+            <point key="canvasLocation" x="-2546" y="13"/>
         </scene>
         <!--Videos-->
         <scene sceneID="0cs-Bh-ccG">
@@ -711,7 +718,7 @@ John Crawford, MD has over 30 years of experience in addiction medicine and is p
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="bmt-Ka-MA5">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="barTintColor" red="0.29673840354332193" green="0.61520525568218254" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="barTintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                     </navigationBar>
                     <connections>
                         <segue destination="9pv-A4-QxB" kind="relationship" relationship="rootViewController" id="UHl-Sk-iQ8"/>
@@ -719,7 +726,7 @@ John Crawford, MD has over 30 years of experience in addiction medicine and is p
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qqW-pg-4qw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2563" y="-2"/>
+            <point key="canvasLocation" x="-3378" y="-2"/>
         </scene>
         <!--FAQ-->
         <scene sceneID="wg7-f3-ORb">

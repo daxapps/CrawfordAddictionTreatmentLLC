@@ -11,6 +11,7 @@
 		E019ACB61E27E23000910847 /* HelpfulLinksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E019ACB51E27E23000910847 /* HelpfulLinksViewController.swift */; };
 		E01B038B1E1DE25D00355A07 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E01B038A1E1DE25D00355A07 /* GoogleService-Info.plist */; };
 		E0405C4D1E2172F900DA3868 /* BupChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0E7248E1E1EACEE00A7809C /* BupChatViewController.swift */; };
+		E05593671E2BB4BE00FFE9CE /* TextUsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E05593661E2BB4BE00FFE9CE /* TextUsViewController.swift */; };
 		E0D6BAB51E1A935A005A26D4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0D6BAB41E1A935A005A26D4 /* AppDelegate.swift */; };
 		E0D6BAB71E1A935A005A26D4 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0D6BAB61E1A935A005A26D4 /* FirstViewController.swift */; };
 		E0D6BABC1E1A935A005A26D4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E0D6BABA1E1A935A005A26D4 /* Main.storyboard */; };
@@ -36,6 +37,7 @@
 		CFCCB1D97B1C53EE3382378A /* Pods-CrawfordAddictionTreatmentLLC.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CrawfordAddictionTreatmentLLC.release.xcconfig"; path = "Pods/Target Support Files/Pods-CrawfordAddictionTreatmentLLC/Pods-CrawfordAddictionTreatmentLLC.release.xcconfig"; sourceTree = "<group>"; };
 		E019ACB51E27E23000910847 /* HelpfulLinksViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HelpfulLinksViewController.swift; sourceTree = "<group>"; };
 		E01B038A1E1DE25D00355A07 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		E05593661E2BB4BE00FFE9CE /* TextUsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextUsViewController.swift; sourceTree = "<group>"; };
 		E0D6BAB11E1A935A005A26D4 /* CrawfordAddictionTreatmentLLC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CrawfordAddictionTreatmentLLC.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E0D6BAB41E1A935A005A26D4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E0D6BAB61E1A935A005A26D4 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
@@ -152,6 +154,7 @@
 				E0F916571E26CEDD000172DC /* VideoViewController3.swift */,
 				E0F916591E26D2A6000172DC /* VideoViewController4.swift */,
 				E019ACB51E27E23000910847 /* HelpfulLinksViewController.swift */,
+				E05593661E2BB4BE00FFE9CE /* TextUsViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -291,6 +294,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E0D6BAD11E1B04D1005A26D4 /* FAQs.swift in Sources */,
+				E05593671E2BB4BE00FFE9CE /* TextUsViewController.swift in Sources */,
 				E0F916581E26CEDD000172DC /* VideoViewController3.swift in Sources */,
 				E0D6BAB51E1A935A005A26D4 /* AppDelegate.swift in Sources */,
 				E0405C4D1E2172F900DA3868 /* BupChatViewController.swift in Sources */,
