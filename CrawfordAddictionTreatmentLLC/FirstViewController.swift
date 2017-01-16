@@ -9,7 +9,7 @@
 import UIKit
 import MessageUI
 
-class FirstViewController: UIViewController {
+class FirstViewController: UIViewController, MFMessageComposeViewControllerDelegate {
 
     @IBOutlet weak var callButton: UIButton!
     @IBOutlet weak var textUsButton: UIButton!
@@ -52,8 +52,28 @@ class FirstViewController: UIViewController {
 //            errorAlert.show()
         }
     }
+    
+    // A wrapper function to indicate whether or not a text message can be sent from the user's device
+    func canSendText() -> Bool {
+        return MFMessageComposeViewController.canSendText()
+    }
+    
+    // Configures and returns a MFMessageComposeViewController instance
+    func configuredMessageComposeViewController() -> MFMessageComposeViewController {
+        let messageComposeVC = MFMessageComposeViewController()
+        messageComposeVC.messageComposeDelegate = self  //  Make sure to set this property to self, so that the controller can be dismissed!
+        messageComposeVC.recipients = ["3379359222"]
+        messageComposeVC.body =  ""
+        return messageComposeVC
+    }
+    
+    // MFMessageComposeViewControllerDelegate callback - dismisses the view controller when the user is finished with it
+    func messageComposeViewController(_ controller: MFMessageComposeViewController, didFinishWith result: MessageComposeResult) {
+        controller.dismiss(animated: true, completion: nil)
+    }
 
 }
+
 
 class TextMessageComposer: NSObject, MFMessageComposeViewControllerDelegate {
     
@@ -77,4 +97,5 @@ class TextMessageComposer: NSObject, MFMessageComposeViewControllerDelegate {
     }
     
 }
+
 
