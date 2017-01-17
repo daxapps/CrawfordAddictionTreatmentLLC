@@ -79,8 +79,8 @@ class BupChatViewController: UIViewController, UITableViewDelegate, UITableViewD
                 if self.user != activeUser {
                     self.user = activeUser
                     self.signedInStatus(isSignedIn: true)
-                    let name = user!.email?.components(separatedBy: "@")[0]
-                    self.displayName = name ?? ""
+                    let name = user!.email!.components(separatedBy: "@")[0]
+                    self.displayName = name
                 }
             } else {
                 // user must sign in

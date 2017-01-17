@@ -31,22 +31,9 @@ class FirstViewController: UIViewController {
 
     @IBAction func sendTextMessageButtonPressed(_ sender: Any) {
         
-        // Create a MessageComposer
-        let messageComposer = MessageComposer()
+        let url = URL(string: "sms:3379359222")!
+        UIApplication.shared.open(url)
         
-        // Make sure the device can send text messages
-        if (messageComposer.canSendText()) {
-            // Obtain a configured MFMessageComposeViewController
-            let messageComposeVC = messageComposer.configuredMessageComposeViewController()
-            
-            // Present the configured MFMessageComposeViewController instance
-            present(messageComposeVC, animated: true, completion: nil)
-        } else {
-            // Let the user know if his/her device isn't able to send text messages
-            let errorAlert = UIAlertController(title: "Cannot Send Text Message", message: "Your device is not able to send text messages.", preferredStyle: .alert)
-                //UIAlertView(title: "Cannot Send Text Message", message: "Your device is not able to send text messages.", delegate: self, cancelButtonTitle: "OK")
-            errorAlert.show(errorAlert, sender: self)
-        }
     }
     
 }
