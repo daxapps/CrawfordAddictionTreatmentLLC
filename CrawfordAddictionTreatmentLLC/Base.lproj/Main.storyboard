@@ -966,7 +966,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="y4o-Ay-oNn">
-                                        <rect key="frame" x="22.5" y="85" width="275" height="55.5"/>
+                                        <rect key="frame" x="23" y="85" width="275" height="55.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yg2-Tn-uRI">
                                                 <rect key="frame" x="0.0" y="0.0" width="275" height="20.5"/>
