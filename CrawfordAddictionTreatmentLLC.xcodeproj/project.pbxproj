@@ -81,6 +81,8 @@
 		E04BBAFE1E296DDA0010916B /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				E0D6BABA1E1A935A005A26D4 /* Main.storyboard */,
+				E0D6BABF1E1A935A005A26D4 /* LaunchScreen.storyboard */,
 				E01B038A1E1DE25D00355A07 /* GoogleService-Info.plist */,
 				E0D6BAC21E1A935A005A26D4 /* Info.plist */,
 				E0D6BABD1E1A935A005A26D4 /* Assets.xcassets */,
@@ -132,8 +134,6 @@
 		E0D6BAC91E1AC764005A26D4 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				E0D6BABF1E1A935A005A26D4 /* LaunchScreen.storyboard */,
-				E0D6BABA1E1A935A005A26D4 /* Main.storyboard */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -146,14 +146,22 @@
 				E0D6BAD21E1B0D8C005A26D4 /* AnswersViewController.swift */,
 				E0EF6D3D1E1B453300911075 /* DirectionsViewController.swift */,
 				E0E7248E1E1EACEE00A7809C /* BupChatViewController.swift */,
-				E0F916511E265CAC000172DC /* VideoViewController1.swift */,
 				E0F916531E26B4E1000172DC /* VideoListViewController.swift */,
-				E0F916551E26C9E9000172DC /* VideoViewController2.swift */,
-				E0F916571E26CEDD000172DC /* VideoViewController3.swift */,
-				E0F916591E26D2A6000172DC /* VideoViewController4.swift */,
+				E0E0AABB1E2FBAE4006C34A5 /* VideoVC */,
 				E019ACB51E27E23000910847 /* HelpfulLinksViewController.swift */,
 			);
 			name = Controller;
+			sourceTree = "<group>";
+		};
+		E0E0AABB1E2FBAE4006C34A5 /* VideoVC */ = {
+			isa = PBXGroup;
+			children = (
+				E0F916511E265CAC000172DC /* VideoViewController1.swift */,
+				E0F916551E26C9E9000172DC /* VideoViewController2.swift */,
+				E0F916571E26CEDD000172DC /* VideoViewController3.swift */,
+				E0F916591E26D2A6000172DC /* VideoViewController4.swift */,
+			);
+			name = VideoVC;
 			sourceTree = "<group>";
 		};
 		E8C5F703D6F8173FA798B0F7 /* Pods */ = {

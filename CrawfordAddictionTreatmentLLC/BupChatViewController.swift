@@ -127,11 +127,6 @@ class BupChatViewController: UIViewController, UITableViewDelegate, UITableViewD
             if status == .success {
                 print("config fetched")
                 self.remoteConfig.activateFetched()
-                //let friendlyMsgLength = self.remoteConfig["friendly_msg_length"]
-                //if friendlyMsgLength.source != .static {
-                    //self.msglength = friendlyMsgLength.numberValue!
-                //print("friend msg length config: \(self.msglength)")
-                //}
             } else {
                 print("config not fetched")
                 print("error: \(error)")
@@ -146,7 +141,6 @@ class BupChatViewController: UIViewController, UITableViewDelegate, UITableViewD
         signOutButton.isHidden = !isSignedIn
         tableView.isHidden = !isSignedIn
         textField.isHidden = !isSignedIn
-        //sendButton.isHidden = !isSignedIn
         imageMessage.isHidden = !isSignedIn
         
        if isSignedIn {
@@ -276,7 +270,7 @@ class BupChatViewController: UIViewController, UITableViewDelegate, UITableViewD
     func sendMessage(data: [String: String]) {
         var packet = data
         packet[Constants.MessageFields.name] = displayName
-        packet[Constants.MessageFields.dateTime] = Utilities().GetDate()
+        packet[Constants.MessageFields.dateTime] = Utilities().getDate()
         self.ref.child("messages").childByAutoId().setValue(packet)
     }
     

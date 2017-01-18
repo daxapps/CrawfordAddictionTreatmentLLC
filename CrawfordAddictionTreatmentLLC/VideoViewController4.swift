@@ -17,7 +17,6 @@ class VideoViewController4: UIViewController, WKUIDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         loadYoutubeVideo(videoID: "6qrwblxhfUY")
-        
     }
     
     func loadYoutubeVideo(videoID:String) {

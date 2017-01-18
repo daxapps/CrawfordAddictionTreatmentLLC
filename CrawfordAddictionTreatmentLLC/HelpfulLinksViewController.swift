@@ -53,8 +53,5 @@ class HelpfulLinksViewController: UIViewController {
             UIApplication.shared.open(url)
         }
     }
-
-    
-    
     
 }

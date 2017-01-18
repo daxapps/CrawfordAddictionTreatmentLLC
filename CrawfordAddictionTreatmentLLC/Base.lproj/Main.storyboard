@@ -605,7 +605,7 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="jm4-Li-HFh">
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="jm4-Li-HFh">
                                                     <rect key="frame" x="54" y="37" width="44" height="15"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
@@ -873,7 +873,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="0Kc-Rf-Ytg">
-                                <rect key="frame" x="0.0" y="64" width="375" height="543"/>
+                                <rect key="frame" x="0.0" y="63" width="375" height="544"/>
                             </mapView>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="y5H-pg-Nhd">
                                 <rect key="frame" x="0.0" y="607" width="375" height="44"/>
@@ -904,7 +904,7 @@
                                 </items>
                             </toolbar>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7ss-Az-E87">
-                                <rect key="frame" x="0.0" y="1" width="375" height="63"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="63"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="63" id="DD4-qh-btw"/>
                                 </constraints>
@@ -929,7 +929,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="Csr-9x-IJ8" firstAttribute="top" secondItem="y5H-pg-Nhd" secondAttribute="bottom" id="13M-WH-drM"/>
-                            <constraint firstItem="7ss-Az-E87" firstAttribute="top" secondItem="h18-o2-83M" secondAttribute="topMargin" constant="1" id="6WB-RA-E5V"/>
+                            <constraint firstItem="7ss-Az-E87" firstAttribute="top" secondItem="h18-o2-83M" secondAttribute="topMargin" id="6WB-RA-E5V"/>
                             <constraint firstItem="0Kc-Rf-Ytg" firstAttribute="top" secondItem="7ss-Az-E87" secondAttribute="bottom" id="BN4-NL-yqx"/>
                             <constraint firstAttribute="trailing" secondItem="0Kc-Rf-Ytg" secondAttribute="trailing" id="Bau-OU-NqB"/>
                             <constraint firstAttribute="trailing" secondItem="7ss-Az-E87" secondAttribute="trailing" id="MY3-fT-izD"/>

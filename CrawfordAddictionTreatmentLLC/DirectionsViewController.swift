@@ -87,7 +87,7 @@ class DirectionsViewController: UIViewController, CLLocationManagerDelegate {
         let location = CLLocationCoordinate2D(latitude: userLocation.coordinate.latitude, longitude: userLocation.coordinate.longitude)
         
         // how far to zoom in
-        let span = MKCoordinateSpanMake(0.2, 0.2)
+        let span = MKCoordinateSpanMake(0.1, 0.1)
         
         // set up region of zoom
         let region = MKCoordinateRegion(center: location, span: span)

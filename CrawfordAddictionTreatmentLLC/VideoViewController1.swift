@@ -27,13 +27,11 @@ class VideoViewController1: UIViewController, WKUIDelegate {
     }
 
     func webViewDidStartLoad(_ webView: UIWebView) {
-        //activityIndicator.isHidden = false
         activityIndicator.startAnimating()
         print("did startLoad")
     }
     
     func webViewDidFinishLoad(_ webView:UIWebView) {
-        //activityIndicator.isHidden = false
         activityIndicator.stopAnimating()
         print("did finishLoad")
     }
