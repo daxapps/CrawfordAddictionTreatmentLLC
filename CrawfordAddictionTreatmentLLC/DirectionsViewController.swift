@@ -106,5 +106,9 @@ class DirectionsViewController: UIViewController, CLLocationManagerDelegate {
             self.present(alert, animated: true, completion: nil)
         }
     }
+    @IBAction func doneButtonPressed(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
+    }
+    
 
 }

@@ -552,7 +552,7 @@
                                     <navigationItem title="Helpful Links" id="m6Q-bC-cjD">
                                         <barButtonItem key="leftBarButtonItem" systemItem="done" id="g6i-HT-uSs">
                                             <connections>
-                                                <segue destination="eaC-t2-E7H" kind="show" id="741-hK-f6u"/>
+                                                <action selector="doneButtonPressed:" destination="LPa-1g-4fb" id="cXl-a4-Q3c"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
@@ -595,18 +595,18 @@
                                         <rect key="frame" x="0.0" y="28" width="320" height="69"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Neg-vr-hLN" id="7dj-sh-dM4">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="68.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="68"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="n2S-R0-TvX">
-                                                    <rect key="frame" x="54" y="17" width="33.5" height="20.5"/>
+                                                    <rect key="frame" x="54" y="16" width="34" height="21"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="jm4-Li-HFh">
-                                                    <rect key="frame" x="54" y="37.5" width="44" height="14.5"/>
+                                                    <rect key="frame" x="54" y="37" width="44" height="15"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                     <nil key="textColor"/>
@@ -761,11 +761,11 @@
                                         <rect key="frame" x="0.0" y="28" width="320" height="92"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="3fP-Da-HGK" id="5sL-zp-N1s">
-                                            <rect key="frame" x="0.0" y="0.0" width="287" height="91.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="287" height="91"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="66O-HI-Wrp">
-                                                    <rect key="frame" x="15" y="0.0" width="270" height="91.5"/>
+                                                    <rect key="frame" x="15" y="0.0" width="270" height="91"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <attributedString key="attributedText">
                                                         <fragment content="Title">
@@ -913,7 +913,7 @@
                                     <navigationItem id="8rb-gp-gAZ">
                                         <barButtonItem key="leftBarButtonItem" systemItem="done" id="3ek-A9-vHN">
                                             <connections>
-                                                <segue destination="eaC-t2-E7H" kind="show" id="6XI-Qy-Zgt"/>
+                                                <action selector="doneButtonPressed:" destination="FgV-jc-t3h" id="ZZ8-1u-ap2"/>
                                             </connections>
                                         </barButtonItem>
                                         <barButtonItem key="rightBarButtonItem" title="Directions" id="CPA-WS-cfj">
@@ -966,10 +966,10 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="y4o-Ay-oNn">
-                                        <rect key="frame" x="23" y="85" width="275" height="55.5"/>
+                                        <rect key="frame" x="23" y="85" width="275" height="56"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yg2-Tn-uRI">
-                                                <rect key="frame" x="0.0" y="0.0" width="275" height="20.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="275" height="21"/>
                                                 <attributedString key="attributedText">
                                                     <fragment content="Label">
                                                         <attributes>
@@ -981,7 +981,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="TopLeft" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="wordWrap" numberOfLines="17" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0um-fx-VIk">
-                                                <rect key="frame" x="0.0" y="35.5" width="275" height="20"/>
+                                                <rect key="frame" x="0.0" y="36" width="275" height="20"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="275" id="Zav-cl-FgV"/>
                                                 </constraints>
@@ -1114,7 +1114,4 @@
         <image name="quickaction_icon_home" width="29" height="28"/>
         <image name="video-icon" width="29" height="29"/>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="741-hK-f6u"/>
-    </inferredMetricsTieBreakers>
 </document>
