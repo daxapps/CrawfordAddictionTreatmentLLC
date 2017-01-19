@@ -1,5 +1,5 @@
 //
-//  FirstViewController.swift
+//  HomeViewController.swift
 //  CrawfordAddictionTreatmentLLC
 //
 //  Created by Jason Crawford on 1/2/17.
@@ -9,7 +9,7 @@
 import UIKit
 import MessageUI
 
-class FirstViewController: UIViewController {
+class HomeViewController: UIViewController {
 
     @IBOutlet weak var callButton: UIButton!
     @IBOutlet weak var textUsButton: UIButton!
