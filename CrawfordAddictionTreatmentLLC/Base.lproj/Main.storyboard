@@ -720,10 +720,10 @@
                         <outlet property="dismissKeyboardRecognizer" destination="8JJ-lB-xc2" id="Osq-eX-5ke"/>
                         <outlet property="imageDisplay" destination="151-fg-hbD" id="3mT-3l-OiW"/>
                         <outlet property="imageMessage" destination="eAD-OM-5Xz" id="pFu-9u-xfb"/>
+                        <outlet property="messageTextField" destination="QFu-0V-wwG" id="H39-gK-qH8"/>
+                        <outlet property="messagesTableView" destination="h6d-I4-lXi" id="Dmc-U1-70I"/>
                         <outlet property="signInButton" destination="Umj-dt-I1I" id="4k0-dX-hk7"/>
                         <outlet property="signOutButton" destination="6NQ-mq-SPU" id="f2V-qZ-0lI"/>
-                        <outlet property="tableView" destination="h6d-I4-lXi" id="QvN-sA-7xQ"/>
-                        <outlet property="textField" destination="QFu-0V-wwG" id="rid-vL-5gB"/>
                         <outlet property="view" destination="47o-7C-coM" id="JOa-te-UwL"/>
                     </connections>
                 </viewController>
@@ -966,10 +966,10 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="y4o-Ay-oNn">
-                                        <rect key="frame" x="23" y="85" width="275" height="56"/>
+                                        <rect key="frame" x="23" y="85" width="275" height="55.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yg2-Tn-uRI">
-                                                <rect key="frame" x="0.0" y="0.0" width="275" height="21"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="275" height="20.5"/>
                                                 <attributedString key="attributedText">
                                                     <fragment content="Label">
                                                         <attributes>
@@ -981,7 +981,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="TopLeft" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="wordWrap" numberOfLines="17" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0um-fx-VIk">
-                                                <rect key="frame" x="0.0" y="36" width="275" height="20"/>
+                                                <rect key="frame" x="0.0" y="35.5" width="275" height="20"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="275" id="Zav-cl-FgV"/>
                                                 </constraints>

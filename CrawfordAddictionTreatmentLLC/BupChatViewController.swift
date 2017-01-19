@@ -29,8 +29,8 @@ class BupChatViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     // MARK: Outlets
     
-    @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var textField: UITextField!
+    @IBOutlet weak var messagesTableView: UITableView!
+    @IBOutlet weak var messageTextField: UITextField!
     @IBOutlet weak var imageMessage: UIButton!
     @IBOutlet weak var signOutButton: UIButton!
     @IBOutlet weak var signInButton: UIButton!
@@ -43,9 +43,9 @@ class BupChatViewController: UIViewController, UITableViewDelegate, UITableViewD
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.tableView.delegate = self
-        self.tableView.dataSource = self
-        self.textField.delegate = self
+//        self.tableView.delegate = self
+//        self.tableView.dataSource = self
+//        self.textField.delegate = self
 
         configureAuth()
     }
@@ -66,12 +66,14 @@ class BupChatViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     func configureAuth() {
         // config auth providers
-        FUIAuth.defaultAuthUI()?.providers = [FUIGoogleAuth()]
+        //FUIAuth.defaultAuthUI()?.providers = [FUIGoogleAuth()]
+        let provider: [FUIAuthProvider] = [FUIGoogleAuth()]
+        FUIAuth.defaultAuthUI()?.providers = provider
         // listen for changes in authorization state
         _authHandle = FIRAuth.auth()?.addStateDidChangeListener { (auth: FIRAuth, user: FIRUser?) in
             // refresh table data
             self.messages.removeAll(keepingCapacity: false)
-            self.tableView.reloadData() 
+            self.messagesTableView.reloadData() 
             
             //check if there is a current user
             if let activeUser = user {
@@ -90,16 +92,11 @@ class BupChatViewController: UIViewController, UITableViewDelegate, UITableViewD
         }
     }
     
-    deinit {
-        self.ref.child("messages").removeObserver(withHandle: _refHandle)
-        FIRAuth.auth()?.removeStateDidChangeListener(_authHandle)
-    }
-    
     func configureDatabase () {
         ref = FIRDatabase.database().reference()
-        _refHandle = self.ref.child("messages").observe(.childAdded, with: {(snapshot: FIRDataSnapshot) -> Void in
+        _refHandle = self.ref.child("messages").observe(.childAdded, with: {(snapshot: FIRDataSnapshot) in
             self.messages.append(snapshot)
-            self.tableView.insertRows(at: [IndexPath(row: self.messages.count-1, section: 0)], with: .automatic)
+            self.messagesTableView.insertRows(at: [IndexPath(row: self.messages.count-1, section: 0)], with: .automatic)
             self.scrollToBottomMessage()
         })
     }
@@ -107,6 +104,11 @@ class BupChatViewController: UIViewController, UITableViewDelegate, UITableViewD
     func configureStorage() {
         // configure storage using your firebase storage
         storageRef = FIRStorage.storage().reference()
+    }
+    
+    deinit {
+        ref.child("messages").removeObserver(withHandle: _refHandle)
+        FIRAuth.auth()?.removeStateDidChangeListener(_authHandle)
     }
     
     func configureRemoteConfig() {
@@ -139,16 +141,18 @@ class BupChatViewController: UIViewController, UITableViewDelegate, UITableViewD
     func signedInStatus(isSignedIn: Bool) {
         signInButton.isHidden = isSignedIn
         signOutButton.isHidden = !isSignedIn
-        tableView.isHidden = !isSignedIn
-        textField.isHidden = !isSignedIn
+        messagesTableView.isHidden = !isSignedIn
+        messageTextField.isHidden = !isSignedIn
         imageMessage.isHidden = !isSignedIn
+        backgroundBlur.effect = UIBlurEffect(style: .light)
         
        if isSignedIn {
             // remove background blur (will use when showing image messages)
-            tableView.rowHeight = UITableViewAutomaticDimension
-            tableView.estimatedRowHeight = 122.0
+            messagesTableView.rowHeight = UITableViewAutomaticDimension
+            messagesTableView.estimatedRowHeight = 122.0
             backgroundBlur.effect = nil
-            textField.delegate = self
+            messageTextField.delegate = self
+            subscribeToKeyboardNotifications()
             
             // Set up app to send and receive messages when signed in
             configureDatabase()
@@ -165,16 +169,16 @@ class BupChatViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     // MARK: TableView
     
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
-    }
+//    func numberOfSections(in tableView: UITableView) -> Int {
+//        return 1
+//    }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return messages.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell: UITableViewCell = self.tableView.dequeueReusableCell(withIdentifier: "tableViewCell", for: indexPath)
+        let cell: UITableViewCell = self.messagesTableView.dequeueReusableCell(withIdentifier: "tableViewCell", for: indexPath)
         
         let messageSnap: FIRDataSnapshot! = self.messages[indexPath.row]
         let message = messageSnap.value as! [String:String]
@@ -183,30 +187,36 @@ class BupChatViewController: UIViewController, UITableViewDelegate, UITableViewD
         // if photo message, then grab image and display it
         if let imageUrl = message[Constants.MessageFields.imageUrl] {
             cell.textLabel?.text = "sent by: \(name)"
-            // download and display image
-            FIRStorage.storage().reference(forURL: imageUrl).data(withMaxSize: INT64_MAX) { (data, error) in
-                guard error == nil else {
-                    print("error downloading: \(error!)")
-                    return
-                }
-                // display image
-                let messageImage = UIImage.init(data: data!, scale: 50)
-                // check if the cell is still on screen, if so, update cell image
-                if cell == tableView.cellForRow(at: indexPath) {
-                    DispatchQueue.main.async {
-                        cell.imageView?.image = messageImage
-                        cell.setNeedsLayout()
+            // image already exists in cache
+            if let cachedImage = imageCache.object(forKey: imageUrl as NSString) {
+                cell.imageView?.image = cachedImage
+                cell.setNeedsLayout()
+            } else {
+                // download and display image
+                FIRStorage.storage().reference(forURL: imageUrl).data(withMaxSize: INT64_MAX) { (data, error) in
+                    guard error == nil else {
+                        print("error downloading: \(error!)")
+                        return
+                    }
+                    // display image
+                    let messageImage = UIImage.init(data: data!, scale: 50)
+                    // check if the cell is still on screen, if so, update cell image
+                    if cell == tableView.cellForRow(at: indexPath) {
+                        DispatchQueue.main.async {
+                            cell.imageView?.image = messageImage
+                            cell.setNeedsLayout()
+                        }
                     }
                 }
             }
         } else {
-            if let text = message[Constants.MessageFields.text] as String! {
+            let text = message[Constants.MessageFields.text] ?? "[message]"
                 cell.textLabel?.text = name + ": " + text
                 cell.imageView?.image = placeholderImage
-            }
-            if let subText = message[Constants.MessageFields.dateTime] {
-                cell.detailTextLabel?.text = subText
-            }
+            
+//            if let subText = message[Constants.MessageFields.dateTime] {
+//                cell.detailTextLabel?.text = subText
+//            }
         }
         
         return cell
@@ -219,7 +229,7 @@ class BupChatViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         // if message contains an image, then display the image
-        guard !textField.isFirstResponder else { return }
+        guard !messageTextField.isFirstResponder else { return }
         
         // unpack message from firebase data snapshot
         let messageSnapshot: FIRDataSnapshot! = messages[(indexPath as NSIndexPath).row]
@@ -246,7 +256,7 @@ class BupChatViewController: UIViewController, UITableViewDelegate, UITableViewD
     func showImageDisplay(_ image: UIImage) {
         dismissImageRecognizer.isEnabled = true
         dismissKeyboardRecognizer.isEnabled = false
-        textField.isEnabled = false
+        messageTextField.isEnabled = false
         UIView.animate(withDuration: 0.25) {
             self.backgroundBlur.effect = UIBlurEffect(style: .light)
             self.imageDisplay.alpha = 1.0
@@ -270,7 +280,7 @@ class BupChatViewController: UIViewController, UITableViewDelegate, UITableViewD
     func sendMessage(data: [String: String]) {
         var packet = data
         packet[Constants.MessageFields.name] = displayName
-        packet[Constants.MessageFields.dateTime] = Utilities().getDate()
+        //packet[Constants.MessageFields.dateTime] = Utilities().getDate()
         self.ref.child("messages").childByAutoId().setValue(packet)
     }
     
@@ -307,8 +317,8 @@ class BupChatViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     func scrollToBottomMessage() {
         if messages.count == 0 { return }
-        let bottomMessageIndex = IndexPath(row: tableView.numberOfRows(inSection: 0) - 1, section: 0)
-        tableView.scrollToRow(at: bottomMessageIndex, at: .bottom, animated: true)
+        let bottomMessageIndex = IndexPath(row: messagesTableView.numberOfRows(inSection: 0) - 1, section: 0)
+        messagesTableView.scrollToRow(at: bottomMessageIndex, at: .bottom, animated: true)
     }
     
     // MARK: Actions
@@ -340,7 +350,7 @@ class BupChatViewController: UIViewController, UITableViewDelegate, UITableViewD
                 self.imageDisplay.alpha = 0.0
             }
             dismissImageRecognizer.isEnabled = false
-            textField.isEnabled = true
+            messageTextField.isEnabled = true
         }
     }
     
@@ -357,13 +367,13 @@ class BupChatViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     func keyboardWillShow(_ notification: NSNotification) {
         resetViewFrame()
-        if textField.isFirstResponder {
+        if messageTextField.isFirstResponder {
             view.frame.origin.y = getKeyboardHeight(notification) * -1
         }
     }
     
     func keyboardWillHide(_ notification: NSNotification) {
-        if textField.isFirstResponder {
+        if messageTextField.isFirstResponder {
             resetViewFrame()
         }
     }
@@ -394,8 +404,8 @@ class BupChatViewController: UIViewController, UITableViewDelegate, UITableViewD
     }
     
     func resignTextfield() {
-        if textField.isFirstResponder {
-            textField.resignFirstResponder()
+        if messageTextField.isFirstResponder {
+            messageTextField.resignFirstResponder()
         }
     }
     
