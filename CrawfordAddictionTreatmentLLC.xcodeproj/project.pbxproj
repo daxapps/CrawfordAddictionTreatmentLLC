@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		02EE7DAB7F39736009345DB2 /* Pods_CrawfordAddictionTreatmentLLC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DAE95C633C4CDE9127B7F82 /* Pods_CrawfordAddictionTreatmentLLC.framework */; };
+		6A8BF66273FE7BA19D549B9A /* Pods_CrawfordAddictionTreatmentLLC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37351D465368C14E8A4A018A /* Pods_CrawfordAddictionTreatmentLLC.framework */; };
 		E019ACB61E27E23000910847 /* HelpfulLinksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E019ACB51E27E23000910847 /* HelpfulLinksViewController.swift */; };
 		E01B038B1E1DE25D00355A07 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E01B038A1E1DE25D00355A07 /* GoogleService-Info.plist */; };
 		E0405C4D1E2172F900DA3868 /* BupChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0E7248E1E1EACEE00A7809C /* BupChatViewController.swift */; };
@@ -31,9 +31,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		1DAE95C633C4CDE9127B7F82 /* Pods_CrawfordAddictionTreatmentLLC.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CrawfordAddictionTreatmentLLC.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		3255B04F1C3A29789425FF86 /* Pods-CrawfordAddictionTreatmentLLC.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CrawfordAddictionTreatmentLLC.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CrawfordAddictionTreatmentLLC/Pods-CrawfordAddictionTreatmentLLC.debug.xcconfig"; sourceTree = "<group>"; };
-		CFCCB1D97B1C53EE3382378A /* Pods-CrawfordAddictionTreatmentLLC.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CrawfordAddictionTreatmentLLC.release.xcconfig"; path = "Pods/Target Support Files/Pods-CrawfordAddictionTreatmentLLC/Pods-CrawfordAddictionTreatmentLLC.release.xcconfig"; sourceTree = "<group>"; };
+		37351D465368C14E8A4A018A /* Pods_CrawfordAddictionTreatmentLLC.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CrawfordAddictionTreatmentLLC.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E019ACB51E27E23000910847 /* HelpfulLinksViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HelpfulLinksViewController.swift; sourceTree = "<group>"; };
 		E01B038A1E1DE25D00355A07 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		E07D0CFF1E3285D5008FA290 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -56,6 +54,8 @@
 		E0F916551E26C9E9000172DC /* VideoViewController2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoViewController2.swift; sourceTree = "<group>"; };
 		E0F916571E26CEDD000172DC /* VideoViewController3.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoViewController3.swift; sourceTree = "<group>"; };
 		E0F916591E26D2A6000172DC /* VideoViewController4.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoViewController4.swift; sourceTree = "<group>"; };
+		EE4C4C58EB4A386DFAF9DF47 /* Pods-CrawfordAddictionTreatmentLLC.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CrawfordAddictionTreatmentLLC.release.xcconfig"; path = "Pods/Target Support Files/Pods-CrawfordAddictionTreatmentLLC/Pods-CrawfordAddictionTreatmentLLC.release.xcconfig"; sourceTree = "<group>"; };
+		F736DA82036961F14CF408F0 /* Pods-CrawfordAddictionTreatmentLLC.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CrawfordAddictionTreatmentLLC.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CrawfordAddictionTreatmentLLC/Pods-CrawfordAddictionTreatmentLLC.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,7 +63,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				02EE7DAB7F39736009345DB2 /* Pods_CrawfordAddictionTreatmentLLC.framework in Frameworks */,
+				6A8BF66273FE7BA19D549B9A /* Pods_CrawfordAddictionTreatmentLLC.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -73,9 +73,18 @@
 		94E05C036A70B7E3C3ADDDB8 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				1DAE95C633C4CDE9127B7F82 /* Pods_CrawfordAddictionTreatmentLLC.framework */,
+				37351D465368C14E8A4A018A /* Pods_CrawfordAddictionTreatmentLLC.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		CB1C60807DB74453C1F5B515 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				F736DA82036961F14CF408F0 /* Pods-CrawfordAddictionTreatmentLLC.debug.xcconfig */,
+				EE4C4C58EB4A386DFAF9DF47 /* Pods-CrawfordAddictionTreatmentLLC.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 		E04BBAFE1E296DDA0010916B /* Assets */ = {
@@ -95,8 +104,8 @@
 			children = (
 				E0D6BAB31E1A935A005A26D4 /* CrawfordAddictionTreatmentLLC */,
 				E0D6BAB21E1A935A005A26D4 /* Products */,
-				E8C5F703D6F8173FA798B0F7 /* Pods */,
 				94E05C036A70B7E3C3ADDDB8 /* Frameworks */,
+				CB1C60807DB74453C1F5B515 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -164,15 +173,6 @@
 			name = VideoVC;
 			sourceTree = "<group>";
 		};
-		E8C5F703D6F8173FA798B0F7 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				3255B04F1C3A29789425FF86 /* Pods-CrawfordAddictionTreatmentLLC.debug.xcconfig */,
-				CFCCB1D97B1C53EE3382378A /* Pods-CrawfordAddictionTreatmentLLC.release.xcconfig */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -180,12 +180,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E0D6BAC51E1A935A005A26D4 /* Build configuration list for PBXNativeTarget "CrawfordAddictionTreatmentLLC" */;
 			buildPhases = (
-				7C788171AC10ABF390104BFE /* [CP] Check Pods Manifest.lock */,
+				9E8255E1389E7E6D7CF44FF4 /* [CP] Check Pods Manifest.lock */,
 				E0D6BAAD1E1A935A005A26D4 /* Sources */,
 				E0D6BAAE1E1A935A005A26D4 /* Frameworks */,
 				E0D6BAAF1E1A935A005A26D4 /* Resources */,
-				14B94152657AB1A987F5E599 /* [CP] Embed Pods Frameworks */,
-				033B0ED84FE5C5A88DCA73D4 /* [CP] Copy Pods Resources */,
+				BF5A5A0D4F34C06D42D23FDC /* [CP] Embed Pods Frameworks */,
+				FBA853BA51715EC3E7C20410 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -246,22 +246,22 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		033B0ED84FE5C5A88DCA73D4 /* [CP] Copy Pods Resources */ = {
+		9E8255E1389E7E6D7CF44FF4 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "[CP] Copy Pods Resources";
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CrawfordAddictionTreatmentLLC/Pods-CrawfordAddictionTreatmentLLC-resources.sh\"\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		14B94152657AB1A987F5E599 /* [CP] Embed Pods Frameworks */ = {
+		BF5A5A0D4F34C06D42D23FDC /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -276,19 +276,19 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CrawfordAddictionTreatmentLLC/Pods-CrawfordAddictionTreatmentLLC-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		7C788171AC10ABF390104BFE /* [CP] Check Pods Manifest.lock */ = {
+		FBA853BA51715EC3E7C20410 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "[CP] Check Pods Manifest.lock";
+			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CrawfordAddictionTreatmentLLC/Pods-CrawfordAddictionTreatmentLLC-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -432,7 +432,7 @@
 		};
 		E0D6BAC61E1A935A005A26D4 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3255B04F1C3A29789425FF86 /* Pods-CrawfordAddictionTreatmentLLC.debug.xcconfig */;
+			baseConfigurationReference = F736DA82036961F14CF408F0 /* Pods-CrawfordAddictionTreatmentLLC.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = SJRX8SM5HE;
@@ -447,7 +447,7 @@
 		};
 		E0D6BAC71E1A935A005A26D4 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = CFCCB1D97B1C53EE3382378A /* Pods-CrawfordAddictionTreatmentLLC.release.xcconfig */;
+			baseConfigurationReference = EE4C4C58EB4A386DFAF9DF47 /* Pods-CrawfordAddictionTreatmentLLC.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = SJRX8SM5HE;

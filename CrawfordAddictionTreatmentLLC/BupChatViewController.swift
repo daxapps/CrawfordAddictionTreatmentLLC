@@ -43,9 +43,9 @@ class BupChatViewController: UIViewController, UITableViewDelegate, UITableViewD
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        self.tableView.delegate = self
-//        self.tableView.dataSource = self
-//        self.textField.delegate = self
+        self.messagesTableView.delegate = self
+        self.messagesTableView.dataSource = self
+        self.messageTextField.delegate = self
 
         configureAuth()
     }
@@ -163,15 +163,15 @@ class BupChatViewController: UIViewController, UITableViewDelegate, UITableViewD
     }
     
     func loginSession() {
-        let authViewController = FUIAuth.defaultAuthUI()?.authViewController()
-        present(authViewController!, animated: true, completion: nil)
+        let authViewController = FUIAuth.defaultAuthUI()!.authViewController()
+        present(authViewController, animated: true, completion: nil)
     }
     
     // MARK: TableView
     
-//    func numberOfSections(in tableView: UITableView) -> Int {
-//        return 1
-//    }
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return messages.count

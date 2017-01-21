@@ -643,20 +643,13 @@
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="47o-7C-coM">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="499"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                    <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="151-fg-hbD">
-                                            <rect key="frame" x="0.0" y="11" width="320" height="479"/>
-                                        </imageView>
-                                    </subviews>
-                                    <constraints>
-                                        <constraint firstItem="151-fg-hbD" firstAttribute="top" secondItem="47o-7C-coM" secondAttribute="top" constant="11" id="DLf-lb-b3v"/>
-                                        <constraint firstAttribute="trailing" secondItem="151-fg-hbD" secondAttribute="trailing" id="E1x-Fz-fcW"/>
-                                        <constraint firstItem="151-fg-hbD" firstAttribute="leading" secondItem="47o-7C-coM" secondAttribute="leading" id="gkn-Ua-2cG"/>
-                                        <constraint firstAttribute="bottom" secondItem="151-fg-hbD" secondAttribute="bottom" constant="9" id="uif-UZ-eZZ"/>
-                                    </constraints>
                                 </view>
                                 <blurEffect style="light"/>
                             </visualEffectView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="151-fg-hbD">
+                                <rect key="frame" x="0.0" y="44" width="320" height="479"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Umj-dt-I1I">
                                 <rect key="frame" x="133" y="269" width="54" height="30"/>
                                 <color key="backgroundColor" red="0.29673840350000003" green="0.61520525569999995" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -721,7 +714,7 @@
                         <outlet property="imageDisplay" destination="151-fg-hbD" id="3mT-3l-OiW"/>
                         <outlet property="imageMessage" destination="eAD-OM-5Xz" id="pFu-9u-xfb"/>
                         <outlet property="messageTextField" destination="QFu-0V-wwG" id="H39-gK-qH8"/>
-                        <outlet property="messagesTableView" destination="h6d-I4-lXi" id="Dmc-U1-70I"/>
+                        <outlet property="messagesTableView" destination="h6d-I4-lXi" id="SjY-U5-W9Y"/>
                         <outlet property="signInButton" destination="Umj-dt-I1I" id="4k0-dX-hk7"/>
                         <outlet property="signOutButton" destination="6NQ-mq-SPU" id="f2V-qZ-0lI"/>
                         <outlet property="view" destination="47o-7C-coM" id="JOa-te-UwL"/>
@@ -739,7 +732,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="-1950" y="868.30985915492954"/>
+            <point key="canvasLocation" x="-1808" y="849"/>
         </scene>
         <!--FAQ-->
         <scene sceneID="wg7-f3-ORb">
