@@ -45,7 +45,10 @@ typedef void (^FUIAuthAlertActionHandler)(void);
 /** @fn init
     @brief Please use @c initWithNibName:bundle:authUI:.
  */
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wnullability"
 - (nullable instancetype)init NS_UNAVAILABLE;
+#pragma clang diagnostic pop
 
 /** @fn initWithStyle:
     @brief Please use @c initWithNibName:bundle:authUI:.
