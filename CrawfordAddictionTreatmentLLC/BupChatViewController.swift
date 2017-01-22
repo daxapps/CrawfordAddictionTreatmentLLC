@@ -253,6 +253,7 @@ class BupChatViewController: UIViewController, UITableViewDelegate, UITableViewD
                 FIRStorage.storage().reference(forURL: imageUrl).data(withMaxSize: INT64_MAX){ (data, error) in
                     guard error == nil else {
                         self.showAlert(title: "Unable to Display Image", message: "Try Again Later")
+                        self.activityIndicator.stopAnimating()
                         print("Error downloading: \(error!)")
                         return
                     }
@@ -308,6 +309,7 @@ class BupChatViewController: UIViewController, UITableViewDelegate, UITableViewD
         storageRef!.child(imagePath).put(photoData, metadata: metadata) { (metadata, error) in
             if let error = error {
                 self.showAlert(title: "Unable to Send Image", message: "Try Again Later")
+                self.activityIndicator.stopAnimating()
                 print("error uploading: \(error)")
                 return
             }
