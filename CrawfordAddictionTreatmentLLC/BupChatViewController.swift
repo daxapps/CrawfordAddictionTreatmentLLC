@@ -69,7 +69,6 @@ class BupChatViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     func configureAuth() {
         // config auth providers
-        //FUIAuth.defaultAuthUI()?.providers = [FUIGoogleAuth()]
         let provider: [FUIAuthProvider] = [FUIGoogleAuth()]
         FUIAuth.defaultAuthUI()?.providers = provider
         // listen for changes in authorization state
@@ -403,6 +402,7 @@ class BupChatViewController: UIViewController, UITableViewDelegate, UITableViewD
         let data = [Constants.MessageFields.text: textField.text! as String]
         sendMessage(data: data)
         textField.text = ""
+        activityIndicator.stopAnimating()
         return true
     }
     
