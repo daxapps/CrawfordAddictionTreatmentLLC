@@ -10,19 +10,8 @@ import UIKit
 
 class VideoListViewController: UIViewController {
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-    }
-
     @IBAction func video1Pressed(_ sender: Any) {
 
-    }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        
     }
     
 

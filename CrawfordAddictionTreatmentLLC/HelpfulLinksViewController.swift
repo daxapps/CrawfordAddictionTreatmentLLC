@@ -10,12 +10,6 @@ import UIKit
 
 class HelpfulLinksViewController: UIViewController {
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-    }
-
     @IBAction func GoodRxButtonPressed(_ sender: Any) {
         if let url = URL(string: "https://m.goodrx.com") {
                         UIApplication.shared.open(url)
