@@ -44,7 +44,7 @@ class DirectionsViewController: UIViewController, CLLocationManagerDelegate {
         if let url = URL(string: "http://maps.apple.com/maps?daddr=30.230607,-93.219534") {
             UIApplication.shared.open(url, options: [:], completionHandler: nil)
         } else {
-            displayAlert(message: "Something's not quite right. Please try again later.")
+            showAlert(title: "Unable to Display Directions", message: "Try Again Later")
         }
         
     }
@@ -96,16 +96,6 @@ class DirectionsViewController: UIViewController, CLLocationManagerDelegate {
         
     }
     
-    // MARK: Display alert
-    
-    func displayAlert(message: String, completionHandler: ((UIAlertAction) -> Void)? = nil) {
-        performUIUpdatesOnMain {
-            
-            let alert = UIAlertController(title: "", message: message, preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: "Got it", style: .default, handler: completionHandler))
-            self.present(alert, animated: true, completion: nil)
-        }
-    }
     @IBAction func doneButtonPressed(_ sender: Any) {
         dismiss(animated: true, completion: nil)
     }

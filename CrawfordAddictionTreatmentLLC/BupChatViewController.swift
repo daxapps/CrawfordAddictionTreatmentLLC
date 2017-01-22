@@ -223,10 +223,6 @@ class BupChatViewController: UIViewController, UITableViewDelegate, UITableViewD
             let text = message[Constants.MessageFields.text] ?? "[message]"
                 cell.textLabel?.text = name + ": " + text
                 cell.imageView?.image = placeholderImage
-            
-//            if let subText = message[Constants.MessageFields.dateTime] {
-//                cell.detailTextLabel?.text = subText
-//            }
         }
         
         return cell
@@ -285,7 +281,7 @@ class BupChatViewController: UIViewController, UITableViewDelegate, UITableViewD
             
         }
         picker.dismiss(animated: true, completion: nil)
-        self.activityIndicator.startAnimating()
+        activityIndicator.startAnimating()
     }
     
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
@@ -317,17 +313,6 @@ class BupChatViewController: UIViewController, UITableViewDelegate, UITableViewD
             // use sendMessage to add imageURL to database
             self.sendMessage(data: [Constants.MessageFields.imageUrl: self.storageRef!.child((metadata?.path)!).description])
             self.activityIndicator.startAnimating()
-        }
-    }
-    
-    // MARK: Alert
-    
-    func showAlert(title: String, message: String) {
-        DispatchQueue.main.async {
-            let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
-            let dismissAction = UIAlertAction(title: "Dismiss", style: .destructive, handler: nil)
-            alert.addAction(dismissAction)
-            self.present(alert, animated: true, completion: nil)
         }
     }
     
@@ -426,6 +411,17 @@ class BupChatViewController: UIViewController, UITableViewDelegate, UITableViewD
             messageTextField.resignFirstResponder()
         }
     }
+}
+
+extension UIViewController {
     
-    
+    // MARK: Alert
+    func showAlert(title: String, message: String) {
+        DispatchQueue.main.async {
+            let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+            let dismissAction = UIAlertAction(title: "Dismiss", style: .destructive, handler: nil)
+            alert.addAction(dismissAction)
+            self.present(alert, animated: true, completion: nil)
+        }
+    }
 }
