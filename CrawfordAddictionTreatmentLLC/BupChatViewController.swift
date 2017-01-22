@@ -38,6 +38,8 @@ class BupChatViewController: UIViewController, UITableViewDelegate, UITableViewD
     @IBOutlet weak var imageDisplay: UIImageView!
     @IBOutlet var dismissImageRecognizer: UITapGestureRecognizer!
     @IBOutlet var dismissKeyboardRecognizer: UITapGestureRecognizer!
+    
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
 
     
     override func viewDidLoad() {
@@ -61,6 +63,7 @@ class BupChatViewController: UIViewController, UITableViewDelegate, UITableViewD
  
         unsubscribeFromKeyboardNotifications()
     }
+    
     
     // MARK: Config
     
@@ -195,16 +198,22 @@ class BupChatViewController: UIViewController, UITableViewDelegate, UITableViewD
                 // download and display image
                 FIRStorage.storage().reference(forURL: imageUrl).data(withMaxSize: INT64_MAX) { (data, error) in
                     guard error == nil else {
+                        self.showAlert(title: "Unable to Download Image", message: "Try Agian Later")
                         print("error downloading: \(error!)")
+                        self.activityIndicator.stopAnimating()
                         return
                     }
                     // display image
                     let messageImage = UIImage.init(data: data!, scale: 50)
                     // check if the cell is still on screen, if so, update cell image
                     if cell == tableView.cellForRow(at: indexPath) {
+                        self.activityIndicator.startAnimating()
                         DispatchQueue.main.async {
                             cell.imageView?.image = messageImage
                             cell.setNeedsLayout()
+                        }
+                        if ((cell.imageView?.image) != nil) {
+                            self.activityIndicator.stopAnimating()
                         }
                     }
                 }
@@ -269,8 +278,10 @@ class BupChatViewController: UIViewController, UITableViewDelegate, UITableViewD
         if let photo = info[UIImagePickerControllerOriginalImage] as? UIImage, let photoData = UIImageJPEGRepresentation(photo, 0.8) {
             // call function to upload photo message
             sendPhotoMessage(photoData: photoData)
+            
         }
         picker.dismiss(animated: true, completion: nil)
+        self.activityIndicator.startAnimating()
     }
     
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {

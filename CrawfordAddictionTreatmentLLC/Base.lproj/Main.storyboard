@@ -621,6 +621,11 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" hidesWhenStopped="YES" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="LqV-Ot-dbH">
+                                <rect key="frame" x="142" y="266" width="37" height="37"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="color" red="0.99936896559999999" green="0.74338763949999997" blue="0.53373223540000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </activityIndicatorView>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QFu-0V-wwG">
                                 <rect key="frame" x="54" y="473" width="195" height="30"/>
                                 <color key="backgroundColor" red="0.33373204372158782" green="1" blue="0.97543678821585433" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -643,13 +648,20 @@
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="47o-7C-coM">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="499"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="151-fg-hbD">
+                                            <rect key="frame" x="0.0" y="44" width="320" height="405"/>
+                                        </imageView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="151-fg-hbD" firstAttribute="top" secondItem="47o-7C-coM" secondAttribute="top" constant="44" id="406-Tc-Vku"/>
+                                        <constraint firstAttribute="trailing" secondItem="151-fg-hbD" secondAttribute="trailing" id="MYR-8x-4wx"/>
+                                        <constraint firstItem="151-fg-hbD" firstAttribute="leading" secondItem="47o-7C-coM" secondAttribute="leading" id="d1A-UH-CHw"/>
+                                        <constraint firstAttribute="bottom" secondItem="151-fg-hbD" secondAttribute="bottom" constant="50" id="tQQ-5k-dbM"/>
+                                    </constraints>
                                 </view>
                                 <blurEffect style="light"/>
                             </visualEffectView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="151-fg-hbD">
-                                <rect key="frame" x="0.0" y="44" width="320" height="479"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Umj-dt-I1I">
                                 <rect key="frame" x="133" y="269" width="54" height="30"/>
                                 <color key="backgroundColor" red="0.29673840350000003" green="0.61520525569999995" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -708,6 +720,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="activityIndicator" destination="LqV-Ot-dbH" id="ba0-wK-LNn"/>
                         <outlet property="backgroundBlur" destination="uRL-fx-m0z" id="mA5-MG-pzU"/>
                         <outlet property="dismissImageRecognizer" destination="Ov5-2D-Z5l" id="GYc-IF-EqX"/>
                         <outlet property="dismissKeyboardRecognizer" destination="8JJ-lB-xc2" id="Osq-eX-5ke"/>
@@ -732,7 +745,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="-1808" y="849"/>
+            <point key="canvasLocation" x="-1809.375" y="848.23943661971828"/>
         </scene>
         <!--FAQ-->
         <scene sceneID="wg7-f3-ORb">
