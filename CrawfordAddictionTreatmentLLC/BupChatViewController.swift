@@ -248,9 +248,11 @@ class BupChatViewController: UIViewController, UITableViewDelegate, UITableViewD
         if let imageUrl = message[Constants.MessageFields.imageUrl] {
             if let cachedImage = imageCache.object(forKey: imageUrl as NSString) {
                 showImageDisplay(cachedImage)
+                activityIndicator.startAnimating()
             } else {
                 FIRStorage.storage().reference(forURL: imageUrl).data(withMaxSize: INT64_MAX){ (data, error) in
                     guard error == nil else {
+                        self.showAlert(title: "Unable to Display Image", message: "Try Again Later")
                         print("Error downloading: \(error!)")
                         return
                     }
@@ -305,11 +307,13 @@ class BupChatViewController: UIViewController, UITableViewDelegate, UITableViewD
         // create a child node at imagePath with photoData and metadata
         storageRef!.child(imagePath).put(photoData, metadata: metadata) { (metadata, error) in
             if let error = error {
+                self.showAlert(title: "Unable to Send Image", message: "Try Again Later")
                 print("error uploading: \(error)")
                 return
             }
             // use sendMessage to add imageURL to database
             self.sendMessage(data: [Constants.MessageFields.imageUrl: self.storageRef!.child((metadata?.path)!).description])
+            self.activityIndicator.startAnimating()
         }
     }
     
