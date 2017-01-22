@@ -194,6 +194,7 @@ class BupChatViewController: UIViewController, UITableViewDelegate, UITableViewD
             if let cachedImage = imageCache.object(forKey: imageUrl as NSString) {
                 cell.imageView?.image = cachedImage
                 cell.setNeedsLayout()
+                self.activityIndicator.stopAnimating()
             } else {
                 // download and display image
                 FIRStorage.storage().reference(forURL: imageUrl).data(withMaxSize: INT64_MAX) { (data, error) in
@@ -212,7 +213,7 @@ class BupChatViewController: UIViewController, UITableViewDelegate, UITableViewD
                             cell.imageView?.image = messageImage
                             cell.setNeedsLayout()
                         }
-                        if ((cell.imageView?.image) != nil) {
+                        if cell.imageView?.image != nil {
                             self.activityIndicator.stopAnimating()
                         }
                     }
@@ -222,6 +223,7 @@ class BupChatViewController: UIViewController, UITableViewDelegate, UITableViewD
             let text = message[Constants.MessageFields.text] ?? "[message]"
                 cell.textLabel?.text = name + ": " + text
                 cell.imageView?.image = placeholderImage
+            
         }
         
         return cell
@@ -290,7 +292,6 @@ class BupChatViewController: UIViewController, UITableViewDelegate, UITableViewD
     func sendMessage(data: [String: String]) {
         var packet = data
         packet[Constants.MessageFields.name] = displayName
-        //packet[Constants.MessageFields.dateTime] = Utilities().getDate()
         self.ref.child("messages").childByAutoId().setValue(packet)
     }
     
@@ -402,7 +403,6 @@ class BupChatViewController: UIViewController, UITableViewDelegate, UITableViewD
         let data = [Constants.MessageFields.text: textField.text! as String]
         sendMessage(data: data)
         textField.text = ""
-        activityIndicator.stopAnimating()
         return true
     }
     
