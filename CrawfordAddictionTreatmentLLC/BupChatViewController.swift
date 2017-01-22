@@ -189,6 +189,7 @@ class BupChatViewController: UIViewController, UITableViewDelegate, UITableViewD
         
         // if photo message, then grab image and display it
         if let imageUrl = message[Constants.MessageFields.imageUrl] {
+            self.activityIndicator.startAnimating()
             cell.textLabel?.text = "sent by: \(name)"
             // image already exists in cache
             if let cachedImage = imageCache.object(forKey: imageUrl as NSString) {
