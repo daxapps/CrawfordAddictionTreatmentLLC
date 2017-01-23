@@ -75,7 +75,8 @@ class BupChatViewController: UIViewController, UITableViewDelegate, UITableViewD
         _authHandle = FIRAuth.auth()?.addStateDidChangeListener { (auth: FIRAuth, user: FIRUser?) in
             // refresh table data
             self.messages.removeAll(keepingCapacity: false)
-            self.messagesTableView.reloadData() 
+            self.messagesTableView.reloadData()
+            self.activityIndicator.startAnimating()
             
             //check if there is a current user
             if let activeUser = user {
@@ -188,13 +189,16 @@ class BupChatViewController: UIViewController, UITableViewDelegate, UITableViewD
         
         // if photo message, then grab image and display it
         if let imageUrl = message[Constants.MessageFields.imageUrl] {
-            self.activityIndicator.startAnimating()
+            //self.activityIndicator.startAnimating()
             cell.textLabel?.text = "sent by: \(name)"
             // image already exists in cache
             if let cachedImage = imageCache.object(forKey: imageUrl as NSString) {
+                self.activityIndicator.startAnimating()
                 cell.imageView?.image = cachedImage
                 cell.setNeedsLayout()
-                self.activityIndicator.stopAnimating()
+                if cell.imageView?.image != nil {
+                    self.activityIndicator.stopAnimating()
+                }
             } else {
                 // download and display image
                 FIRStorage.storage().reference(forURL: imageUrl).data(withMaxSize: INT64_MAX) { (data, error) in
@@ -246,7 +250,7 @@ class BupChatViewController: UIViewController, UITableViewDelegate, UITableViewD
         if let imageUrl = message[Constants.MessageFields.imageUrl] {
             if let cachedImage = imageCache.object(forKey: imageUrl as NSString) {
                 showImageDisplay(cachedImage)
-                activityIndicator.startAnimating()
+                //activityIndicator.startAnimating()
             } else {
                 FIRStorage.storage().reference(forURL: imageUrl).data(withMaxSize: INT64_MAX){ (data, error) in
                     guard error == nil else {
@@ -312,7 +316,7 @@ class BupChatViewController: UIViewController, UITableViewDelegate, UITableViewD
             }
             // use sendMessage to add imageURL to database
             self.sendMessage(data: [Constants.MessageFields.imageUrl: self.storageRef!.child((metadata?.path)!).description])
-            self.activityIndicator.startAnimating()
+            //self.activityIndicator.startAnimating()
         }
     }
     
