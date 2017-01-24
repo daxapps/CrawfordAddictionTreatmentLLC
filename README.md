@@ -7,7 +7,6 @@ This app allows users to:
 - Read FAQ
 - Watch videos about opiate addiction treatment
 - Get instant driving directions to the facility from their present location
-- Chat and share information with others that use the app
 - Connect with several helpful links
 
 
@@ -18,11 +17,10 @@ Download Apple’s IDE Xcode from the App Store,  clone project, update cocoapod
 ## Contributing
 
 1. Fork it!
-2. Install pods: `pod install`
-3. Create your feature branch: `git checkout -b my-new-feature`
-4. Commit your changes: `git commit -am 'Add some feature'`
-5. Push to the branch: `git push origin my-new-feature`
-6. Submit a pull request :D
+2. Create your feature branch: `git checkout -b my-new-feature`
+3. Commit your changes: `git commit -am 'Add some feature'`
+4. Push to the branch: `git push origin my-new-feature`
+5. Submit a pull request :D
 
 ## License
 
