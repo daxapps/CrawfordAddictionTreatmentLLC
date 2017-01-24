@@ -144,12 +144,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E0D6BAC51E1A935A005A26D4 /* Build configuration list for PBXNativeTarget "CrawfordAddictionTreatmentLLC" */;
 			buildPhases = (
-				9E8255E1389E7E6D7CF44FF4 /* [CP] Check Pods Manifest.lock */,
 				E0D6BAAD1E1A935A005A26D4 /* Sources */,
 				E0D6BAAE1E1A935A005A26D4 /* Frameworks */,
 				E0D6BAAF1E1A935A005A26D4 /* Resources */,
-				BF5A5A0D4F34C06D42D23FDC /* [CP] Embed Pods Frameworks */,
-				FBA853BA51715EC3E7C20410 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -207,54 +204,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		9E8255E1389E7E6D7CF44FF4 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		BF5A5A0D4F34C06D42D23FDC /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CrawfordAddictionTreatmentLLC/Pods-CrawfordAddictionTreatmentLLC-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		FBA853BA51715EC3E7C20410 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CrawfordAddictionTreatmentLLC/Pods-CrawfordAddictionTreatmentLLC-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		E0D6BAAD1E1A935A005A26D4 /* Sources */ = {
