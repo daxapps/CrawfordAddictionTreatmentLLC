@@ -7,10 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		6A8BF66273FE7BA19D549B9A /* Pods_CrawfordAddictionTreatmentLLC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37351D465368C14E8A4A018A /* Pods_CrawfordAddictionTreatmentLLC.framework */; };
 		E019ACB61E27E23000910847 /* HelpfulLinksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E019ACB51E27E23000910847 /* HelpfulLinksViewController.swift */; };
-		E01B038B1E1DE25D00355A07 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E01B038A1E1DE25D00355A07 /* GoogleService-Info.plist */; };
-		E0405C4D1E2172F900DA3868 /* BupChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0E7248E1E1EACEE00A7809C /* BupChatViewController.swift */; };
 		E07D0D001E3285D5008FA290 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E07D0CFF1E3285D5008FA290 /* HomeViewController.swift */; };
 		E0D6BAB51E1A935A005A26D4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0D6BAB41E1A935A005A26D4 /* AppDelegate.swift */; };
 		E0D6BABC1E1A935A005A26D4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E0D6BABA1E1A935A005A26D4 /* Main.storyboard */; };
@@ -19,8 +16,6 @@
 		E0D6BACF1E1AC85E005A26D4 /* FAQTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0D6BACE1E1AC85E005A26D4 /* FAQTableViewController.swift */; };
 		E0D6BAD11E1B04D1005A26D4 /* FAQs.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0D6BAD01E1B04D1005A26D4 /* FAQs.swift */; };
 		E0D6BAD31E1B0D8C005A26D4 /* AnswersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0D6BAD21E1B0D8C005A26D4 /* AnswersViewController.swift */; };
-		E0E724911E1EB56000A7809C /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0E724901E1EB56000A7809C /* Utilities.swift */; };
-		E0E724931E1EB59B00A7809C /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0E724921E1EB59B00A7809C /* Constants.swift */; };
 		E0EF6D3E1E1B453300911075 /* DirectionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0EF6D3D1E1B453300911075 /* DirectionsViewController.swift */; };
 		E0EF6D401E1B57A200911075 /* GCDBlackBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0EF6D3F1E1B57A200911075 /* GCDBlackBox.swift */; };
 		E0F916521E265CAC000172DC /* VideoViewController1.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0F916511E265CAC000172DC /* VideoViewController1.swift */; };
@@ -31,9 +26,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		37351D465368C14E8A4A018A /* Pods_CrawfordAddictionTreatmentLLC.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CrawfordAddictionTreatmentLLC.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E019ACB51E27E23000910847 /* HelpfulLinksViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HelpfulLinksViewController.swift; sourceTree = "<group>"; };
-		E01B038A1E1DE25D00355A07 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		E07D0CFF1E3285D5008FA290 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		E0D6BAB11E1A935A005A26D4 /* CrawfordAddictionTreatmentLLC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CrawfordAddictionTreatmentLLC.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E0D6BAB41E1A935A005A26D4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -44,9 +37,6 @@
 		E0D6BACE1E1AC85E005A26D4 /* FAQTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FAQTableViewController.swift; sourceTree = "<group>"; };
 		E0D6BAD01E1B04D1005A26D4 /* FAQs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FAQs.swift; sourceTree = "<group>"; };
 		E0D6BAD21E1B0D8C005A26D4 /* AnswersViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnswersViewController.swift; sourceTree = "<group>"; };
-		E0E7248E1E1EACEE00A7809C /* BupChatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BupChatViewController.swift; sourceTree = "<group>"; };
-		E0E724901E1EB56000A7809C /* Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
-		E0E724921E1EB59B00A7809C /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		E0EF6D3D1E1B453300911075 /* DirectionsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DirectionsViewController.swift; sourceTree = "<group>"; };
 		E0EF6D3F1E1B57A200911075 /* GCDBlackBox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GCDBlackBox.swift; sourceTree = "<group>"; };
 		E0F916511E265CAC000172DC /* VideoViewController1.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoViewController1.swift; sourceTree = "<group>"; };
@@ -54,8 +44,6 @@
 		E0F916551E26C9E9000172DC /* VideoViewController2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoViewController2.swift; sourceTree = "<group>"; };
 		E0F916571E26CEDD000172DC /* VideoViewController3.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoViewController3.swift; sourceTree = "<group>"; };
 		E0F916591E26D2A6000172DC /* VideoViewController4.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoViewController4.swift; sourceTree = "<group>"; };
-		EE4C4C58EB4A386DFAF9DF47 /* Pods-CrawfordAddictionTreatmentLLC.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CrawfordAddictionTreatmentLLC.release.xcconfig"; path = "Pods/Target Support Files/Pods-CrawfordAddictionTreatmentLLC/Pods-CrawfordAddictionTreatmentLLC.release.xcconfig"; sourceTree = "<group>"; };
-		F736DA82036961F14CF408F0 /* Pods-CrawfordAddictionTreatmentLLC.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CrawfordAddictionTreatmentLLC.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CrawfordAddictionTreatmentLLC/Pods-CrawfordAddictionTreatmentLLC.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,36 +51,17 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6A8BF66273FE7BA19D549B9A /* Pods_CrawfordAddictionTreatmentLLC.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		94E05C036A70B7E3C3ADDDB8 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				37351D465368C14E8A4A018A /* Pods_CrawfordAddictionTreatmentLLC.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		CB1C60807DB74453C1F5B515 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				F736DA82036961F14CF408F0 /* Pods-CrawfordAddictionTreatmentLLC.debug.xcconfig */,
-				EE4C4C58EB4A386DFAF9DF47 /* Pods-CrawfordAddictionTreatmentLLC.release.xcconfig */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
 		E04BBAFE1E296DDA0010916B /* Assets */ = {
 			isa = PBXGroup;
 			children = (
 				E0D6BABA1E1A935A005A26D4 /* Main.storyboard */,
 				E0D6BABF1E1A935A005A26D4 /* LaunchScreen.storyboard */,
-				E01B038A1E1DE25D00355A07 /* GoogleService-Info.plist */,
 				E0D6BAC21E1A935A005A26D4 /* Info.plist */,
 				E0D6BABD1E1A935A005A26D4 /* Assets.xcassets */,
 			);
@@ -104,8 +73,6 @@
 			children = (
 				E0D6BAB31E1A935A005A26D4 /* CrawfordAddictionTreatmentLLC */,
 				E0D6BAB21E1A935A005A26D4 /* Products */,
-				94E05C036A70B7E3C3ADDDB8 /* Frameworks */,
-				CB1C60807DB74453C1F5B515 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -134,8 +101,6 @@
 			children = (
 				E0D6BAD01E1B04D1005A26D4 /* FAQs.swift */,
 				E0EF6D3F1E1B57A200911075 /* GCDBlackBox.swift */,
-				E0E724901E1EB56000A7809C /* Utilities.swift */,
-				E0E724921E1EB59B00A7809C /* Constants.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -154,7 +119,6 @@
 				E0D6BACE1E1AC85E005A26D4 /* FAQTableViewController.swift */,
 				E0D6BAD21E1B0D8C005A26D4 /* AnswersViewController.swift */,
 				E0EF6D3D1E1B453300911075 /* DirectionsViewController.swift */,
-				E0E7248E1E1EACEE00A7809C /* BupChatViewController.swift */,
 				E0F916531E26B4E1000172DC /* VideoListViewController.swift */,
 				E0E0AABB1E2FBAE4006C34A5 /* VideoVC */,
 				E019ACB51E27E23000910847 /* HelpfulLinksViewController.swift */,
@@ -237,7 +201,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				E0D6BAC11E1A935A005A26D4 /* LaunchScreen.storyboard in Resources */,
-				E01B038B1E1DE25D00355A07 /* GoogleService-Info.plist in Resources */,
 				E0D6BABE1E1A935A005A26D4 /* Assets.xcassets in Resources */,
 				E0D6BABC1E1A935A005A26D4 /* Main.storyboard in Resources */,
 			);
@@ -302,15 +265,12 @@
 				E0F916581E26CEDD000172DC /* VideoViewController3.swift in Sources */,
 				E0D6BAB51E1A935A005A26D4 /* AppDelegate.swift in Sources */,
 				E07D0D001E3285D5008FA290 /* HomeViewController.swift in Sources */,
-				E0405C4D1E2172F900DA3868 /* BupChatViewController.swift in Sources */,
-				E0E724911E1EB56000A7809C /* Utilities.swift in Sources */,
 				E0F916541E26B4E1000172DC /* VideoListViewController.swift in Sources */,
 				E019ACB61E27E23000910847 /* HelpfulLinksViewController.swift in Sources */,
 				E0F916561E26C9E9000172DC /* VideoViewController2.swift in Sources */,
 				E0D6BACF1E1AC85E005A26D4 /* FAQTableViewController.swift in Sources */,
 				E0F916521E265CAC000172DC /* VideoViewController1.swift in Sources */,
 				E0EF6D3E1E1B453300911075 /* DirectionsViewController.swift in Sources */,
-				E0E724931E1EB59B00A7809C /* Constants.swift in Sources */,
 				E0D6BAD31E1B0D8C005A26D4 /* AnswersViewController.swift in Sources */,
 				E0EF6D401E1B57A200911075 /* GCDBlackBox.swift in Sources */,
 				E0F9165A1E26D2A6000172DC /* VideoViewController4.swift in Sources */,
@@ -432,7 +392,6 @@
 		};
 		E0D6BAC61E1A935A005A26D4 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F736DA82036961F14CF408F0 /* Pods-CrawfordAddictionTreatmentLLC.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = EN498SV6Q8;
@@ -447,7 +406,6 @@
 		};
 		E0D6BAC71E1A935A005A26D4 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = EE4C4C58EB4A386DFAF9DF47 /* Pods-CrawfordAddictionTreatmentLLC.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = EN498SV6Q8;

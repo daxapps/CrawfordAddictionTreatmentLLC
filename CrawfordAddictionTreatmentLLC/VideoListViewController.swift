@@ -16,3 +16,16 @@ class VideoListViewController: UIViewController {
     
 
 }
+
+extension UIViewController {
+    
+    // MARK: Alert
+    func showAlert(title: String, message: String) {
+        DispatchQueue.main.async {
+            let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+            let dismissAction = UIAlertAction(title: "Dismiss", style: .destructive, handler: nil)
+            alert.addAction(dismissAction)
+            self.present(alert, animated: true, completion: nil)
+        }
+    }
+}
