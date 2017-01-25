@@ -346,7 +346,7 @@
 				DEVELOPMENT_TEAM = EN498SV6Q8;
 				INFOPLIST_FILE = CrawfordAddictionTreatmentLLC/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.daxapps.CrawfordAddictionTreatmentLLC;
+				PRODUCT_BUNDLE_IDENTIFIER = com.daxapps.CrawfordAddictionTreatmentLLC2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -360,7 +360,7 @@
 				DEVELOPMENT_TEAM = EN498SV6Q8;
 				INFOPLIST_FILE = CrawfordAddictionTreatmentLLC/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.daxapps.CrawfordAddictionTreatmentLLC;
+				PRODUCT_BUNDLE_IDENTIFIER = com.daxapps.CrawfordAddictionTreatmentLLC2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 1;

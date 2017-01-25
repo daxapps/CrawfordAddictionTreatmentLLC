@@ -12,7 +12,7 @@ This app allows users to:
 
 ## Installation
 
-Download Apple’s IDE Xcode from the App Store,  clone project, update cocoapods and then build and run.
+Download Apple’s IDE Xcode from the App Store, clone project, then build and run.
 
 ## Contributing
 
