@@ -1,8 +1,9 @@
 # Crawford Addiction Treatment LLC
 
-This is an iOS app written using Swift3 and Xcode8 to help patients and loved ones learn about opiate addiction and Crawford Addiction Treatment’s program. 
 
-Apple App Store https://itunes.apple.com/us/app/crawford-addiction-treatment/id1198790527?mt=8
+[![Download on the App Store](https://img.shields.io/badge/download-app%20store-pink.svg)](https://itunes.apple.com/us/app/crawford-addiction-treatment/id1198790527?mt=8)
+
+This is an iOS app written using Swift3 and Xcode8 to help patients and loved ones learn about opiate addiction and Crawford Addiction Treatment’s program. 
 
 This app allows users to:
 - Instantly call or text the office to make an appointment or ask questions
